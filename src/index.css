@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------
+   HubSpot embedded form styling
+   Scope: only inside .hs-form-styles
+---------------------------- */
+.btn-primary {
+  @apply inline-flex items-center justify-center 
+         rounded-xl px-5 h-11 
+         text-sm font-semibold 
+         bg-slate-900 text-white 
+         shadow-sm 
+         hover:bg-black 
+         transition-colors
+         focus:outline-none focus-visible:ring-2 
+         focus-visible:ring-slate-900 focus-visible:ring-offset-2
+         disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.hsfc-Button {
+  @apply btn-primary;
+}
+
+.meetings-iframe-container iframe {
+  width: 100%;
+  min-height: 520px;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .meetings-iframe-container iframe {
+    min-height: 460px;
+  }
+}
+
+/* ✅ Style the HubSpot meetings iframe when using <iframe src="...meetings.hubspot.com..."> */
+iframe[src*="meetings.hubspot.com"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+}
+
+/* Recommended height (reduce the ugly internal scroll) */
+iframe[src*="meetings.hubspot.com"] {
+  height: 760px !important;
+}
+
+@media (max-width: 768px) {
+  iframe[src*="meetings.hubspot.com"] {
+    height: 860px !important;
+  }
+}
+
+/* Hide HubSpot inline thank-you message */
+.hs-form .submitted-message,
+.hs-form .hs-form__thankyou {
+  display: none !important;
+}
+
+/* Header padding fix — MOBILE ONLY */
+.header-pad-fix {
+  padding-left: 1rem;
+  padding-right: 1rem; /* normal default */
+}
+
+@media (max-width: 640px) {
+  .header-pad-fix {
+    padding-right: 7rem; /* your tested value */
+  }
+}

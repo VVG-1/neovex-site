@@ -1,0 +1,367 @@
+/* src/styles/hubspot-form.css */
+
+.hs-form-styles .hs-form * {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Labels */
+.hs-form-styles .hs-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Inputs */
+.hs-form-styles .hs-form input[type="text"],
+.hs-form-styles .hs-form input[type="email"],
+.hs-form-styles .hs-form input[type="tel"],
+.hs-form-styles .hs-form input[type="number"],
+.hs-form-styles .hs-form select,
+.hs-form-styles .hs-form textarea {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid #cbd5e1; /* slate-300 */
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  box-shadow: none;
+}
+
+.hs-form-styles .hs-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Focus state */
+.hs-form-styles .hs-form input:focus,
+.hs-form-styles .hs-form select:focus,
+.hs-form-styles .hs-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* Spacing */
+.hs-form-styles .hs-form .hs-form-field {
+  margin-bottom: 14px;
+}
+
+/* Checkbox / radio */
+.hs-form-styles .hs-form .hs-form-checkbox,
+.hs-form-styles .hs-form .hs-form-radio {
+  margin: 8px 0;
+}
+
+.hs-form-styles .hs-form .hs-form-checkbox label,
+.hs-form-styles .hs-form .hs-form-radio label {
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Error messages */
+.hs-form-styles .hs-form .hs-error-msgs {
+  margin-top: 6px;
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.hs-form-styles .hs-form .hs-error-msgs li {
+  list-style: none;
+}
+
+
+/* ===================================================== */
+/* ✅ HARD OVERRIDE HUBSPOT SUBMIT BUTTON */
+/* Matches your site’s slate-900 button */
+/* ===================================================== */
+
+.hs-form-styles .hs-form .hs_submit .hs-button,
+.hs-form-styles .hs-form .hs_submit input[type="submit"],
+.hs-form-styles .hs-form input[type="submit"].hs-button,
+.hs-form-styles .hs-button {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  background-color: #2563eb !important; /* slate-900 */
+  background-image: none !important;    /* kill HubSpot gradients */
+
+  color: #ffffff !important;
+
+  border: none !important;
+  border-radius: 0.75rem !important;
+
+  height: 44px !important;
+  line-height: 44px !important;
+  padding: 0 20px !important;
+
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease-in-out !important;
+}
+
+/* Hover */
+.hs-form-styles .hs-form .hs_submit .hs-button:hover,
+.hs-form-styles .hs-form input[type="submit"]:hover {
+  background-color: #000000 !important;
+}
+
+/* Spacing above button */
+.hs-form-styles .hs-form .hs_submit {
+  margin-top: 12px;
+}
+
+/* Mobile full width */
+@media (max-width: 640px) {
+  .hs-form-styles .hs-form .hs_submit .hs-button,
+  .hs-form-styles .hs-form input[type="submit"] {
+    width: 100% !important;
+  }
+}
+
+/* extra fallback */
+.neovex-hs-submit {
+  background-color: #2563eb !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  font-weight: 700 !important;
+}
+
+.neovex-hs-submit:hover {
+  background-color: #1d4ed8 !important;
+}
+.neovex-hs-submit:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Option A (best): set the variables HubSpot uses */
+.hs-form-styles {
+  --hsf-button__background-color: #2563eb; /* blue-600 */
+  --hsf-button__color: #ffffff;
+  --hsf-button__border-color: transparent;
+  --hsf-button__border-radius: 0.75rem;
+  --hsf-button__font-weight: 700;
+  --hsf-button__font-size: 0.875rem;
+  --hsf-button__padding: 0 20px;
+  --hsf-button__height: 44px;
+  --hsf-button__line-height: 44px;
+
+  /* hover vars (runtime uses these if present) */
+  --hsf-button__hover-background-color: #1d4ed8; /* blue-700 */
+  --hsf-button__hover-color: #ffffff;
+}
+
+/* ===================================================== */
+/* ✅ HubSpot Forms Runtime (hsfc-*) button fix           */
+/* Your form is rendering .hsfc-Button, not .hs-button    */
+/* ===================================================== */
+
+/* Set BOTH variable families (HubSpot uses different names depending on runtime version) */
+.hs-form-styles {
+  /* runtime button vars (your screenshot shows --hsfc-button__...) */
+  --hsfc-button__background-color: #2563eb;
+  --hsfc-button__color: #ffffff;
+  --hsfc-button__border-radius: 0.75rem;
+  --hsfc-button__font-weight: 700;
+  --hsfc-button__font-size: 0.875rem;
+  --hsfc-button__padding: 0 20px;
+  --hsfc-button__height: 44px;
+  --hsfc-button__line-height: 44px;
+
+  --hsfc-button__hover-background-color: #1d4ed8;
+  --hsfc-button__hover-color: #ffffff;
+
+  /* keep your hsf vars too (doesn’t hurt) */
+}
+
+/* Direct override for the actual runtime button */
+.hs-form-styles .hsfc-Button,
+.hs-form-styles button.hsfc-Button,
+.hs-form-styles [type="submit"].hsfc-Button {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  padding: 0 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.hs-form-styles .hsfc-Button:hover,
+.hs-form-styles button.hsfc-Button:hover,
+.hs-form-styles [type="submit"].hsfc-Button:hover {
+  background: #1d4ed8 !important;
+}
+
+.hs-form-styles .hsfc-Button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* ===================================================== */
+/* ✅ HubSpot runtime button variables + hard override    */
+/* Your DOM uses .hsfc-Button and reads --hsf-button__*   */
+/* ===================================================== */
+
+.hs-form-styles {
+  /* Primary vars used by .hsfc-Button */
+  --hsf-button__background-color: #2563eb;      /* blue-600 */
+  --hsf-button__color: #ffffff;
+  --hsf-button__border-color: transparent;
+  --hsf-button__border-style: solid;
+  --hsf-button__border-width: 0px;
+
+  --hsf-button__border-radius: 0.75rem;
+  --hsf-button__font-weight: 700;
+  --hsf-button__font-size: 0.875rem;
+  --hsf-button__padding: 0 20px;
+  --hsf-button__box-shadow: none;
+}
+
+/* Optional: set defaults too, in case HubSpot swaps variable names */
+.hs-form-styles {
+  --hsf-default-button__background-color: #2563eb;
+  --hsf-default-button__color: #ffffff;
+  --hsf-default-button__border-radius: 0.75rem;
+  --hsf-default-button__font-weight: 700;
+  --hsf-default-button__font-size: 0.875rem;
+  --hsf-default-button__padding: 0 20px;
+  --hsf-default-button__box-shadow: none;
+}
+
+/* HARD override the actual button (wins even if vars don’t apply) */
+.hs-form-styles .hsfc-Button {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  padding: 0 20px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  box-shadow: none !important;
+}
+
+/* Hover */
+.hs-form-styles .hsfc-Button:hover {
+  background-color: #1d4ed8 !important; /* blue-700 */
+}
+
+/* Focus */
+.hs-form-styles .hsfc-Button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* FINAL HubSpot Button Style */
+.hs-form-styles .hsfc-Button {
+  background-color: #000000 !important; /* blue-600 */
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  padding: 0 20px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.hs-form-styles .hsfc-Button:hover {
+  background-color: #000000 !important; /* blue-700 */
+}
+
+/* === Neovex Button Theme Override for HubSpot === */
+
+.hs-form-styles {
+  /* Primary button */
+  --hsf-button__background-color: #0f172a;  /* slate-900 */
+  --hsf-button__color: #ffffff;
+  --hsf-button__border-color: transparent;
+  --hsf-button__border-radius: 0.75rem;
+  --hsf-button__font-weight: 700;
+  --hsf-button__font-size: 0.875rem;
+  --hsf-button__padding: 0 20px;
+  --hsf-button__height: 44px;
+  --hsf-button__line-height: 44px;
+
+  /* Hover state */
+  --hsf-button__hover-background-color: #000000;
+  --hsf-button__hover-color: #ffffff;
+}
+
+.hsfc-Button
+{
+  background-color: #000000 !important; /* slate-900 */
+}
+
+.meetings-iframe-container iframe {
+  width: 100%;
+  min-height: 520px;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .meetings-iframe-container iframe {
+    min-height: 460px;
+  }
+}
+
+/* ✅ Style the HubSpot meetings iframe when using <iframe src="...meetings.hubspot.com..."> */
+iframe[src*="meetings.hubspot.com"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+}
+
+/* Recommended height (reduce the ugly internal scroll) */
+iframe[src*="meetings.hubspot.com"] {
+  height: 760px !important;
+}
+
+@media (max-width: 768px) {
+  iframe[src*="meetings.hubspot.com"] {
+    height: 860px !important;
+  }
+}
+
+/* Hide HubSpot inline thank-you message */
+.hs-form .submitted-message,
+.hs-form .hs-form__thankyou {
+  display: none !important;
+}
+
+/* Hide HubSpot's default post-submit message if it sneaks in */
+.submitted-message,
+.hs-form .submitted-message,
+.hs-form .hs-form__thankyou,
+.hs-form .hs-form__submitted-message {
+  display: none !important;
+}
