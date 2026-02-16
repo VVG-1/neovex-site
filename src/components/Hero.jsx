@@ -28,7 +28,7 @@ export default function Hero() {
 
         {/* H1 */}
         <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.05] text-slate-900 [text-wrap:balance] hyphens-none">
-          We Build & Manage AI Systems for{" "}
+          We Install & Manage AI Systems for{" "}
           <span className="whitespace-normal sm:whitespace-nowrap">
             Service Businesses
           </span>
