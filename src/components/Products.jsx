@@ -36,7 +36,7 @@ export default function Products() {
             title="Missed Call Capture (Managed)"
             desc="Capture missed calls, qualify leads, and get an instant summary—so you call back fast and win the job."
             icon={<PhoneMissed className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />}
-            href="/products/missed-call-capture"
+            href="/missed-call-capture"
             variant="blue"
           />
 
@@ -44,7 +44,7 @@ export default function Products() {
             title="Web Lead Capture (Managed)"
             desc="Capture website leads, auto-qualify them, and route them instantly—no inbox lag, no manual intake."
             icon={<FormInput className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />}
-            href="/products/lead-capture"
+            href="/lead-capture"
             variant="emerald"
           />
         </div>
@@ -52,13 +52,13 @@ export default function Products() {
         {/* Secondary links */}
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <a
-            href="/products/missed-call-capture"
+            href="/missed-call-capture"
             className="text-blue-700 font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
           >
             Explore Missed Call Capture →
           </a>
           <a
-            href="/products/lead-capture"
+            href="/lead-capture"
             className="text-blue-700 font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
           >
             Explore Web Lead Capture →

@@ -226,7 +226,7 @@ export default function Header() {
               href={MEETINGS_URL}
               className="inline-flex items-center justify-center bg-slate-900 hover:bg-black text-white rounded-xl px-3 h-10 text-sm font-semibold"
             >
-              Book an Intro Call
+              Book Call
             </a>
 
             <button
