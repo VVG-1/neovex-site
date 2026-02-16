@@ -58,7 +58,7 @@ export default function Products() {
             Explore Missed Call Capture →
           </a>
           <a
-            href="/lead-capture"
+            href="/web-capture"
             className="text-blue-700 font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
           >
             Explore Web Lead Capture →

@@ -108,13 +108,13 @@ export default function Footer({
 
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/products/missed-call-capture" className="hover:text-white">
-                  Noevex Missed Call Capture
+                <Link to="/missed-call-capture" className="hover:text-white">
+                  Neovex Missed Call Capture
                 </Link>
               </li>
               <li>
                 {/* Make sure this matches your real route */}
-                <Link to="/products/web-lead-capture" className="hover:text-white">
+                <Link to="/web-capture" className="hover:text-white">
                   Neovex Web Capture
                 </Link>
               </li>
