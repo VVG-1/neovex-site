@@ -132,7 +132,7 @@ export default function BeforeAfter({
         <div className="mt-10 text-center">
           <a
             href={ctaHref}
-            className="inline-flex items-center gap-2 bg-slate-950 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-slate-800 transition"
+            className="inline-flex items-center gap-2 bg-[#172235] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#1B2638] transition"
           >
             {ctaText}
           </a>

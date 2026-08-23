@@ -114,7 +114,7 @@ function OfferCard({ offer }) {
           href={MEETINGS_URL}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-flex items-center justify-center rounded-lg bg-slate-950 text-white px-4 py-3 text-sm font-semibold hover:bg-slate-800"
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-[#172235] text-white px-4 py-3 text-sm font-semibold hover:bg-[#1B2638]"
         >
           {offer.cta}
         </a>

@@ -11,9 +11,9 @@ export default function Footer({
   xUrl = "",
 }) {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-slate-950 text-slate-400">
+    <footer id="contact" className="relative overflow-hidden bg-[#172235] text-slate-400">
       <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="rounded-lg border border-slate-800 bg-slate-900/70 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="rounded-lg border border-[#263247] bg-[#1B2638]/70 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
               Ready to get started?
@@ -44,7 +44,7 @@ export default function Footer({
 
             <a
               href="/#audit"
-              className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
+              className="inline-flex items-center justify-center rounded-lg border border-[#344055] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]"
             >
               Start With an Audit
             </a>

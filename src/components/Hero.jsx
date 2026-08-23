@@ -50,7 +50,7 @@ export default function Hero() {
           <a
             href={MEETINGS_URL}
             aria-label="Discuss a workflow with Neovex"
-            className="w-full sm:w-auto bg-slate-950 text-white px-6 py-3 text-base rounded-lg hover:bg-slate-800 transition inline-flex items-center justify-center"
+            className="w-full sm:w-auto bg-[#172235] text-white px-6 py-3 text-base rounded-lg hover:bg-[#1B2638] transition inline-flex items-center justify-center"
           >
             Discuss a Workflow
           </a>
@@ -80,7 +80,7 @@ function WorkflowDiagram() {
         {workflowCards.map((step, index) => (
           <li key={step.title} className="relative grid grid-cols-[2.75rem_minmax(0,252px)] sm:grid-cols-[2.75rem_minmax(0,1fr)] lg:grid-cols-[3rem_minmax(0,1fr)] items-center gap-3 lg:gap-3.5">
             <div className="relative z-10 flex items-center justify-center">
-              <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-lg border border-slate-800 bg-slate-900 text-slate-100 flex items-center justify-center ring-4 ring-white">
+              <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-lg border border-[#263247] bg-[#172235] text-slate-100 flex items-center justify-center ring-4 ring-white">
                 {step.icon}
               </div>
               {index < workflowCards.length - 1 ? (

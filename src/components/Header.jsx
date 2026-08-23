@@ -88,7 +88,7 @@ export default function Header() {
                 <div className="space-y-3">
                   <a
                     href={MEETINGS_URL}
-                    className="w-full inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-4 h-12 text-sm font-semibold"
+                    className="w-full inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-4 h-12 text-sm font-semibold"
                     onClick={closeMobile}
                   >
                     Discuss a Workflow
@@ -120,7 +120,7 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-slate-950 text-white px-3 py-2 rounded-md"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-[#172235] text-white px-3 py-2 rounded-md"
       >
         Skip to content
       </a>
@@ -135,7 +135,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <a
               href={MEETINGS_URL}
-              className="hidden sm:inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-3 h-10 text-sm font-semibold"
+              className="hidden sm:inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-3 h-10 text-sm font-semibold"
             >
               Discuss
             </a>
@@ -183,7 +183,7 @@ export default function Header() {
 
           <a
             href={MEETINGS_URL}
-            className="inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-5 h-11 text-sm font-semibold"
+            className="inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-5 h-11 text-sm font-semibold"
           >
             Discuss a Workflow
           </a>

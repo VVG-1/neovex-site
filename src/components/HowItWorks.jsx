@@ -68,7 +68,7 @@ export default function HowItWorks() {
         <div className="mt-10">
           <a
             href="https://meetings.hubspot.com/neovex"
-            className="inline-flex items-center gap-2 bg-slate-950 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-slate-800 transition"
+            className="inline-flex items-center gap-2 bg-[#172235] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#1B2638] transition"
           >
             Discuss a Workflow
           </a>

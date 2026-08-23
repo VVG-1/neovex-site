@@ -14,7 +14,7 @@ const auditItems = [
 
 export default function WorkflowAudit() {
   return (
-    <section id="audit" className="bg-slate-950 text-white py-20 px-6 border-t border-slate-900 scroll-mt-28 md:scroll-mt-32">
+    <section id="audit" className="bg-[#172235] text-white py-20 px-6 border-t border-[#263247] scroll-mt-28 md:scroll-mt-32">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
         <div>
           <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
@@ -41,7 +41,7 @@ export default function WorkflowAudit() {
             </a>
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
+              className="inline-flex items-center justify-center rounded-lg border border-[#344055] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]"
             >
               View Ways to Work
             </a>
@@ -52,17 +52,17 @@ export default function WorkflowAudit() {
           </p>
         </div>
 
-        <div className="rounded-lg border border-slate-800 bg-slate-900/70 p-5 md:p-6">
+        <div className="rounded-lg border border-[#263247] bg-[#1B2638]/70 p-5 md:p-6">
           <div className="grid sm:grid-cols-2 gap-4">
             {auditItems.map(({ Icon, label }) => (
-              <div key={label} className="rounded-lg border border-slate-800 bg-slate-950/50 p-4">
+              <div key={label} className="rounded-lg border border-[#263247] bg-[#172235]/55 p-4">
                 <Icon className="w-5 h-5 text-slate-300" />
                 <div className="mt-3 text-sm font-semibold text-white">{label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 rounded-lg border border-slate-700 bg-slate-950/35 p-4">
+          <div className="mt-4 rounded-lg border border-[#344055] bg-[#172235]/45 p-4">
             <div className="text-xs font-semibold uppercase tracking-wide text-blue-300">
               Output
             </div>

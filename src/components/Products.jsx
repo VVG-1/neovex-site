@@ -60,7 +60,7 @@ export default function Products() {
         <div className="mt-14 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
           <a
             href="#audit"
-            className="inline-flex items-center justify-center rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+            className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
           >
             Start with a Workflow Automation Audit
           </a>
