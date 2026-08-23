@@ -34,7 +34,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 -z-20 bg-white" />
       <div className="text-left max-w-xl w-full min-w-0">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-700">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#25638f]">
           DESIGNED &bull; BUILT &bull; MANAGED BY NEOVEX
         </div>
 

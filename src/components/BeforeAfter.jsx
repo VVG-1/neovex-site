@@ -30,7 +30,7 @@ export default function BeforeAfter({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
             {eyebrow}
           </div>
 
@@ -60,11 +60,11 @@ export default function BeforeAfter({
                 </div>
 
                 <div className="rounded-lg bg-white ring-1 ring-stone-200 p-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-wide text-blue-700 mb-2">
+                  <div className="text-[11px] font-semibold uppercase tracking-wide text-[#25638f] mb-2">
                     {rightLabel}
                   </div>
-                  <div className="flex items-start gap-2 text-sm font-medium text-blue-800">
-                    <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" aria-hidden="true" />
+                  <div className="flex items-start gap-2 text-sm font-medium text-[#25638f]">
+                    <CheckCircle2 className="w-4 h-4 text-[#25638f] mt-0.5 shrink-0" aria-hidden="true" />
                     <span className="leading-5">{row.auto}</span>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function BeforeAfter({
         <div className="hidden md:block mt-10 overflow-x-auto">
           <div className="w-full rounded-lg p-[1px] bg-stone-200">
             <div className="w-full rounded-lg bg-white border border-stone-200 overflow-hidden min-w-[820px] md:min-w-0">
-              <div className="h-px w-full bg-blue-600/50" />
+              <div className="h-px w-full bg-[#25638f]/45" />
 
               <table className="w-full text-left text-sm md:text-base leading-6 border-collapse md:table-fixed">
                 <colgroup>
@@ -96,7 +96,7 @@ export default function BeforeAfter({
                       </span>
                     </th>
                     <th scope="col" className="p-4 md:p-5">
-                      <span className="text-xs font-semibold text-blue-700">
+                      <span className="text-xs font-semibold text-[#25638f]">
                         {rightLabel}
                       </span>
                     </th>
@@ -115,9 +115,9 @@ export default function BeforeAfter({
                           {row.manual}
                         </span>
                       </td>
-                      <td className="p-4 md:p-5 text-blue-700 font-semibold">
+                      <td className="p-4 md:p-5 text-[#25638f] font-semibold">
                         <span className="inline-flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-blue-600" aria-hidden="true" />
+                          <CheckCircle2 className="w-4 h-4 text-[#25638f]" aria-hidden="true" />
                           {row.auto}
                         </span>
                       </td>

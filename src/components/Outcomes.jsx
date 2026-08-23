@@ -47,7 +47,7 @@ export default function Outcomes() {
       className="relative overflow-hidden py-20 px-6 bg-white scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-4">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-4">
           Outcomes
         </div>
 
@@ -68,7 +68,7 @@ export default function Outcomes() {
         <div className="mt-10">
           <a
             href="https://meetings.hubspot.com/neovex"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#25638f] hover:text-[#1f567f] transition"
           >
             Discuss a Workflow
           </a>

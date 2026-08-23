@@ -39,7 +39,7 @@ export default function Products() {
   return (
     <section id="solutions" className="bg-white pt-24 pb-20 px-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold text-blue-700 uppercase tracking-[0.18em] mb-4">
+        <div className="text-[11px] font-semibold text-[#25638f] uppercase tracking-[0.18em] mb-4">
           What We Automate
         </div>
 

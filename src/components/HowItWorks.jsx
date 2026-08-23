@@ -35,7 +35,7 @@ export default function HowItWorks() {
       className="bg-white py-20 px-6 border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
           Understand - Build - Launch - Manage
         </div>
 
@@ -48,7 +48,7 @@ export default function HowItWorks() {
         </p>
 
         <ol className="relative mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-          <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-px bg-blue-200" aria-hidden="true" />
+          <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-px bg-slate-200" aria-hidden="true" />
           {steps.map(({ n, Icon, title, desc }) => (
             <li key={title} className="relative">
               <div className="min-h-full rounded-lg bg-white p-6 md:p-7 border border-stone-200 transition-colors hover:border-stone-300">
@@ -80,7 +80,7 @@ export default function HowItWorks() {
 
 function StepNumber({ n }) {
   return (
-    <div className="inline-grid place-items-center rounded-full p-[1px] bg-blue-600">
+    <div className="inline-grid place-items-center rounded-full p-[1px] bg-[#25638f]">
       <div className="grid place-items-center h-10 w-10 rounded-full bg-white text-slate-900 text-[13px] font-semibold">
         {n}
       </div>

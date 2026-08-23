@@ -164,7 +164,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="px-1 py-1 text-sm font-medium text-slate-700 hover:text-blue-600 transition"
+              className="px-1 py-1 text-sm font-medium text-slate-700 hover:text-[#25638f] transition"
             >
               {item.label}
             </a>

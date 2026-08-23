@@ -54,7 +54,7 @@ export default function FAQ({
       }`}
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
           FAQ
         </div>
 
@@ -111,7 +111,7 @@ export default function FAQ({
         <div className="mt-10">
           <a
             href="https://meetings.hubspot.com/neovex"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#25638f] hover:text-[#1f567f] transition"
           >
             Did not see your question? Discuss a Workflow
           </a>

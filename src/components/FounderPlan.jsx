@@ -65,7 +65,7 @@ export default function FounderPlan() {
       className="relative overflow-hidden py-20 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-4">
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-4">
           Pricing
         </div>
 
@@ -94,7 +94,7 @@ export default function FounderPlan() {
 function OfferCard({ offer }) {
   return (
     <article className="rounded-lg border border-stone-200 bg-white overflow-hidden flex flex-col">
-      <div className="h-px bg-blue-600/50" />
+      <div className="h-px bg-[#25638f]/45" />
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-semibold text-slate-900">{offer.title}</h3>
         <p className="mt-2 text-sm leading-6 text-slate-600">{offer.audience}</p>
@@ -104,7 +104,7 @@ function OfferCard({ offer }) {
         <ul className="mt-5 space-y-3 text-sm text-slate-700 flex-1">
           {offer.features.map((feature) => (
             <li key={feature} className="flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-[#25638f] mt-0.5 shrink-0" />
               <span>{feature}</span>
             </li>
           ))}

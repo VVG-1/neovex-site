@@ -32,7 +32,7 @@ export default function Problem() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
           <div className="min-w-0">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-5">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-5">
               THE PROBLEM
             </div>
 
@@ -49,7 +49,7 @@ export default function Problem() {
             {items.map((item, index) => (
               <li key={item.title} className={index === 0 ? "" : "border-t border-stone-300/70"}>
                 <div className="grid sm:grid-cols-[4rem_1fr] gap-3 sm:gap-5 py-6 md:py-7">
-                  <div className="text-[0.95rem] font-bold tracking-[0.18em] text-blue-700">
+                  <div className="text-[0.95rem] font-bold tracking-[0.18em] text-[#25638f]">
                     {item.n}
                   </div>
                   <div>
