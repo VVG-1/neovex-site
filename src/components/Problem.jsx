@@ -36,53 +36,60 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-14 md:py-16 lg:py-[4.5rem] px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-10 md:py-12 lg:py-14 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
-          <div className="min-w-0">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-5">
-              THE PROBLEM
-            </div>
-
-            <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-[2.8rem] md:leading-[1.14] font-bold text-slate-900 tracking-tight">
-              Too Much Work Still Depends on Someone Remembering the Next Step.
-            </h2>
-
-            <p className="mt-6 max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
-              Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
-            </p>
+        <div className="max-w-full sm:max-w-[52rem]">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-5">
+            THE PROBLEM
           </div>
 
-          <ol role="list" className="min-w-0 border-y border-stone-300/70 lg:-mt-2">
-            {items.map((item, index) => (
-              <li key={item.title} className={index === 0 ? "" : "border-t border-stone-300/70"}>
-                <div className="relative grid grid-cols-[2.5rem_2.25rem_minmax(0,1fr)] sm:grid-cols-[3.5rem_2.5rem_minmax(0,1fr)] xl:grid-cols-[3.5rem_2.5rem_minmax(0,1fr)_7.25rem] gap-3 sm:gap-4 py-5 md:py-5 items-start">
-                  <div className="pt-1.5 text-[0.95rem] font-bold tracking-[0.18em] text-[#25638f]">
-                    {item.n}
+          <h2 className="max-w-[13ch] sm:max-w-none text-3xl md:text-[2.8rem] md:leading-[1.14] font-bold text-slate-900 tracking-tight">
+            Too Much Work Still Depends on Someone Remembering the Next Step.
+          </h2>
+
+          <p className="mt-5 max-w-[43rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
+            Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
+          </p>
+        </div>
+
+        <ol role="list" className="mt-8 md:mt-9 grid md:grid-cols-2 lg:grid-cols-4 border-y border-stone-300/70">
+          {items.map((item, index) => {
+            const dividerClass = [
+              index > 0 ? "border-t border-stone-300/70" : "",
+              index === 1 ? "md:border-t-0 md:border-l md:border-stone-300/70" : "",
+              index === 2 ? "md:border-l-0 lg:border-t-0 lg:border-l lg:border-stone-300/70" : "",
+              index === 3 ? "md:border-l md:border-stone-300/70 lg:border-t-0" : "",
+            ]
+              .filter(Boolean)
+              .join(" ");
+
+            return (
+              <li key={item.title} className={dividerClass}>
+                <div className="py-5 md:py-6 lg:py-5 md:px-6 lg:px-7">
+                  <div className="flex items-center gap-3">
+                    <div className="text-[0.85rem] font-bold tracking-[0.18em] text-[#25638f]">
+                      {item.n}
+                    </div>
+
+                    <item.Icon className="h-4 w-4 text-slate-600" strokeWidth={1.9} aria-hidden="true" />
+
+                    <div className="ml-auto hidden sm:block text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#25638f]/75 md:hidden lg:block">
+                      {item.status}
+                    </div>
                   </div>
 
-                  <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-lg border border-stone-300 bg-[#F7F6F2] text-slate-600">
-                    <item.Icon className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
-                  </div>
-
-                  <div className="min-w-0">
-                    <h3 className="text-xl md:text-[1.3rem] font-semibold text-slate-900">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1.5 text-base md:text-[1.05rem] leading-7 md:leading-8 text-slate-700">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  <div className="hidden xl:block pt-1.5 text-right text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#25638f]/80">
-                    {item.status}
-                  </div>
+                  <h3 className="mt-4 text-xl md:text-[1.22rem] font-semibold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 text-base lg:text-[1rem] leading-7 text-slate-700">
+                    {item.desc}
+                  </p>
                 </div>
               </li>
-            ))}
-          </ol>
-        </div>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
