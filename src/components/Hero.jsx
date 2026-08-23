@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="relative px-6 pt-14 md:pt-16 pb-10 md:pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-7 lg:gap-10 scroll-mt-20 md:scroll-mt-24 overflow-hidden"
+      className="relative px-6 xl:px-8 pt-14 md:pt-16 pb-10 md:pb-12 w-full max-w-7xl xl:max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)] items-center gap-7 lg:gap-12 xl:gap-14 scroll-mt-20 md:scroll-mt-24 overflow-hidden"
     >
       <div className="absolute inset-0 -z-20 bg-gradient-to-tr from-blue-50 via-white to-slate-50" />
       <div className="pointer-events-none absolute -top-24 right-0 translate-x-1/3 h-72 w-72 md:h-[22rem] md:w-[22rem] rounded-full bg-blue-200/40 blur-3xl -z-10" />
@@ -70,7 +70,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full max-w-[340px] sm:max-w-md lg:max-w-[400px] lg:-translate-x-8 xl:-translate-x-12 mt-0 min-w-0">
+      <div className="w-full max-w-[340px] sm:max-w-md lg:max-w-[400px] xl:max-w-[438px] justify-self-start lg:ml-2 xl:ml-0 mt-0 min-w-0">
         <WorkflowDiagram />
       </div>
     </section>
