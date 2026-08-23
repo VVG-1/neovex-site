@@ -1,30 +1,25 @@
 import React from "react";
-import { ClipboardPenLine, MailCheck, Shuffle, Unplug } from "lucide-react";
 
 const items = [
   {
-    Icon: ClipboardPenLine,
+    n: "01",
     title: "Repetitive Data Entry",
     desc: "Information gets copied between systems that should already be connected.",
-    gradient: "from-blue-600 to-sky-500",
   },
   {
-    Icon: MailCheck,
-    title: "Manual Follow-Up",
-    desc: "Employees have to remember when to email, text, call, or send the next step.",
-    gradient: "from-violet-600 to-fuchsia-500",
+    n: "02",
+    title: "Manual Next Steps",
+    desc: "Someone has to remember when to email, text, call, approve, schedule, or trigger the next action.",
   },
   {
-    Icon: Shuffle,
+    n: "03",
     title: "Broken Handoffs",
-    desc: "Work slows down when one person has to manually pass information to another.",
-    gradient: "from-emerald-600 to-teal-500",
+    desc: "Work slows down when information has to be manually passed from one person to another.",
   },
   {
-    Icon: Unplug,
+    n: "04",
     title: "Disconnected Tools",
-    desc: "The systems contain the information, but they do not automatically move the work forward.",
-    gradient: "from-amber-600 to-orange-500",
+    desc: "Your systems hold the information, but they do not automatically move the process forward.",
   },
 ];
 
@@ -32,14 +27,13 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-20 md:py-24 px-6 bg-gradient-to-tr from-blue-50 via-blue-100 to-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-16 md:py-20 px-6 bg-gradient-to-tr from-blue-50 via-blue-100 to-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-[0.92fr_1.08fr] gap-10 lg:gap-14 items-center">
+        <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
           <div className="min-w-0">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100 mb-4">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
-              The Problem
+            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-700 mb-4">
+              THE PROBLEM
             </div>
 
             <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -47,34 +41,32 @@ export default function Problem() {
             </h2>
             <div className="mt-3 mb-6 h-1 w-20 rounded-full bg-blue-600/60" />
 
-            <p className="max-w-[32ch] sm:max-w-none text-lg md:text-xl text-slate-700">
-              Businesses often have information moving manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and employees. Every small handoff creates delay, repetitive work, and room for something to be missed.
+            <p className="max-w-[32ch] sm:max-w-[36rem] text-lg md:text-xl leading-8 text-slate-700">
+              Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
             </p>
           </div>
 
-          <ul role="list" className="grid sm:grid-cols-2 gap-5 md:gap-6 items-stretch min-w-0">
-            {items.map(({ Icon, title, desc, gradient }) => (
-              <li key={title} className="h-full">
-                <PainTile Icon={Icon} title={title} desc={desc} gradient={gradient} />
+          <ol role="list" className="min-w-0 border-y border-blue-200/70">
+            {items.map((item, index) => (
+              <li key={item.title} className={index === 0 ? "" : "border-t border-blue-200/70"}>
+                <div className="grid sm:grid-cols-[4rem_1fr] gap-3 sm:gap-5 py-5 md:py-6">
+                  <div className="text-sm font-semibold tracking-[0.16em] text-blue-700">
+                    {item.n}
+                  </div>
+                  <div>
+                    <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm md:text-base leading-7 text-slate-700">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </div>
     </section>
-  );
-}
-
-function PainTile({ Icon, title, desc, gradient }) {
-  return (
-    <div className="group relative rounded-2xl border border-gray-100 bg-white/70 backdrop-blur p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md h-full">
-      <div className="flex flex-col gap-3">
-        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} text-white flex items-center justify-center shadow-sm ring-1 ring-white/60`}>
-          <Icon aria-hidden="true" className="w-7 h-7" strokeWidth={2.25} />
-        </div>
-        <h3 className="text-base md:text-lg font-semibold text-gray-900">{title}</h3>
-        <p className="text-sm md:text-base leading-6 text-gray-600">{desc}</p>
-      </div>
-    </div>
   );
 }
