@@ -16,20 +16,6 @@ import About from "./pages/About.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
 
-// Products
-import VoicePage from "./pages/Voice.jsx";
-import IntakePage from "./pages/Intake";
-import SalesPage from "./pages/Reach.jsx";      // Reach page component
-import SchedulingPage from "./pages/Scheduling";
-import InvoicingPage from "./pages/Invoicing";
-import SocialPage from "./pages/Social";
-import RevenueRecoveryPage from "./pages/RevenueRecovery";
-import MissedCallCapture from "./pages/MIssedCallCapture.jsx";
-
-
-// Products index
-import ProductsIndex from "./pages/ProductsIndex.jsx";
-import WebCapturePage from "./pages/webcapture.jsx";
 
 /** Scroll to top on route change */
 function ScrollToTop() {
@@ -88,24 +74,18 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/thanks" element={<ContactThanks />} />
 
-          {/* Products */}
-          <Route path="/products" element={<ProductsIndex />} />
-          <Route path="/products/voice" element={<VoicePage />} />
-          <Route path="/products/intake" element={<IntakePage />} />
-          <Route path="/revenue-recovery" element={<RevenueRecoveryPage />} />
-          <Route path="/missed-call-capture" element={<MissedCallCapture />} />
-          <Route path="/web-capture" element={<WebCapturePage />} />
-
-
-
-
-
-          {/* Support both /reach and /sales for now */}
-          <Route path="/products/reach" element={<SalesPage />} />
-          <Route path="/products/sales" element={<Navigate to="/products/reach" replace />} />
-          <Route path="/products/scheduling" element={<SchedulingPage />} />
-          <Route path="/products/invoicing" element={<InvoicingPage />} />
-          <Route path="/products/social" element={<SocialPage />} />
+          {/* Legacy product URLs now route to the workflow automation positioning. */}
+          <Route path="/products" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/voice" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/intake" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/reach" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/sales" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/scheduling" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/invoicing" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/products/social" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/revenue-recovery" element={<Navigate to="/#pricing" replace />} />
+          <Route path="/missed-call-capture" element={<Navigate to="/#solutions" replace />} />
+          <Route path="/web-capture" element={<Navigate to="/#solutions" replace />} />
 
           {/* 404 */}
           <Route path="*" element={<NotFound />} />

@@ -36,14 +36,14 @@ const HUBSPOT_PORTAL_ID = "41132721";
 const HUBSPOT_FORM_ID = "37a58c83-e222-45f8-999f-92a3d987ca1e";
 const HUBSPOT_REGION = "na1";
 
-// Keep these aligned to what a service-business owner actually says.
+// Keep these aligned to what an operations-minded buyer actually says.
 const CHALLENGE_OPTIONS = [
-  "We miss calls (busy or after hours)",
-  "Website inquiries sit in an inbox",
-  "Slow follow-up to new leads",
-  "Not enough details to quote",
-  "People reach out but don’t book",
-  "I’m not sure — I just want more booked jobs",
+  "Repetitive data entry between tools",
+  "Manual follow-up or reminders",
+  "Approvals are chased by email",
+  "Customer onboarding has too many handoffs",
+  "Billing or collections work is manual",
+  "I am not sure what to automate first",
 ];
 
 export default function ContactPage() {
@@ -145,12 +145,12 @@ export default function ContactPage() {
           </div>
 
           <h1 className="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">
-            Let’s get you more booked jobs
+            Let us discuss the workflow taking too much time
           </h1>
           <p className="mt-3 text-lg md:text-xl text-slate-700 max-w-3xl">
-            Tell us what’s leaking revenue (missed calls, slow follow-up, website
-            inquiries sitting in an inbox). We’ll recommend the fastest fix and
-            set it up for you—fully managed.
+            Tell us what process is still manual, repetitive, or dependent on handoffs.
+            We will recommend the clearest automation path and outline what it would take
+            to build and manage it.
           </p>
 
           {/* quick proof chips */}
@@ -169,7 +169,7 @@ export default function ContactPage() {
             </span>
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200">
               <CalendarDays className="h-3.5 w-3.5 text-blue-600" />
-              Live fast (typically ≤ 7 days)
+              Managed implementation
             </span>
           </div>
         </div>
@@ -317,7 +317,7 @@ onSubmitted={() => setSent(true)}
                   </div>
 
                   <p className="mt-2 text-xs text-slate-500">
-                    Pick all that apply — we’ll recommend the fastest fix.
+                    Pick all that apply and we will recommend the clearest next step.
                   </p>
                 </fieldset>
 
@@ -392,7 +392,7 @@ className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 h-11 text
       Prefer to book a quick call?
     </h2>
     <p className="mt-1 text-sm text-slate-600">
-      We’ll ask a few questions, show the best-fit setup, and outline what “go live” looks like.
+      We will ask a few questions, review the workflow, and outline what a build or audit would look like.
     </p>
 
     {/* Add content so the height feels intentional */}
@@ -403,9 +403,9 @@ className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 h-11 text
       <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
         <div className="text-xs font-semibold text-slate-700">What we’ll cover</div>
         <ul className="mt-2 space-y-1.5 text-sm text-slate-600">
-          <li>• Your current lead flow</li>
-          <li>• What’s leaking revenue</li>
-          <li>• Best-fit setup + next steps</li>
+          <li>- Your current workflow</li>
+          <li>- Manual steps and handoffs</li>
+          <li>- Best-fit audit or build path</li>
         </ul>
       </div>
       <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">

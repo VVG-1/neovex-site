@@ -1,11 +1,50 @@
 import React from "react";
-import {
-  PhoneCall,
-  Globe,
-  MessageCircle,
-  Sparkles,
-  ShieldCheck,
-} from "lucide-react";
+import { ClipboardCheck, Eye, HandCoins, MessageCircle, MoveRight, UserCheck } from "lucide-react";
+
+const outcomes = [
+  {
+    chip: "Data movement",
+    title: "Less Manual Entry",
+    desc: "Information moves between systems automatically.",
+    icon: <ClipboardCheck className="w-5 h-5" />,
+    variant: "blue",
+  },
+  {
+    chip: "Next steps",
+    title: "Faster Follow-Up",
+    desc: "Messages and next steps trigger when they should.",
+    icon: <MessageCircle className="w-5 h-5" />,
+    variant: "sky",
+  },
+  {
+    chip: "Routing",
+    title: "Cleaner Handoffs",
+    desc: "The right person receives the right information at the right time.",
+    icon: <MoveRight className="w-5 h-5" />,
+    variant: "violet",
+  },
+  {
+    chip: "Reliability",
+    title: "Fewer Dropped Tasks",
+    desc: "Work does not disappear because someone forgot a step.",
+    icon: <UserCheck className="w-5 h-5" />,
+    variant: "emerald",
+  },
+  {
+    chip: "Visibility",
+    title: "Better Visibility",
+    desc: "See where the workflow is and what has already happened.",
+    icon: <Eye className="w-5 h-5" />,
+    variant: "amber",
+  },
+  {
+    chip: "Team capacity",
+    title: "More Capacity",
+    desc: "Teams spend less time moving information around and more time on higher-value work.",
+    icon: <HandCoins className="w-5 h-5" />,
+    variant: "rose",
+  },
+];
 
 export default function Outcomes() {
   return (
@@ -14,75 +53,25 @@ export default function Outcomes() {
       className="relative overflow-hidden py-20 px-6 bg-white scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        {/* badge */}
         <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100 mb-4">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
           Outcomes
         </div>
 
-        <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
-          A reliable inbound ops layer — across calls and web leads
+        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900">
+          What Changes When the Workflow Runs Itself
         </h2>
 
         <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-blue-600/60" />
 
         <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-12">
-          Neovex installs and runs a managed inbound operations layer that captures every inquiry,
-          standardizes intake, and routes the next step inside your existing tools.
-          <span className="block text-slate-500 text-base mt-2">
-            We monitor performance and tune the workflow so it keeps improving.
-          </span>
+          Automated workflows reduce the repetitive movement of information, keep next steps visible, and make handoffs more consistent.
         </p>
 
-        {/* Cards */}
         <ul role="list" className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <OutcomeCard
-            chip="Inbound coverage"
-            title="Capture every missed call"
-            desc="If your team can’t answer, Neovex captures the caller, collects key details, and sends a clean summary instantly."
-            icon={<PhoneCall className="w-5 h-5" />}
-            variant="blue"
-          />
-
-          <OutcomeCard
-            chip="Instant web response"
-            title="Respond to web leads in seconds"
-            desc="New inquiries get acknowledged, structured, summarized, and routed automatically — no inbox lag."
-            icon={<Globe className="w-5 h-5" />}
-            variant="sky"
-          />
-
-          <OutcomeCard
-            chip="Follow-up control"
-            title="Stop lead leakage"
-            desc="Automatic follow-ups trigger based on your rules so opportunities don’t go cold between touches."
-            icon={<MessageCircle className="w-5 h-5" />}
-            variant="violet"
-          />
-
-          <OutcomeCard
-            chip="Standardized intake"
-            title="Better qualification up front"
-            desc="Neovex asks the right questions every time so you call back prepared and move faster."
-            icon={<Sparkles className="w-5 h-5" />}
-            variant="emerald"
-          />
-
-          <OutcomeCard
-            chip="Routing + visibility"
-            title="Clean handoff into your tools"
-            desc="Summaries route to the right person, inbox, CRM, or pipeline — with consistent formatting and context."
-            icon={<ArrowIcon />}
-            variant="amber"
-          />
-
-          <OutcomeCard
-            chip="Managed service"
-            title="We run and improve it"
-            desc="Not DIY software. We set it up, test it, monitor it, and continuously refine outcomes over time."
-            icon={<ShieldCheck className="w-5 h-5" />}
-            variant="rose"
-          />
+          {outcomes.map((outcome) => (
+            <OutcomeCard key={outcome.title} {...outcome} />
+          ))}
         </ul>
 
         <div className="mt-10">
@@ -90,15 +79,13 @@ export default function Outcomes() {
             href="https://meetings.hubspot.com/neovex"
             className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 transition"
           >
-            Book an Intro Call →
+            Discuss a Workflow
           </a>
         </div>
       </div>
     </section>
   );
 }
-
-/* ---------- Card ---------- */
 
 function OutcomeCard({ chip, title, desc, icon, variant = "blue" }) {
   const bgMap = {
@@ -123,7 +110,6 @@ function OutcomeCard({ chip, title, desc, icon, variant = "blue" }) {
           {icon}
         </div>
 
-        {/* fixed heights to keep cards uniform */}
         <h3 className="text-lg font-semibold text-slate-900 mb-1 leading-snug min-h-[3rem]">
           {title}
         </h3>
@@ -133,22 +119,5 @@ function OutcomeCard({ chip, title, desc, icon, variant = "blue" }) {
         </p>
       </div>
     </li>
-  );
-}
-
-/* ---------- Small arrow icon ---------- */
-
-function ArrowIcon() {
-  return (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M5 12h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path
-        d="M13 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
