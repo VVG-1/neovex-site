@@ -36,7 +36,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-16 md:py-[5.5rem] lg:py-24 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-14 md:py-16 lg:py-[4.5rem] px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
@@ -49,20 +49,20 @@ export default function Problem() {
               Too Much Work Still Depends on Someone Remembering the Next Step.
             </h2>
 
-            <p className="mt-7 max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
+            <p className="mt-6 max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
               Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
             </p>
           </div>
 
-          <ol role="list" className="min-w-0 border-y border-stone-300/70">
+          <ol role="list" className="min-w-0 border-y border-stone-300/70 lg:-mt-2">
             {items.map((item, index) => (
               <li key={item.title} className={index === 0 ? "" : "border-t border-stone-300/70"}>
-                <div className="relative grid grid-cols-[2.75rem_2.5rem_minmax(0,1fr)] sm:grid-cols-[4rem_3rem_minmax(0,1fr)] xl:grid-cols-[4rem_3rem_minmax(0,1fr)_8.75rem] gap-3 sm:gap-5 py-6 md:py-7 items-start">
-                  <div className="pt-2 text-[0.95rem] font-bold tracking-[0.18em] text-[#25638f]">
+                <div className="relative grid grid-cols-[2.5rem_2.25rem_minmax(0,1fr)] sm:grid-cols-[3.5rem_2.5rem_minmax(0,1fr)] xl:grid-cols-[3.5rem_2.5rem_minmax(0,1fr)_7.25rem] gap-3 sm:gap-4 py-5 md:py-5 items-start">
+                  <div className="pt-1.5 text-[0.95rem] font-bold tracking-[0.18em] text-[#25638f]">
                     {item.n}
                   </div>
 
-                  <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-lg border border-stone-300 bg-[#F7F6F2] text-slate-600">
+                  <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-lg border border-stone-300 bg-[#F7F6F2] text-slate-600">
                     <item.Icon className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
                   </div>
 
@@ -70,12 +70,12 @@ export default function Problem() {
                     <h3 className="text-xl md:text-[1.3rem] font-semibold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-base md:text-[1.05rem] leading-7 md:leading-8 text-slate-700">
+                    <p className="mt-1.5 text-base md:text-[1.05rem] leading-7 md:leading-8 text-slate-700">
                       {item.desc}
                     </p>
                   </div>
 
-                  <div className="hidden xl:block pt-2 text-right text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#25638f]/80">
+                  <div className="hidden xl:block pt-1.5 text-right text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#25638f]/80">
                     {item.status}
                   </div>
                 </div>
