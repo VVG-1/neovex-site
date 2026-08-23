@@ -26,7 +26,7 @@ export default function BeforeAfter({
   return (
     <section
       id={id}
-      className="bg-blue-100 py-20 px-6 border-t border-slate-100 scroll-mt-28 md:scroll-mt-32"
+      className="bg-[#F7F6F2] py-20 px-6 border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
@@ -52,12 +52,12 @@ export default function BeforeAfter({
               <div className="text-base font-semibold text-slate-900">{row.stage}</div>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-xl bg-rose-50/60 ring-1 ring-rose-100 p-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-wide text-rose-700 mb-2">
+                <div className="rounded-xl bg-stone-50 ring-1 ring-stone-200 p-3">
+                  <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-600 mb-2">
                     {leftLabel}
                   </div>
-                  <div className="flex items-start gap-2 text-sm text-rose-800">
-                    <XCircle className="w-4 h-4 text-rose-500 mt-0.5 shrink-0" aria-hidden="true" />
+                  <div className="flex items-start gap-2 text-sm text-slate-700">
+                    <XCircle className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" aria-hidden="true" />
                     <span className="leading-5">{row.manual}</span>
                   </div>
                 </div>
@@ -77,9 +77,9 @@ export default function BeforeAfter({
         </div>
 
         <div className="hidden md:block mt-10 overflow-x-auto">
-          <div className="w-full rounded-2xl p-[1px] bg-gradient-to-r from-blue-100 via-sky-100 to-blue-100">
-            <div className="w-full rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm min-w-[820px] md:min-w-0">
-              <div className="h-1 w-full bg-gradient-to-r from-rose-400 via-blue-500 to-sky-400" />
+          <div className="w-full rounded-lg p-[1px] bg-stone-200">
+            <div className="w-full rounded-lg bg-white border border-stone-200 overflow-hidden shadow-sm min-w-[820px] md:min-w-0">
+              <div className="h-1 w-full bg-blue-600/80" />
 
               <table className="w-full text-left text-sm md:text-base leading-6 border-collapse md:table-fixed">
                 <colgroup>
@@ -94,8 +94,8 @@ export default function BeforeAfter({
                       Workflow stage
                     </th>
                     <th scope="col" className="p-4 md:p-5">
-                      <span className="inline-flex items-center gap-2 rounded-full bg-rose-50 text-rose-700 px-2.5 py-1 text-xs font-semibold ring-1 ring-rose-100">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-500" aria-hidden="true" />
+                      <span className="inline-flex items-center gap-2 rounded-full bg-stone-50 text-slate-700 px-2.5 py-1 text-xs font-semibold ring-1 ring-stone-200">
+                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
                         {leftLabel}
                       </span>
                     </th>
@@ -110,13 +110,13 @@ export default function BeforeAfter({
 
                 <tbody className="divide-y divide-slate-100">
                   {rows.map((row) => (
-                    <tr key={row.stage} className="hover:bg-sky-50/40 transition-colors">
+                    <tr key={row.stage} className="hover:bg-stone-50/70 transition-colors">
                       <th scope="row" className="p-4 md:p-5 text-slate-900 font-medium">
                         {row.stage}
                       </th>
-                      <td className="p-4 md:p-5 text-rose-700">
+                      <td className="p-4 md:p-5 text-slate-600">
                         <span className="inline-flex items-center gap-2">
-                          <XCircle className="w-4 h-4 text-rose-500" aria-hidden="true" />
+                          <XCircle className="w-4 h-4 text-slate-400" aria-hidden="true" />
                           {row.manual}
                         </span>
                       </td>

@@ -6,25 +6,25 @@ const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 const workflowCards = [
   {
     icon: <ClipboardList className="w-6 h-6" />,
-    grad: "from-blue-600 to-sky-500",
+    grad: "from-blue-600 to-blue-500",
     title: "New request received",
     desc: "Captured and routed automatically.",
   },
   {
     icon: <CheckCircle2 className="w-6 h-6" />,
-    grad: "from-emerald-600 to-teal-500",
+    grad: "from-blue-600 to-blue-500",
     title: "Customer approved",
     desc: "Documents and next steps triggered.",
   },
   {
     icon: <CreditCard className="w-6 h-6" />,
-    grad: "from-violet-600 to-fuchsia-500",
+    grad: "from-blue-600 to-blue-500",
     title: "Invoice created",
     desc: "Billing workflow begins automatically.",
   },
   {
     icon: <Bell className="w-6 h-6" />,
-    grad: "from-amber-600 to-orange-500",
+    grad: "from-blue-600 to-blue-500",
     title: "Team notified",
     desc: "The right person receives the next task.",
   },
@@ -36,8 +36,8 @@ export default function Hero() {
       id="about"
       className="relative px-6 xl:px-8 pt-14 md:pt-16 pb-10 md:pb-12 w-full max-w-7xl xl:max-w-[1360px] mx-auto grid grid-cols-1 lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)] items-center gap-7 lg:gap-12 xl:gap-14 scroll-mt-20 md:scroll-mt-24 overflow-hidden"
     >
-      <div className="absolute inset-0 -z-20 bg-gradient-to-tr from-blue-50 via-white to-slate-50" />
-      <div className="pointer-events-none absolute -top-24 right-0 translate-x-1/3 h-72 w-72 md:h-[22rem] md:w-[22rem] rounded-full bg-blue-200/40 blur-3xl -z-10" />
+      <div className="absolute inset-0 -z-20 bg-white" />
+      <div className="pointer-events-none absolute -top-24 right-0 translate-x-1/3 h-72 w-72 md:h-[22rem] md:w-[22rem] rounded-full bg-blue-100/35 blur-3xl -z-10" />
 
       <div className="text-left max-w-xl w-full min-w-0">
         <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-700">

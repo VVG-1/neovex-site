@@ -32,7 +32,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="bg-blue-100 py-20 px-6 border-t border-slate-100 scroll-mt-28 md:scroll-mt-32"
+      className="bg-white py-20 px-6 border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100">
@@ -51,13 +51,13 @@ export default function HowItWorks() {
         </p>
 
         <ol className="relative mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 text-left">
-          <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-px bg-gradient-to-r from-blue-300 via-blue-500 to-sky-300" aria-hidden="true" />
+          <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-px bg-blue-200" aria-hidden="true" />
           {steps.map(({ n, Icon, title, desc }) => (
-            <li key={title} className="relative rounded-2xl p-[1px] bg-gradient-to-br from-blue-200/60 to-sky-200/40">
-              <div className="min-h-full rounded-2xl bg-white p-6 md:p-7 border border-slate-200 shadow-sm hover:shadow-md transition">
+            <li key={title} className="relative">
+              <div className="min-h-full rounded-lg bg-white p-6 md:p-7 border border-stone-200 shadow-sm transition-colors hover:border-blue-200">
                 <div className="flex items-center justify-between gap-4">
                   <StepNumber n={n} />
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-white flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center">
                     <Icon className="w-6 h-6" />
                   </div>
                 </div>
@@ -83,7 +83,7 @@ export default function HowItWorks() {
 
 function StepNumber({ n }) {
   return (
-    <div className="inline-grid place-items-center rounded-full p-[2px] bg-gradient-to-br from-blue-600 to-sky-500">
+    <div className="inline-grid place-items-center rounded-full p-[2px] bg-blue-600">
       <div className="grid place-items-center h-10 w-10 rounded-full bg-white text-slate-900 text-[13px] font-semibold">
         {n}
       </div>

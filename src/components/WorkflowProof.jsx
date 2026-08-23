@@ -95,7 +95,7 @@ export default function WorkflowProof() {
 }
 
 function State({ label, value, tone }) {
-  const styles = tone === "manual" ? "bg-rose-50 border-rose-100 text-rose-800" : "bg-emerald-50 border-emerald-100 text-emerald-800";
+  const styles = tone === "manual" ? "bg-stone-50 border-stone-200 text-slate-700" : "bg-blue-50 border-blue-100 text-blue-800";
 
   return (
     <div className={`rounded-xl border p-3 ${styles}`}>

@@ -27,7 +27,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-16 md:py-[5.5rem] lg:py-24 px-6 bg-gradient-to-tr from-blue-50 via-blue-100 to-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-16 md:py-[5.5rem] lg:py-24 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
@@ -46,9 +46,9 @@ export default function Problem() {
             </p>
           </div>
 
-          <ol role="list" className="min-w-0 border-y border-blue-200/70">
+          <ol role="list" className="min-w-0 border-y border-stone-300/70">
             {items.map((item, index) => (
-              <li key={item.title} className={index === 0 ? "" : "border-t border-blue-200/70"}>
+              <li key={item.title} className={index === 0 ? "" : "border-t border-stone-300/70"}>
                 <div className="grid sm:grid-cols-[4rem_1fr] gap-3 sm:gap-5 py-6 md:py-7">
                   <div className="text-[0.95rem] font-bold tracking-[0.18em] text-blue-700">
                     {item.n}

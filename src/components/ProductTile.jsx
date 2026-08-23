@@ -11,13 +11,13 @@ export default function ProductTile({
       href={href}
       aria-label={title}
       className={[
-        "group relative block h-full rounded-xl border border-slate-200 bg-white p-5 md:p-6",
-        "text-left transition-colors hover:border-blue-200 hover:bg-slate-50/40",
+        "group relative block h-full rounded-lg border border-stone-200 bg-white p-5 md:p-6",
+        "text-left transition-colors hover:border-blue-200 hover:bg-stone-50/40",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
       ].join(" ")}
     >
       <div className="flex h-full flex-col">
-        <div className="mb-5 flex h-9 w-9 items-center justify-center rounded-lg border border-blue-100 bg-blue-50 text-blue-700">
+        <div className="mb-5 flex h-9 w-9 items-center justify-center rounded-md border border-blue-100 bg-blue-50/70 text-blue-700">
           {icon}
         </div>
 

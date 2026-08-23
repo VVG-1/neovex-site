@@ -7,42 +7,36 @@ const outcomes = [
     title: "Less Manual Entry",
     desc: "Information moves between systems automatically.",
     icon: <ClipboardCheck className="w-5 h-5" />,
-    variant: "blue",
   },
   {
     chip: "Next steps",
     title: "Faster Follow-Up",
     desc: "Messages and next steps trigger when they should.",
     icon: <MessageCircle className="w-5 h-5" />,
-    variant: "sky",
   },
   {
     chip: "Routing",
     title: "Cleaner Handoffs",
     desc: "The right person receives the right information at the right time.",
     icon: <MoveRight className="w-5 h-5" />,
-    variant: "violet",
   },
   {
     chip: "Reliability",
     title: "Fewer Dropped Tasks",
     desc: "Work does not disappear because someone forgot a step.",
     icon: <UserCheck className="w-5 h-5" />,
-    variant: "emerald",
   },
   {
     chip: "Visibility",
     title: "Better Visibility",
     desc: "See where the workflow is and what has already happened.",
     icon: <Eye className="w-5 h-5" />,
-    variant: "amber",
   },
   {
     chip: "Team capacity",
     title: "More Capacity",
     desc: "Teams spend less time moving information around and more time on higher-value work.",
     icon: <HandCoins className="w-5 h-5" />,
-    variant: "rose",
   },
 ];
 
@@ -87,26 +81,15 @@ export default function Outcomes() {
   );
 }
 
-function OutcomeCard({ chip, title, desc, icon, variant = "blue" }) {
-  const bgMap = {
-    blue: "bg-blue-50 border-blue-100",
-    sky: "bg-sky-50 border-sky-100",
-    violet: "bg-violet-50 border-violet-100",
-    emerald: "bg-emerald-50 border-emerald-100",
-    amber: "bg-amber-50 border-amber-100",
-    rose: "bg-rose-50 border-rose-100",
-  };
-
-  const bg = bgMap[variant] || bgMap.blue;
-
+function OutcomeCard({ chip, title, desc, icon }) {
   return (
     <li className="h-full">
-      <div className={`rounded-2xl p-6 text-center h-full border shadow-sm ${bg}`}>
-        <div className="mx-auto mb-3 inline-flex items-center gap-2 rounded-full bg-white/80 text-slate-700 px-2.5 py-1 text-xs font-medium ring-1 ring-slate-200">
+      <div className="rounded-lg p-6 text-center h-full border border-stone-200 bg-stone-50/45 shadow-sm">
+        <div className="mx-auto mb-3 inline-flex items-center gap-2 rounded-full bg-white text-slate-700 px-2.5 py-1 text-xs font-medium ring-1 ring-stone-200">
           {chip}
         </div>
 
-        <div className="mx-auto w-10 h-10 rounded-full bg-white text-blue-700 flex items-center justify-center mb-3 shadow-sm ring-1 ring-slate-200">
+        <div className="mx-auto w-10 h-10 rounded-md bg-white text-blue-700 flex items-center justify-center mb-3 shadow-sm ring-1 ring-stone-200">
           {icon}
         </div>
 

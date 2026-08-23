@@ -15,7 +15,6 @@ export const workflowOffers = [
       "Prioritized recommendations",
       "Roadmap",
     ],
-    accent: "from-blue-600 to-sky-500",
   },
   {
     title: "Workflow Build",
@@ -30,7 +29,6 @@ export const workflowOffers = [
       "Launch",
       "Documentation",
     ],
-    accent: "from-emerald-600 to-teal-500",
   },
   {
     title: "Automation System",
@@ -44,7 +42,6 @@ export const workflowOffers = [
       "AI where appropriate",
       "Testing and implementation",
     ],
-    accent: "from-violet-600 to-fuchsia-500",
   },
   {
     title: "Managed Automation",
@@ -58,7 +55,6 @@ export const workflowOffers = [
       "Workflow adjustments",
       "Optimization",
     ],
-    accent: "from-amber-600 to-orange-500",
   },
 ];
 
@@ -66,10 +62,10 @@ export default function FounderPlan() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden py-20 px-6 bg-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-20 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/70 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100 mb-4">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-stone-200 mb-4">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
           Pricing
         </div>
@@ -99,8 +95,8 @@ export default function FounderPlan() {
 
 function OfferCard({ offer }) {
   return (
-    <article className="rounded-2xl border border-blue-100 bg-white/90 backdrop-blur shadow-sm overflow-hidden flex flex-col">
-      <div className={`h-1 bg-gradient-to-r ${offer.accent}`} />
+    <article className="rounded-lg border border-stone-200 bg-white shadow-sm overflow-hidden flex flex-col">
+      <div className="h-1 bg-blue-600/80" />
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-semibold text-slate-900">{offer.title}</h3>
         <p className="mt-2 text-sm leading-6 text-slate-600">{offer.audience}</p>
