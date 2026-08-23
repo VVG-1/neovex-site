@@ -70,7 +70,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full max-w-[340px] sm:max-w-md lg:max-w-[460px] mt-0 min-w-0">
+      <div className="w-full max-w-[340px] sm:max-w-md lg:max-w-[400px] lg:-translate-x-8 xl:-translate-x-12 mt-0 min-w-0">
         <WorkflowDiagram />
       </div>
     </section>
@@ -82,15 +82,15 @@ function WorkflowDiagram() {
     <div className="relative mt-7 lg:mt-0 px-1 lg:px-0">
       <div className="absolute left-[1.375rem] lg:left-6 top-6 bottom-6 w-px bg-gradient-to-b from-blue-200 via-slate-300 to-blue-200" aria-hidden="true" />
 
-      <ol className="relative space-y-4">
+      <ol className="relative space-y-3">
         {workflowCards.map((step, index) => (
-          <li key={step.title} className="relative grid grid-cols-[2.75rem_minmax(0,252px)] sm:grid-cols-[2.75rem_minmax(0,1fr)] lg:grid-cols-[3rem_minmax(0,1fr)] items-center gap-4">
+          <li key={step.title} className="relative grid grid-cols-[2.75rem_minmax(0,252px)] sm:grid-cols-[2.75rem_minmax(0,1fr)] lg:grid-cols-[3rem_minmax(0,1fr)] items-center gap-3 lg:gap-3.5">
             <div className="relative z-10 flex items-center justify-center">
-              <div className={`w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-gradient-to-br ${step.grad} text-white flex items-center justify-center ring-4 ring-white shadow-sm`}>
+              <div className={`w-11 h-11 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br ${step.grad} text-white flex items-center justify-center ring-4 ring-white shadow-sm`}>
                 {step.icon}
               </div>
               {index < workflowCards.length - 1 ? (
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-4 flex items-center justify-center text-slate-400" aria-hidden="true">
+                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 h-3 flex items-center justify-center text-slate-400" aria-hidden="true">
                   <svg className="w-3 h-3" viewBox="0 0 16 16" fill="none">
                     <path d="M8 3v9M4.5 8.5 8 12l3.5-3.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -98,7 +98,7 @@ function WorkflowDiagram() {
               ) : null}
             </div>
 
-            <div className="min-w-0 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3">
+            <div className="min-w-0 rounded-xl border border-slate-200/80 bg-white/80 px-3.5 py-2.5">
               <h3 className="text-sm lg:text-base font-semibold text-slate-900">
                 {step.title}
               </h3>
