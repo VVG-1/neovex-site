@@ -54,11 +54,7 @@ export default function Problem() {
             </p>
           </div>
 
-          <ol role="list" className="relative min-w-0 border-y border-stone-300/70">
-            <div
-              className="pointer-events-none absolute left-[4rem] sm:left-[5.5rem] top-8 bottom-8 w-px bg-stone-300/80"
-              aria-hidden="true"
-            />
+          <ol role="list" className="min-w-0 border-y border-stone-300/70">
             {items.map((item, index) => (
               <li key={item.title} className={index === 0 ? "" : "border-t border-stone-300/70"}>
                 <div className="relative grid grid-cols-[2.75rem_2.5rem_minmax(0,1fr)] sm:grid-cols-[4rem_3rem_minmax(0,1fr)] xl:grid-cols-[4rem_3rem_minmax(0,1fr)_8.75rem] gap-3 sm:gap-5 py-6 md:py-7 items-start">
