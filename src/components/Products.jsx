@@ -43,7 +43,7 @@ const solutions = [
 
 export default function Products() {
   return (
-    <section id="solutions" className="bg-white py-20 px-6 border-t border-gray-100">
+    <section id="solutions" className="bg-white pt-24 pb-20 px-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto text-center">
         <div className="text-sm font-semibold text-blue-600 uppercase mb-3">
           What We Automate

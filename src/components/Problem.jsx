@@ -27,7 +27,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-16 md:py-20 px-6 bg-gradient-to-tr from-blue-50 via-blue-100 to-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-16 md:py-[5.5rem] lg:py-24 px-6 bg-gradient-to-tr from-blue-50 via-blue-100 to-blue-50 border-t border-blue-100 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
@@ -36,12 +36,12 @@ export default function Problem() {
               THE PROBLEM
             </div>
 
-            <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-[3.35rem] md:leading-[1.04] font-extrabold text-slate-900 tracking-tight">
               Too Much Work Still Depends on Someone Remembering the Next Step.
             </h2>
             <div className="mt-3 mb-6 h-1 w-20 rounded-full bg-blue-600/60" />
 
-            <p className="max-w-[32ch] sm:max-w-[36rem] text-lg md:text-xl leading-8 text-slate-700">
+            <p className="max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.35rem] leading-8 md:leading-9 text-slate-700">
               Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
             </p>
           </div>
@@ -49,15 +49,15 @@ export default function Problem() {
           <ol role="list" className="min-w-0 border-y border-blue-200/70">
             {items.map((item, index) => (
               <li key={item.title} className={index === 0 ? "" : "border-t border-blue-200/70"}>
-                <div className="grid sm:grid-cols-[4rem_1fr] gap-3 sm:gap-5 py-5 md:py-6">
-                  <div className="text-sm font-semibold tracking-[0.16em] text-blue-700">
+                <div className="grid sm:grid-cols-[4rem_1fr] gap-3 sm:gap-5 py-6 md:py-7">
+                  <div className="text-[0.95rem] font-bold tracking-[0.18em] text-blue-700">
                     {item.n}
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                    <h3 className="text-xl md:text-[1.4rem] font-bold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm md:text-base leading-7 text-slate-700">
+                    <p className="mt-2 text-base md:text-[1.05rem] leading-7 md:leading-8 text-slate-700">
                       {item.desc}
                     </p>
                   </div>
