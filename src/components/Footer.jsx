@@ -12,18 +12,14 @@ export default function Footer({
 }) {
   return (
     <footer id="contact" className="relative overflow-hidden bg-slate-950 text-slate-400">
-      <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-blue-600/20 blur-3xl" aria-hidden="true" />
-      <div className="pointer-events-none absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl" aria-hidden="true" />
-
       <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-900/40 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="rounded-lg border border-slate-800 bg-slate-900/70 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 text-blue-300 px-3 py-1 text-xs font-semibold ring-1 ring-blue-500/20">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-400" aria-hidden="true" />
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
               Ready to get started?
             </div>
 
-            <h3 className="mt-3 text-white text-2xl md:text-3xl font-extrabold tracking-tight">
+            <h3 className="mt-3 text-white text-2xl md:text-3xl font-bold tracking-tight">
               Start With the Workflow That Is Taking Too Much Time.
             </h3>
 
@@ -41,14 +37,14 @@ export default function Footer({
               href="https://meetings.hubspot.com/neovex"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
+              className="inline-flex items-center justify-center rounded-lg bg-white text-slate-950 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
             >
               Discuss a Workflow
             </a>
 
             <a
               href="/#audit"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
             >
               Start With an Audit
             </a>

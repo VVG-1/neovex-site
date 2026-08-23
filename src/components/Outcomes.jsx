@@ -47,18 +47,15 @@ export default function Outcomes() {
       className="relative overflow-hidden py-20 px-6 bg-white scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100 mb-4">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-4">
           Outcomes
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900">
+        <h2 className="text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900">
           What Changes When the Workflow Runs Itself
         </h2>
 
-        <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-blue-600/60" />
-
-        <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-12">
+        <p className="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-12">
           Automated workflows reduce the repetitive movement of information, keep next steps visible, and make handoffs more consistent.
         </p>
 
@@ -84,12 +81,12 @@ export default function Outcomes() {
 function OutcomeCard({ chip, title, desc, icon }) {
   return (
     <li className="h-full">
-      <div className="rounded-lg p-6 text-center h-full border border-stone-200 bg-stone-50/45 shadow-sm">
-        <div className="mx-auto mb-3 inline-flex items-center gap-2 rounded-full bg-white text-slate-700 px-2.5 py-1 text-xs font-medium ring-1 ring-stone-200">
+      <div className="rounded-lg p-6 text-center h-full border border-stone-200 bg-stone-50/45">
+        <div className="mx-auto mb-3 text-xs font-medium text-slate-600">
           {chip}
         </div>
 
-        <div className="mx-auto w-10 h-10 rounded-md bg-white text-blue-700 flex items-center justify-center mb-3 shadow-sm ring-1 ring-stone-200">
+        <div className="mx-auto w-10 h-10 rounded-md bg-white text-slate-700 flex items-center justify-center mb-3 ring-1 ring-stone-200">
           {icon}
         </div>
 

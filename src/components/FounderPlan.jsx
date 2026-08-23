@@ -65,17 +65,15 @@ export default function FounderPlan() {
       className="relative overflow-hidden py-20 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-white text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-stone-200 mb-4">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-4">
           Pricing
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900">
+        <h2 className="text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900">
           Ways to Work With Neovex
         </h2>
-        <div className="mx-auto mt-3 mb-6 h-1 w-20 rounded-full bg-blue-600/60" />
 
-        <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto">
+        <p className="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl mx-auto">
           Start with a focused audit, a defined workflow build, a larger automation system, or ongoing management after launch.
         </p>
 
@@ -95,13 +93,13 @@ export default function FounderPlan() {
 
 function OfferCard({ offer }) {
   return (
-    <article className="rounded-lg border border-stone-200 bg-white shadow-sm overflow-hidden flex flex-col">
-      <div className="h-1 bg-blue-600/80" />
+    <article className="rounded-lg border border-stone-200 bg-white overflow-hidden flex flex-col">
+      <div className="h-px bg-blue-600/50" />
       <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-semibold text-slate-900">{offer.title}</h3>
         <p className="mt-2 text-sm leading-6 text-slate-600">{offer.audience}</p>
 
-        <div className="mt-5 text-2xl font-extrabold text-slate-900">{offer.price}</div>
+        <div className="mt-5 text-2xl font-bold text-slate-900">{offer.price}</div>
 
         <ul className="mt-5 space-y-3 text-sm text-slate-700 flex-1">
           {offer.features.map((feature) => (
@@ -116,7 +114,7 @@ function OfferCard({ offer }) {
           href={MEETINGS_URL}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-flex items-center justify-center rounded-xl bg-blue-600 text-white px-4 py-3 text-sm font-semibold hover:bg-blue-700"
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-slate-950 text-white px-4 py-3 text-sm font-semibold hover:bg-slate-800"
         >
           {offer.cta}
         </a>

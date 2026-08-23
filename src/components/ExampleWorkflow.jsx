@@ -16,11 +16,10 @@ export default function ExampleWorkflow() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 text-blue-300 px-3 py-1 text-xs font-semibold ring-1 ring-blue-500/20">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-400" aria-hidden="true" />
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
               Example Workflow
             </div>
-            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2 className="mt-4 text-3xl md:text-[2.45rem] md:leading-[1.14] font-bold tracking-tight">
               One approval can start the next five steps.
             </h2>
             <p className="mt-3 text-slate-300 leading-7">
@@ -30,7 +29,7 @@ export default function ExampleWorkflow() {
 
           <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {steps.map((step, index) => (
-              <li key={step} className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
+              <li key={step} className="rounded-lg border border-slate-800 bg-slate-900/70 p-4">
                 <div className="text-xs font-semibold text-blue-300">0{index + 1}</div>
                 <div className="mt-2 flex items-center justify-between gap-3">
                   <span className="text-sm font-semibold text-white">{step}</span>

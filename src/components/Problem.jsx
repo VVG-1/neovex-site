@@ -32,16 +32,15 @@ export default function Problem() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-[0.82fr_1fr] gap-10 lg:gap-16 items-start">
           <div className="min-w-0">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-700 mb-4">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700 mb-5">
               THE PROBLEM
             </div>
 
-            <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-[3.35rem] md:leading-[1.04] font-extrabold text-slate-900 tracking-tight">
+            <h2 className="max-w-[14ch] sm:max-w-none text-3xl md:text-[2.8rem] md:leading-[1.14] font-bold text-slate-900 tracking-tight">
               Too Much Work Still Depends on Someone Remembering the Next Step.
             </h2>
-            <div className="mt-3 mb-6 h-1 w-20 rounded-full bg-blue-600/60" />
 
-            <p className="max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.35rem] leading-8 md:leading-9 text-slate-700">
+            <p className="mt-7 max-w-[32ch] sm:max-w-[36rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
               Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
             </p>
           </div>
@@ -54,7 +53,7 @@ export default function Problem() {
                     {item.n}
                   </div>
                   <div>
-                    <h3 className="text-xl md:text-[1.4rem] font-bold text-slate-900">
+                    <h3 className="text-xl md:text-[1.3rem] font-semibold text-slate-900">
                       {item.title}
                     </h3>
                     <p className="mt-2 text-base md:text-[1.05rem] leading-7 md:leading-8 text-slate-700">

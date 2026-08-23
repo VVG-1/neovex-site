@@ -17,12 +17,11 @@ export default function WorkflowAudit() {
     <section id="audit" className="bg-slate-950 text-white py-20 px-6 border-t border-slate-900 scroll-mt-28 md:scroll-mt-32">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-14 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/10 text-blue-300 px-3 py-1 text-xs font-semibold ring-1 ring-blue-500/20">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-400" aria-hidden="true" />
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
             Workflow Automation Audit
           </div>
 
-          <h2 className="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="mt-5 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight">
             Not Sure What to Automate First?
           </h2>
 
@@ -36,13 +35,13 @@ export default function WorkflowAudit() {
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <a
               href={MEETINGS_URL}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-white text-slate-950 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
             >
               Start With an Audit <ArrowRight className="w-4 h-4" />
             </a>
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900"
             >
               View Ways to Work
             </a>
@@ -53,17 +52,17 @@ export default function WorkflowAudit() {
           </p>
         </div>
 
-        <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5 md:p-6 shadow-xl">
+        <div className="rounded-lg border border-slate-800 bg-slate-900/70 p-5 md:p-6">
           <div className="grid sm:grid-cols-2 gap-4">
             {auditItems.map(({ Icon, label }) => (
-              <div key={label} className="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
-                <Icon className="w-5 h-5 text-blue-300" />
+              <div key={label} className="rounded-lg border border-slate-800 bg-slate-950/50 p-4">
+                <Icon className="w-5 h-5 text-slate-300" />
                 <div className="mt-3 text-sm font-semibold text-white">{label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-4 rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
+          <div className="mt-4 rounded-lg border border-slate-700 bg-slate-950/35 p-4">
             <div className="text-xs font-semibold uppercase tracking-wide text-blue-300">
               Output
             </div>

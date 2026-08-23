@@ -30,29 +30,26 @@ export default function BeforeAfter({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
             {eyebrow}
           </div>
 
-          <h2 className="mt-3 text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
             {title}
           </h2>
 
-          <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-400" />
-
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
             {subhead}
           </p>
         </div>
 
         <div className="md:hidden mt-10 space-y-5">
           {rows.map((row) => (
-            <div key={row.stage} className="rounded-2xl bg-white border border-slate-200 shadow-sm p-5">
+            <div key={row.stage} className="rounded-lg bg-white border border-stone-200 p-5">
               <div className="text-base font-semibold text-slate-900">{row.stage}</div>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-xl bg-stone-50 ring-1 ring-stone-200 p-3">
+                <div className="rounded-lg bg-stone-50 ring-1 ring-stone-200 p-3">
                   <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-600 mb-2">
                     {leftLabel}
                   </div>
@@ -62,7 +59,7 @@ export default function BeforeAfter({
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-blue-50/60 ring-1 ring-blue-100 p-3">
+                <div className="rounded-lg bg-white ring-1 ring-stone-200 p-3">
                   <div className="text-[11px] font-semibold uppercase tracking-wide text-blue-700 mb-2">
                     {rightLabel}
                   </div>
@@ -78,8 +75,8 @@ export default function BeforeAfter({
 
         <div className="hidden md:block mt-10 overflow-x-auto">
           <div className="w-full rounded-lg p-[1px] bg-stone-200">
-            <div className="w-full rounded-lg bg-white border border-stone-200 overflow-hidden shadow-sm min-w-[820px] md:min-w-0">
-              <div className="h-1 w-full bg-blue-600/80" />
+            <div className="w-full rounded-lg bg-white border border-stone-200 overflow-hidden min-w-[820px] md:min-w-0">
+              <div className="h-px w-full bg-blue-600/50" />
 
               <table className="w-full text-left text-sm md:text-base leading-6 border-collapse md:table-fixed">
                 <colgroup>
@@ -94,14 +91,12 @@ export default function BeforeAfter({
                       Workflow stage
                     </th>
                     <th scope="col" className="p-4 md:p-5">
-                      <span className="inline-flex items-center gap-2 rounded-full bg-stone-50 text-slate-700 px-2.5 py-1 text-xs font-semibold ring-1 ring-stone-200">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-slate-400" aria-hidden="true" />
+                      <span className="text-xs font-semibold text-slate-700">
                         {leftLabel}
                       </span>
                     </th>
                     <th scope="col" className="p-4 md:p-5">
-                      <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-2.5 py-1 text-xs font-semibold ring-1 ring-blue-100">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+                      <span className="text-xs font-semibold text-blue-700">
                         {rightLabel}
                       </span>
                     </th>
@@ -137,7 +132,7 @@ export default function BeforeAfter({
         <div className="mt-10 text-center">
           <a
             href={ctaHref}
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-blue-700 transition"
+            className="inline-flex items-center gap-2 bg-slate-950 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-slate-800 transition"
           >
             {ctaText}
           </a>

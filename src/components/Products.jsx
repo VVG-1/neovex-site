@@ -7,37 +7,31 @@ const solutions = [
     title: "Lead Management",
     desc: "Capture, qualify, route, follow up, schedule, and update the CRM.",
     icon: <Inbox className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "blue",
   },
   {
     title: "Customer Onboarding",
     desc: "Trigger agreements, forms, payments, welcome communication, and internal setup.",
     icon: <FileCheck2 className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "emerald",
   },
   {
     title: "Scheduling & Coordination",
     desc: "Automate bookings, reminders, assignments, confirmations, and calendar updates.",
     icon: <CalendarDays className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "violet",
   },
   {
     title: "Quotes & Approvals",
     desc: "Generate, send, track, follow up, and trigger the next step after approval.",
     icon: <ReceiptText className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "amber",
   },
   {
     title: "Billing & Collections",
     desc: "Create invoices, send reminders, update records, and escalate overdue accounts.",
     icon: <CreditCard className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "rose",
   },
   {
     title: "Administrative Work",
     desc: "Automate email processing, data entry, document routing, reporting, and internal notifications.",
     icon: <FolderKanban className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
-    variant: "sky",
   },
 ];
 
@@ -45,16 +39,15 @@ export default function Products() {
   return (
     <section id="solutions" className="bg-white pt-24 pb-20 px-6 border-t border-gray-100">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-sm font-semibold text-blue-600 uppercase mb-3">
+        <div className="text-[11px] font-semibold text-blue-700 uppercase tracking-[0.18em] mb-4">
           What We Automate
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+        <h2 className="text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
           Workflows Neovex Can Automate
         </h2>
-        <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-400" />
 
-        <p className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
+        <p className="mt-6 text-lg md:text-xl text-slate-700 mb-10 max-w-3xl mx-auto">
           From the first customer inquiry to back-office administration, Neovex connects the steps that are still happening manually.
         </p>
 
@@ -67,13 +60,13 @@ export default function Products() {
         <div className="mt-14 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
           <a
             href="#audit"
-            className="inline-flex items-center justify-center rounded-xl border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="inline-flex items-center justify-center rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
           >
             Start with a Workflow Automation Audit
           </a>
           <a
             href="#how-it-works"
-            className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-slate-700 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="inline-flex items-center justify-center rounded-lg border border-stone-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
           >
             See how Neovex works
           </a>

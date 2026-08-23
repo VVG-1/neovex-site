@@ -35,18 +35,15 @@ export default function HowItWorks() {
       className="bg-white py-20 px-6 border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" />
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
           Understand - Build - Launch - Manage
         </div>
 
-        <h2 className="mt-4 text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
           From Manual Process to Managed Workflow
         </h2>
 
-        <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-400" />
-
-        <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
+        <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
           Neovex turns a manual business process into a workflow that connects systems, routes work, triggers next steps, and stays maintained after launch.
         </p>
 
@@ -54,10 +51,10 @@ export default function HowItWorks() {
           <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-px bg-blue-200" aria-hidden="true" />
           {steps.map(({ n, Icon, title, desc }) => (
             <li key={title} className="relative">
-              <div className="min-h-full rounded-lg bg-white p-6 md:p-7 border border-stone-200 shadow-sm transition-colors hover:border-blue-200">
+              <div className="min-h-full rounded-lg bg-white p-6 md:p-7 border border-stone-200 transition-colors hover:border-stone-300">
                 <div className="flex items-center justify-between gap-4">
                   <StepNumber n={n} />
-                  <div className="w-12 h-12 rounded-lg bg-blue-600 text-white flex items-center justify-center">
+                  <div className="w-11 h-11 rounded-lg border border-stone-200 bg-stone-50 text-slate-700 flex items-center justify-center">
                     <Icon className="w-6 h-6" />
                   </div>
                 </div>
@@ -71,7 +68,7 @@ export default function HowItWorks() {
         <div className="mt-10">
           <a
             href="https://meetings.hubspot.com/neovex"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-blue-700 transition"
+            className="inline-flex items-center gap-2 bg-slate-950 text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-slate-800 transition"
           >
             Discuss a Workflow
           </a>
@@ -83,7 +80,7 @@ export default function HowItWorks() {
 
 function StepNumber({ n }) {
   return (
-    <div className="inline-grid place-items-center rounded-full p-[2px] bg-blue-600">
+    <div className="inline-grid place-items-center rounded-full p-[1px] bg-blue-600">
       <div className="grid place-items-center h-10 w-10 rounded-full bg-white text-slate-900 text-[13px] font-semibold">
         {n}
       </div>

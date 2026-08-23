@@ -50,22 +50,20 @@ export default function FAQ({
     <section
       id={id}
       className={`relative overflow-hidden py-20 px-6 scroll-mt-28 md:scroll-mt-32 ${
-        bg === "white" ? "bg-white border-t border-slate-100" : "bg-blue-50 border-t border-blue-100"
+        bg === "white" ? "bg-white border-t border-stone-200" : "bg-[#F7F6F2] border-t border-stone-200"
       }`}
     >
       <div className="max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-xs font-semibold ring-1 ring-blue-100">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" aria-hidden="true" />
+        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-700">
           FAQ
         </div>
 
-        <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
+        <h2 className="mt-4 text-3xl md:text-[2.45rem] md:leading-[1.14] font-bold text-slate-900 tracking-tight">
           {title}
         </h2>
-        <div className="mx-auto mt-3 mb-8 h-1 w-20 rounded-full bg-gradient-to-r from-blue-600 to-sky-400" />
 
         {subtitle ? (
-          <p className="text-base md:text-lg text-slate-700 max-w-3xl mx-auto">
+          <p className="mt-6 text-base md:text-lg text-slate-700 max-w-3xl mx-auto">
             {subtitle}
           </p>
         ) : null}
@@ -77,8 +75,8 @@ export default function FAQ({
               <li
                 key={itemId}
                 id={`${id}-${itemId}`}
-                className={`rounded-2xl border overflow-hidden transition shadow-sm ${
-                  isOpen ? "border-blue-200 ring-1 ring-blue-100 bg-white" : "border-slate-200 bg-white"
+                className={`rounded-lg border overflow-hidden transition ${
+                  isOpen ? "border-stone-300 bg-white" : "border-stone-200 bg-white"
                 }`}
               >
                 <button
@@ -86,14 +84,14 @@ export default function FAQ({
                   aria-controls={`faq-panel-${itemId}`}
                   aria-expanded={isOpen}
                   onClick={() => handleToggle(itemId, isOpen)}
-                  className="w-full flex justify-between items-start px-6 py-4 text-left text-base md:text-lg font-medium text-slate-800 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  className="w-full flex justify-between items-start px-6 py-4 text-left text-base md:text-lg font-medium text-slate-800 hover:bg-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   <span className="flex items-start gap-3 pr-3">
-                    {Icon ? <Icon className={`w-5 h-5 mt-0.5 ${isOpen ? "text-blue-600" : "text-slate-400"}`} /> : null}
+                    {Icon ? <Icon className={`w-5 h-5 mt-0.5 ${isOpen ? "text-slate-700" : "text-slate-400"}`} /> : null}
                     <span>{q}</span>
                   </span>
 
-                  <ChevronDown className={`w-5 h-5 mt-0.5 motion-safe:transition-transform ${isOpen ? "rotate-180 text-blue-600" : "text-slate-400"}`} />
+                  <ChevronDown className={`w-5 h-5 mt-0.5 motion-safe:transition-transform ${isOpen ? "rotate-180 text-slate-700" : "text-slate-400"}`} />
                 </button>
 
                 <div

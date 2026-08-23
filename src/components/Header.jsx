@@ -64,7 +64,7 @@ export default function Header() {
                 <button
                   type="button"
                   aria-label="Close menu"
-                  className="inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-200 bg-white"
+                  className="inline-flex items-center justify-center h-10 w-10 rounded-lg border border-slate-200 bg-white"
                   onClick={closeMobile}
                 >
                   <X className="w-5 h-5 text-slate-900" />
@@ -88,7 +88,7 @@ export default function Header() {
                 <div className="space-y-3">
                   <a
                     href={MEETINGS_URL}
-                    className="w-full inline-flex items-center justify-center bg-slate-900 hover:bg-black text-white rounded-2xl px-4 h-12 text-sm font-semibold shadow-sm"
+                    className="w-full inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-4 h-12 text-sm font-semibold"
                     onClick={closeMobile}
                   >
                     Discuss a Workflow
@@ -96,7 +96,7 @@ export default function Header() {
 
                   <a
                     href={`tel:${PHONE_TEL}`}
-                    className="w-full inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-4 h-12 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                    className="w-full inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 h-12 text-sm font-semibold text-slate-900 hover:bg-slate-50"
                     onClick={closeMobile}
                   >
                     <span className="inline-flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur border-b border-slate-100">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-3 py-2 rounded-md"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-slate-950 text-white px-3 py-2 rounded-md"
       >
         Skip to content
       </a>
@@ -135,7 +135,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <a
               href={MEETINGS_URL}
-              className="hidden sm:inline-flex items-center justify-center bg-slate-900 hover:bg-black text-white rounded-xl px-3 h-10 text-sm font-semibold"
+              className="hidden sm:inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-3 h-10 text-sm font-semibold"
             >
               Discuss
             </a>
@@ -145,7 +145,7 @@ export default function Header() {
               onClick={() => setMobileOpen((v) => !v)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
-              className="fixed right-4 top-2 z-[100000] inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-900 shadow-sm active:scale-[0.98]"
+              className="fixed right-4 top-2 z-[100000] inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 bg-white text-slate-900 active:scale-[0.98]"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -174,16 +174,16 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href={`tel:${PHONE_TEL}`}
-            className="inline-flex items-center gap-2 justify-center h-11 px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-800 hover:bg-slate-50 transition whitespace-nowrap"
+            className="inline-flex items-center gap-2 justify-center h-11 px-4 rounded-lg border border-slate-200 bg-white text-sm font-semibold text-slate-800 hover:bg-slate-50 transition whitespace-nowrap"
             aria-label={`Call Neovex at ${PHONE}`}
           >
-            <PhoneCall className="w-4 h-4 text-blue-600" />
+            <PhoneCall className="w-4 h-4 text-slate-600" />
             <span>{PHONE}</span>
           </a>
 
           <a
             href={MEETINGS_URL}
-            className="inline-flex items-center justify-center bg-slate-900 hover:bg-black text-white rounded-xl px-5 h-11 text-sm font-semibold"
+            className="inline-flex items-center justify-center bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-5 h-11 text-sm font-semibold"
           >
             Discuss a Workflow
           </a>
