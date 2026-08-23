@@ -6,37 +6,37 @@ const solutions = [
   {
     title: "Lead Management",
     desc: "Capture, qualify, route, follow up, schedule, and update the CRM.",
-    icon: <Inbox className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <Inbox className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "blue",
   },
   {
     title: "Customer Onboarding",
     desc: "Trigger agreements, forms, payments, welcome communication, and internal setup.",
-    icon: <FileCheck2 className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <FileCheck2 className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "emerald",
   },
   {
     title: "Scheduling & Coordination",
     desc: "Automate bookings, reminders, assignments, confirmations, and calendar updates.",
-    icon: <CalendarDays className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <CalendarDays className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "violet",
   },
   {
     title: "Quotes & Approvals",
     desc: "Generate, send, track, follow up, and trigger the next step after approval.",
-    icon: <ReceiptText className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <ReceiptText className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "amber",
   },
   {
     title: "Billing & Collections",
     desc: "Create invoices, send reminders, update records, and escalate overdue accounts.",
-    icon: <CreditCard className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <CreditCard className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "rose",
   },
   {
     title: "Administrative Work",
     desc: "Automate email processing, data entry, document routing, reporting, and internal notifications.",
-    icon: <FolderKanban className="w-7 h-7" strokeWidth={2.25} aria-hidden="true" />,
+    icon: <FolderKanban className="w-5 h-5" strokeWidth={2.1} aria-hidden="true" />,
     variant: "sky",
   },
 ];
@@ -58,22 +58,22 @@ export default function Products() {
           From the first customer inquiry to back-office administration, Neovex connects the steps that are still happening manually.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 max-w-6xl mx-auto">
           {solutions.map((solution) => (
             <ProductTile key={solution.title} href="#pricing" {...solution} />
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
+        <div className="mt-14 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
           <a
             href="#audit"
-            className="text-blue-700 font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            className="inline-flex items-center justify-center rounded-xl border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-800 hover:bg-blue-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Start with a Workflow Automation Audit
           </a>
           <a
             href="#how-it-works"
-            className="text-blue-700 font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            className="inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold text-slate-700 hover:text-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             See how Neovex works
           </a>
