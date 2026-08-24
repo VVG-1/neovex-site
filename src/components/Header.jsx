@@ -23,10 +23,10 @@ const solutionItems = [
 ];
 
 const navItems = [
-  { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#results", label: "Case Studies" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/how-it-works", label: "How It Works" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Header() {

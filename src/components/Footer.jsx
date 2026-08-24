@@ -73,9 +73,9 @@ export default function Footer({
               Solutions
             </h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#solutions" className="hover:text-white">Workflow Automation</a></li>
-              <li><a href="/#audit" className="hover:text-white">Workflow Automation Audit</a></li>
-              <li><a href="/#pricing" className="hover:text-white">Ways to Work</a></li>
+              <li><a href="/workflow-automation" className="hover:text-white">Workflow Automation</a></li>
+              <li><a href="/workflow-automation-audit" className="hover:text-white">Workflow Automation Audit</a></li>
+              <li><a href="/pricing" className="hover:text-white">Ways to Work</a></li>
             </ul>
           </nav>
 
@@ -85,8 +85,8 @@ export default function Footer({
             </h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="hover:text-white">About</Link></li>
-              <li><Link to="/#faq" className="hover:text-white">FAQ</Link></li>
-              <li><Link to="/#pricing" className="hover:text-white">Pricing</Link></li>
+              <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+              <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
               <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
             </ul>
           </nav>

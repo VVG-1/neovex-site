@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useEffect } from "react";
-import { Routes, Route, useLocation, Link, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation, Link, Navigate, useParams } from "react-router-dom";
 import PrivacyPage from "./pages/Privacy.jsx";
 import TermsPage from "./pages/Terms.jsx";
 import ContactThanks from "./pages/ContactThanks.jsx";
@@ -13,8 +13,14 @@ import Header from "./components/Header.jsx";
 // Pages
 import CompanyHome from "./pages/CompanyHome.jsx";
 import About from "./pages/About.jsx";
-import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
+import {
+  CaseStudiesPage,
+  CaseStudyDetailPage,
+  FaqPage,
+  HowItWorksPage,
+  PricingPage,
+} from "./pages/PrimaryPages.jsx";
 import {
   ManagedAutomationPage,
   WorkflowAutomationAuditPage,
@@ -75,7 +81,11 @@ export default function App() {
           {/* Marketing pages */}
           <Route path="/" element={<CompanyHome />} />
           <Route path="/about" element={<About />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyDetailRoute />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/thanks" element={<ContactThanks />} />
           <Route path="/workflow-automation" element={<WorkflowAutomationPage />} />
@@ -105,6 +115,11 @@ export default function App() {
       </main>
     </>
   );
+}
+
+function CaseStudyDetailRoute() {
+  const { slug } = useParams();
+  return <CaseStudyDetailPage slug={slug} />;
 }
 
 /** Lightweight 404 */
