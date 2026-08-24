@@ -248,6 +248,114 @@ function AuditPricingBlock() {
   );
 }
 
+function HumanLoopSection() {
+  const flow = ["Automated workflow", "Exception / approval", "Human review", "Workflow continues"];
+
+  return (
+    <section className="px-6 py-16 bg-[#F3F5F7]">
+      <div className="max-w-7xl mx-auto grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-center lg:gap-14">
+        <SectionIntro eyebrow="HUMANS STAY IN THE LOOP" title="Automation Should Know When to Stop." />
+        <div>
+          <p className="max-w-2xl text-lg leading-8 text-slate-700">
+            Approvals, exceptions, judgment calls, and unusual cases can be routed to the right person instead of being forced through automation.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-[minmax(0,1fr)_52px_minmax(0,1fr)_52px_minmax(0,1fr)_52px_minmax(0,1fr)] md:items-center">
+            {flow.map((item, index) => (
+              <React.Fragment key={item}>
+                <div className="text-base font-semibold text-[#172235]">{item}</div>
+                {index < flow.length - 1 ? <Connector /> : null}
+              </React.Fragment>
+            ))}
+          </div>
+          <p className="mt-8 max-w-2xl text-base leading-7 text-slate-700">
+            The goal is to remove repetitive work while keeping human decision-making where it belongs.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ManagedLifecycleSection() {
+  const stages = [
+    ["01", "Workflow Build", "Design and build the automation."],
+    ["02", "Launch", "Test and move the workflow into production."],
+    ["03", "Managed Automation", "Monitor, maintain, troubleshoot, and adjust."],
+    ["04", "Ongoing Improvement", "Refine the workflow as the business changes."],
+  ];
+
+  return (
+    <section id="how-it-fits" className="px-6 py-16 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <SectionIntro
+          eyebrow="HOW IT FITS TOGETHER"
+          title="Workflow Build, Launch, Managed Automation, Ongoing Improvement."
+          copy="Managed Automation is optional after launch. Some clients operate completed workflows themselves, while others keep Neovex involved for monitoring, maintenance, troubleshooting, adjustments, and improvement."
+        />
+        <div className="relative mt-12">
+          <div className="absolute left-0 right-0 top-[18px] hidden h-px bg-slate-300 lg:block" aria-hidden="true" />
+          <ol className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+            {stages.map(([n, title, desc]) => (
+              <li key={title} className="relative">
+                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#25638f]/40 bg-white text-xs font-semibold text-[#25638f]">
+                  {n}
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-[#172235]">{title}</h3>
+                <p className="mt-2 max-w-sm text-sm leading-6 text-slate-700">{desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ManagedPricingBlock() {
+  const items = ["Monitoring", "Integration maintenance", "Troubleshooting", "Workflow adjustments", "Optimization", "Minor workflow improvements"];
+
+  return (
+    <section className="px-6 py-16 bg-[#F3F5F7]">
+      <div className="max-w-7xl mx-auto">
+        <article className="rounded-lg border border-slate-200 bg-white p-7 md:p-9 lg:grid lg:grid-cols-[0.42fr_0.58fr] lg:gap-12">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Managed Automation</h2>
+            <div className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#172235]">Starting at $1,500/month</div>
+            <p className="mt-4 max-w-md text-base leading-7 text-slate-700">
+              Ongoing monitoring, maintenance, troubleshooting, and workflow improvements after launch.
+            </p>
+            <a href={MEETINGS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
+              Discuss Management
+            </a>
+          </div>
+
+          <div className="mt-9 lg:mt-0">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">What&apos;s included</div>
+            <ul className="mt-5 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+              {items.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#25638f]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-7 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+              Final scope depends on workflow complexity, systems involved, and the level of ongoing support required.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Need a workflow built first?
+              <br />
+              <a href="/workflow-automation" className="font-semibold text-[#25638f] hover:text-[#172235]">
+                Explore Workflow Automation -&gt;
+              </a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
 function SectionIntro({ eyebrow, title, copy, light = false }) {
   return (
     <div className="max-w-3xl">
@@ -472,46 +580,25 @@ export function ManagedAutomationPage() {
         primary="Discuss Management"
         secondary="See How It Works"
         secondaryHref="#how-it-fits"
+        journeyItems={heroJourney}
       />
 
-      <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+      <section className="px-6 py-16 bg-[#F3F5F7]">
         <div className="max-w-7xl mx-auto">
           <SectionIntro eyebrow="AFTER LAUNCH" title="Workflows Change Because Businesses Change." copy="Systems get updated. Processes change. Team responsibilities shift. Exceptions appear. Managed Automation gives your workflow ongoing attention instead of leaving your team to troubleshoot it internally." />
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-white border-b border-slate-100">
+      <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <SectionIntro eyebrow="WHAT IS MANAGED" title="The Workflow Gets Ongoing Attention." />
           <TextGrid items={managedItems} cols="lg:grid-cols-3" />
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.45fr_0.55fr] gap-10 lg:gap-14">
-          <SectionIntro eyebrow="HUMANS STAY IN THE LOOP" title="Automation Should Know When to Stop." />
-          <div className="text-lg leading-8 text-slate-700">
-            <p>Approvals, exceptions, judgment calls, and unusual cases can be routed to the right person instead of being forced through automation.</p>
-            <p className="mt-4">The goal is to remove repetitive work while keeping human decision-making where it belongs.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="how-it-fits" className="px-6 py-16 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <SectionIntro eyebrow="HOW IT FITS TOGETHER" title="Workflow Build, Launch, Managed Automation, Ongoing Improvement." copy="Managed Automation is optional after launch. Some clients operate completed workflows themselves, while others keep Neovex involved for monitoring, maintenance, troubleshooting, adjustments, and improvement." />
-        </div>
-      </section>
-
-      <PricingPanel
-        title="Managed Automation"
-        price="Starting at $1,500/month"
-        items={["Monitoring", "Integration maintenance", "Troubleshooting", "Workflow adjustments", "Optimization", "Minor workflow improvements"]}
-        cta="Discuss Management"
-        note="Final scope depends on workflow complexity, systems involved, and level of ongoing support required."
-      />
-
-      <FinalCta title="Keep the Workflow Running Without Adding More Work to Your Team." primary="Discuss Management" secondary="Discuss a Workflow" secondaryHref="/workflow-automation" />
+      <HumanLoopSection />
+      <ManagedLifecycleSection />
+      <ManagedPricingBlock />
       <Footer />
     </div>
   );
