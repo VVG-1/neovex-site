@@ -4,7 +4,28 @@ import Footer from "../components/Footer";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
-const workflowSteps = ["Process reviewed", "Systems connected", "Workflow launched", "Automation managed"];
+const workflowSteps = [
+  {
+    n: "01",
+    title: "Process reviewed",
+    desc: "Current workflow, systems, and handoffs mapped",
+  },
+  {
+    n: "02",
+    title: "Systems connected",
+    desc: "Existing tools, data, and triggers linked",
+  },
+  {
+    n: "03",
+    title: "Workflow launched",
+    desc: "Rules, routing, approvals, and next steps activated",
+  },
+  {
+    n: "04",
+    title: "Automation managed",
+    desc: "Workflow monitored, maintained, and improved",
+  },
+];
 
 const buildItems = [
   { icon: GitBranch, title: "Workflow mapping", desc: "We understand how the process moves today and where manual work slows it down." },
@@ -63,14 +84,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="border-y border-slate-200">
-            {workflowSteps.map((item, index) => (
-              <div key={item} className="flex items-center gap-4 border-b border-slate-200 py-5 last:border-b-0">
-                <div className="text-sm font-bold tracking-[0.18em] text-[#25638f]">0{index + 1}</div>
-                <div className="text-lg font-semibold text-[#172235]">{item}</div>
-              </div>
-            ))}
-          </div>
+          <ImplementationJourney />
         </div>
       </section>
 
@@ -228,6 +242,37 @@ export default function AboutPage() {
       </section>
 
       <Footer />
+    </div>
+  );
+}
+
+function ImplementationJourney() {
+  return (
+    <div className="w-full max-w-[480px] lg:justify-self-end">
+      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+        FROM REVIEW TO MANAGEMENT
+      </div>
+
+      <ol className="relative mt-6">
+        <div className="absolute left-[3.15rem] top-3 bottom-3 w-px bg-[#607184]/35" aria-hidden="true" />
+
+        {workflowSteps.map((step) => (
+          <li key={step.n} className="relative grid grid-cols-[2.4rem_1.5rem_minmax(0,1fr)] gap-3 pb-7 last:pb-0">
+            <div className="pt-0.5 text-sm font-semibold tracking-[0.16em] text-[#25638f]">
+              {step.n}
+            </div>
+
+            <div className="relative z-10 flex justify-center pt-1.5">
+              <span className="h-3 w-3 rounded-full border border-[#25638f]/45 bg-white ring-4 ring-white" aria-hidden="true" />
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold tracking-tight text-[#172235]">{step.title}</h2>
+              <p className="mt-1.5 text-sm leading-6 text-slate-600">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   );
 }
