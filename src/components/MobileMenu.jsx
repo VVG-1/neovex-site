@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, PhoneCall, Menu, X } from "lucide-react";
 
-const PHONE = "(312) 588-6278";
-const PHONE_TEL = "+13128982809";
+const PHONE = "(833) 312-1335";
+const PHONE_TEL = "+18333121335";
 const DISCUSS_URL = "/discuss-a-workflow";
 
 export default function MobileHeader({ logoSrc }) {

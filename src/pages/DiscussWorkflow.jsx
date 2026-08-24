@@ -5,8 +5,8 @@ import Footer from "../components/Footer.jsx";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 const EMAIL = "hello@neovexai.com";
-const PHONE = "(312) 588-6278";
-const PHONE_TEL = "+13125886278";
+const PHONE = "(833) 312-1335";
+const PHONE_TEL = "+18333121335";
 
 const startingPoints = [
   "I know the workflow I want automated",

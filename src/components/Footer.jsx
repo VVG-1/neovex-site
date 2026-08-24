@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer({
   orgName = "Neovex",
   email = "hello@neovexai.com",
-  phone = "(312) 588-6278",
+  phone = "(833) 312-1335",
   year = new Date().getFullYear(),
   siteUrl = "https://neovexai.com",
   linkedinUrl = "https://linkedin.com/company/neovex",

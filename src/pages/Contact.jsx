@@ -276,7 +276,7 @@ onSubmitted={() => setSent(true)}
                       value={formData.phone}
                       onChange={(e) => setField("phone", e.target.value)}
                       className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600"
-                      placeholder="(312)-898-2809"
+                      placeholder="(833) 312-1335"
                     />
                   </div>
                   <div>
@@ -457,8 +457,8 @@ className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 h-11 text
                   </li>
                   <li className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-blue-600" />
-                    <a className="hover:underline" href="tel:+13128982809">
-                      +1 (312) 588-6278
+                    <a className="hover:underline" href="tel:+18333121335">
+                      +1 (833) 312-1335
                     </a>
                   </li>
                 </ul>
