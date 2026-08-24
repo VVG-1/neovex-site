@@ -6,20 +6,21 @@ const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 export const workflowOffers = [
   {
     title: "Workflow Automation Audit",
-    audience: "For businesses that want to identify and prioritize automation opportunities.",
-    price: "Starting at $750",
+    audience: "For businesses that want to identify and prioritize the highest-value automation opportunities.",
+    price: "$1,500",
     cta: "Start With an Audit",
     features: [
       "Workflow review",
-      "Automation opportunity mapping",
-      "Prioritized recommendations",
-      "Roadmap",
+      "Stakeholder working session",
+      "Automation opportunity heat map",
+      "Prioritized roadmap",
+      "Recommended next steps",
     ],
   },
   {
     title: "Workflow Build",
     audience: "For a defined process that is ready to automate.",
-    price: "Starting at $2,500",
+    price: "Starting at $4,500",
     cta: "Discuss a Workflow",
     features: [
       "Workflow design",
@@ -33,27 +34,29 @@ export const workflowOffers = [
   {
     title: "Automation System",
     audience: "For multiple connected workflows or a larger operational process.",
-    price: "Custom Scope",
-    cta: "Talk to Neovex",
+    price: "Starting at $10,000",
+    cta: "Discuss a System",
     features: [
       "Multiple workflows",
       "Cross-system automation",
       "Rules and decision logic",
       "AI where appropriate",
       "Testing and implementation",
+      "Documentation",
     ],
   },
   {
     title: "Managed Automation",
-    audience: "For ongoing monitoring, maintenance, and workflow improvements.",
-    price: "Monthly plans available",
-    cta: "Learn About Management",
+    audience: "For ongoing monitoring, maintenance, and workflow improvements after launch.",
+    price: "Starting at $1,500/month",
+    cta: "Discuss Management",
     features: [
       "Monitoring",
       "Integration maintenance",
       "Troubleshooting",
       "Workflow adjustments",
       "Optimization",
+      "Minor workflow improvements",
     ],
   },
 ];
@@ -84,7 +87,7 @@ export default function FounderPlan() {
         </div>
 
         <p className="mt-6 text-sm text-slate-700">
-          Scope depends on workflow complexity, systems involved, access, testing requirements, and approval steps.
+          Final scope depends on workflow complexity, systems involved, access requirements, testing, and approval logic.
         </p>
       </div>
     </section>
