@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, ClipboardList, GitBranch, Handshake, Link2, Settings2, Shield } from "lucide-react";
+import { ArrowRight, GitBranch, Handshake, Link2, Settings2 } from "lucide-react";
 import Footer from "../components/Footer";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
@@ -10,19 +10,21 @@ const buildItems = [
   { icon: GitBranch, title: "Workflow mapping", desc: "We understand how the process moves today and where manual work slows it down." },
   { icon: Link2, title: "System connection", desc: "We connect the tools that already hold the information and trigger the next steps." },
   { icon: Settings2, title: "Automation build", desc: "We configure rules, routing, handoffs, approvals, and repeatable workflow logic." },
-  { icon: Handshake, title: "Managed launch", desc: "We test, launch, monitor, maintain, and improve the workflow after it is live." },
+  { icon: Handshake, title: "Launch & management", desc: "We test, launch, monitor, maintain, and improve the workflow after it is live." },
 ];
 
 const principles = [
   {
-    icon: ClipboardList,
-    title: "Built around your process",
-    desc: "We start with the work itself: the people involved, the systems in use, the handoffs, and the places where human judgment still belongs.",
+    title: "Start with the work",
+    desc: "We map what actually happens before deciding what should be automated.",
   },
   {
-    icon: Shield,
-    title: "Managed after launch",
-    desc: "We maintain integrations, monitor workflow behavior, troubleshoot issues, and adjust the automation as the business changes.",
+    title: "Use the simplest reliable solution",
+    desc: "A workflow may use integrations, rules, APIs, or AI. We use the approach that makes the process work reliably rather than adding unnecessary complexity.",
+  },
+  {
+    title: "Stay accountable after launch",
+    desc: "Workflows are tested against real scenarios, monitored after deployment, and adjusted as the process or systems change.",
   },
 ];
 
@@ -84,8 +86,40 @@ export default function AboutPage() {
           </div>
 
           <p className="text-lg md:text-xl leading-8 text-slate-700">
-            We help teams identify where manual work is slowing the business down, then build managed workflows that connect systems, trigger next steps, and keep exceptions visible.
+            We believe automation should remove unnecessary work without making the business harder to run. That means working with the systems already in place, keeping people involved where judgment matters, and building workflows that are understandable, maintainable, and useful after launch.
           </p>
+        </div>
+      </section>
+
+      <section className="px-6 py-16 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.62fr)_minmax(300px,0.38fr)] gap-10 lg:gap-14 items-start">
+          <div className="max-w-4xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              BUILT FROM OPERATING EXPERIENCE
+            </div>
+            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">
+              Built by automating real operational work.
+            </h2>
+            <div className="mt-6 space-y-5 text-lg leading-8 text-slate-700">
+              <p>
+                Neovex grew out of a practical need: reducing the repetitive administrative work required to run real businesses.
+              </p>
+              <p>
+                Before offering workflow automation as a service, Neovex-built automations were deployed across operating businesses to handle work such as intake, follow-up, scheduling, customer communication, administrative handoffs, and back-office processes.
+              </p>
+              <p>
+                That experience shapes how we approach client work today: understand the process first, identify what should remain human, automate the repeatable work, and make sure the workflow keeps working after launch.
+              </p>
+            </div>
+          </div>
+
+          <div className="border-y border-slate-200 py-4">
+            {["Process first", "Human judgment preserved", "Repeatable work automated", "Managed after launch"].map((item) => (
+              <div key={item} className="border-b border-slate-200 py-4 last:border-b-0">
+                <div className="text-base font-semibold text-[#172235]">{item}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -130,18 +164,65 @@ export default function AboutPage() {
               Practical, operational, implementation-focused.
             </h2>
             <p className="mt-5 text-lg md:text-xl leading-8 text-slate-700">
-              Neovex uses automation, integrations, rules, and AI where appropriate. The objective is the right workflow, not hype for its own sake.
+              Neovex uses automation, integrations, rules, APIs, and AI where appropriate. The objective is the right workflow - not technology for its own sake.
             </p>
           </div>
 
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
-            {principles.map((item) => (
-              <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-6">
-                <item.icon className="h-5 w-5 text-[#25638f]" strokeWidth={1.9} aria-hidden="true" />
-                <h3 className="mt-4 text-xl font-semibold text-[#172235]">{item.title}</h3>
+          <div className="mt-10 grid md:grid-cols-3 border-y border-slate-200">
+            {principles.map((item, index) => (
+              <article
+                key={item.title}
+                className={`${index > 0 ? "border-t border-slate-200 md:border-t-0 md:border-l" : ""} border-slate-200 py-6 md:px-6`}
+              >
+                <h3 className="text-xl font-semibold text-[#172235]">{item.title}</h3>
                 <p className="mt-2 text-base leading-7 text-slate-700">{item.desc}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-14 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="max-w-3xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              SEE THE WORK
+            </div>
+            <h2 className="mt-4 text-3xl md:text-[2.6rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">
+              See the workflows running in real businesses.
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-700">
+              Explore how Neovex-built workflows have changed day-to-day operations, reduced manual steps, and connected work across existing systems.
+            </p>
+          </div>
+
+          <a
+            href="/#results"
+            className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-[#172235] text-white hover:bg-[#1B2638]"
+          >
+            View Case Studies <ArrowRight className="ml-2 h-4 w-4" />
+          </a>
+        </div>
+      </section>
+
+      <section className="px-6 py-14 bg-[#F5F6F7] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.3fr_0.7fr] gap-8 lg:gap-12">
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              LEADERSHIP
+            </div>
+          </div>
+
+          <div className="max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900">
+              Jameson Dixon
+            </h2>
+            <div className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
+              Founder, Neovex
+            </div>
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Jameson founded Neovex after building automation into the day-to-day operations of businesses he operates and seeing how much repetitive administrative work could be removed when systems were designed to work together. His background spans business operations, recruiting operations, workflow design, automation, and AI-enabled processes.
+            </p>
           </div>
         </div>
       </section>
