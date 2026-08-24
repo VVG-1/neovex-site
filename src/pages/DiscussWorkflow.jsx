@@ -7,6 +7,7 @@ const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 const EMAIL = "hello@neovexai.com";
 const PHONE = "(833) 312-1335";
 const PHONE_TEL = "+18333121335";
+const FORM_ERROR = "We could not send your workflow details. Please try again or email hello@neovexai.com.";
 
 const startingPoints = [
   "I know the workflow I want automated",
@@ -81,14 +82,18 @@ export function DiscussWorkflowPage() {
 
     setSubmitting(true);
     try {
-      sessionStorage.setItem(
-        "neovexWorkflowIntake",
-        JSON.stringify({ ...formData, submittedAt: new Date().toISOString() })
-      );
-      await new Promise((resolve) => setTimeout(resolve, 350));
+      const response = await fetch("/api/workflow-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || !result?.ok) {
+        throw new Error(result?.message || FORM_ERROR);
+      }
       navigate("/discuss-a-workflow/thank-you");
-    } catch {
-      setErrors({ form: "Something went wrong. Please try again or email hello@neovexai.com." });
+    } catch (error) {
+      setErrors({ form: error?.message || FORM_ERROR });
     } finally {
       setSubmitting(false);
     }
