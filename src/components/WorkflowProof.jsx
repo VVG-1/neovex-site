@@ -62,7 +62,7 @@ export default function WorkflowProof() {
   return (
     <section id="results" className="bg-white py-20 px-6 border-t border-slate-100 scroll-mt-28 md:scroll-mt-32">
       <div className="max-w-[1360px] mx-auto">
-        <div className="max-w-3xl">
+        <div className="max-w-[1320px]">
           <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
             REAL-WORLD AUTOMATION
           </div>
@@ -70,7 +70,7 @@ export default function WorkflowProof() {
           <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
             See the Workflows Running in Real Businesses
           </h2>
-          <p className="mt-6 text-lg md:text-xl leading-relaxed text-slate-700">
+          <p className="mt-6 max-w-[820px] text-lg md:text-xl leading-relaxed text-slate-700">
             Businesses are already using Neovex-built automations in day-to-day operations. Explore the case studies to see what was automated, how the workflow changed, and the impact after launch.
           </p>
         </div>
