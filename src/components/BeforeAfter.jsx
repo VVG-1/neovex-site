@@ -26,7 +26,7 @@ export default function BeforeAfter({
   return (
     <section
       id={id}
-      className="bg-[#F7F6F2] py-20 px-6 border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
+      className="bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">

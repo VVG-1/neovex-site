@@ -65,7 +65,7 @@ export default function FounderPlan() {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden py-20 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-20 px-6 bg-[#F5F6F7] border-t border-slate-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto text-center">
         <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-4">

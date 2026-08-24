@@ -17,72 +17,72 @@ const faqs = [
   {
     id: "kinds",
     q: "What kinds of workflows can Neovex automate?",
-    a: "Neovex can automate workflows across lead management, customer onboarding, scheduling, quotes, approvals, billing, collections, document routing, reporting, and administrative handoffs.",
-    seoText: "Neovex automates workflows across lead management, customer onboarding, scheduling, quotes, approvals, billing, collections, document routing, reporting, and administrative handoffs.",
+    a: "Neovex can automate workflows across lead management, customer onboarding, scheduling, quotes, approvals, billing, collections, document routing, reporting, and administrative handoffs. The best fit is usually a repeatable process where information or next steps are still moving manually.",
+    seoText: "Neovex automates repeatable workflows across lead management, onboarding, scheduling, quotes, approvals, billing, collections, documents, reporting, and administrative handoffs.",
     Icon: GitBranch,
   },
   {
     id: "replace-software",
     q: "Do we have to replace our existing software?",
-    a: "Usually, no. Neovex typically works across the systems your company already uses. The goal is to connect the tools and automate the work between them, not force a software replacement.",
-    seoText: "Usually no. Neovex typically works across existing business systems and automates the work between them instead of forcing software replacement.",
+    a: "Usually, no. Neovex is designed to connect the systems already involved in the process whenever practical. Compatibility depends on the software, access, and integration options available.",
+    seoText: "Usually no. Neovex is designed to connect existing business systems whenever practical, depending on software access and integration options.",
     Icon: Link2,
   },
   {
     id: "tools",
     q: "What tools can Neovex connect?",
-    a: "Neovex can often connect CRMs, calendars, email, forms, spreadsheets, billing tools, document tools, and team communication systems. Exact options depend on the software, available integrations, permissions, and workflow requirements.",
-    seoText: "Neovex can often connect CRMs, calendars, email, forms, spreadsheets, billing tools, document tools, and team communication systems depending on available integrations and permissions.",
+    a: "Common categories include CRM, email, calendars, forms, spreadsheets, billing systems, document tools, and internal notifications. Exact options depend on the software, permissions, and workflow requirements.",
+    seoText: "Neovex can often connect CRM, email, calendars, forms, spreadsheets, billing systems, document tools, and internal notifications depending on permissions and workflow requirements.",
     Icon: Link2,
   },
   {
     id: "ai",
     q: "Does every workflow use AI?",
-    a: "No. Neovex uses automation, integrations, rules, and AI where appropriate. The objective is to build the right workflow, not force AI into every process.",
-    seoText: "No. Neovex uses automation, integrations, rules, and AI where appropriate. The objective is to build the right workflow.",
+    a: "No. Neovex uses the simplest reliable method for the workflow, including rules, triggers, system integrations, and routing logic. AI is used only where it meaningfully improves the workflow.",
+    seoText: "No. Neovex uses rules, triggers, integrations, routing logic, and AI only where it meaningfully improves the workflow.",
     Icon: Bot,
-  },
-  {
-    id: "timeline",
-    q: "How long does a workflow take to build?",
-    a: "Timing depends on complexity, number of systems, access, testing, and approval requirements. A defined single workflow is usually faster than a larger system with multiple connected processes.",
-    seoText: "Timing depends on complexity, number of systems, access, testing, and approval requirements.",
-    Icon: Clock,
-  },
-  {
-    id: "human-judgment",
-    q: "What happens when a step requires human judgment?",
-    a: "The workflow can pause for approval, route an exception to the right person, request a decision, or escalate the task. Human-in-the-loop steps are designed into the process when judgment is required.",
-    seoText: "The workflow can pause for approval, route an exception, request a decision, or escalate the task when human judgment is required.",
-    Icon: HelpCircle,
-  },
-  {
-    id: "partial",
-    q: "Can Neovex automate only part of a process?",
-    a: "Yes. Many engagements start with one painful step or a defined workflow segment, then expand after the first automation is tested and running.",
-    seoText: "Yes. Neovex can automate one step or a defined workflow segment before expanding.",
-    Icon: CheckCircle,
-  },
-  {
-    id: "after-launch",
-    q: "What happens after launch?",
-    a: "After launch, Neovex tests the workflow in production, monitors performance, maintains integrations, troubleshoots issues, and can adjust or improve the workflow through Managed Automation.",
-    seoText: "After launch, Neovex tests, monitors, maintains integrations, troubleshoots issues, and improves workflows through Managed Automation.",
-    Icon: Wrench,
   },
   {
     id: "cost",
     q: "How much does workflow automation cost?",
-    a: "A Workflow Automation Audit starts at $750. A defined Workflow Build starts at $2,500. Larger automation systems are custom scoped, and Managed Automation is available as a monthly plan.",
-    seoText: "A Workflow Automation Audit starts at $750. A Workflow Build starts at $2,500. Larger systems are custom scoped, and Managed Automation is available monthly.",
+    a: "A Workflow Automation Audit is $1,500. A Workflow Build starts at $4,500, an Automation System starts at $10,000, and Managed Automation starts at $1,500/month. Final scope depends on workflow complexity, systems involved, access requirements, testing, and approval logic.",
+    seoText: "A Workflow Automation Audit is $1,500. A Workflow Build starts at $4,500, an Automation System starts at $10,000, and Managed Automation starts at $1,500/month.",
     Icon: DollarSign,
   },
   {
     id: "audit-first",
     q: "Do I need a Workflow Automation Audit first?",
-    a: "No. If you already know what you want automated, you can begin with a Workflow Build. The audit is for businesses that want help finding and prioritizing the best automation opportunity.",
-    seoText: "No. Businesses that already know what they want automated can begin with a Workflow Build.",
+    a: "No. The audit is best for businesses that know manual work exists but are not sure which workflows should be automated first. If the workflow is already clearly defined, Neovex can move directly into a Workflow Build.",
+    seoText: "No. The audit helps businesses prioritize automation opportunities, but clearly defined workflows can move directly into a Workflow Build.",
     Icon: Settings2,
+  },
+  {
+    id: "timeline",
+    q: "How long does a workflow take to build?",
+    a: "Timing depends on complexity, number of systems, access, testing, and approval requirements. A defined single workflow is usually faster than a larger system with multiple connected processes.",
+    seoText: "Timing depends on workflow complexity, number of systems, access, testing, and approval requirements.",
+    Icon: Clock,
+  },
+  {
+    id: "human-judgment",
+    q: "What happens when a step requires human judgment?",
+    a: "The workflow can route approvals, exceptions, judgment calls, and unusual cases to the right person. Automation should remove repetitive work without eliminating human decision-making where it is needed.",
+    seoText: "The workflow can route approvals, exceptions, judgment calls, and unusual cases to the right person when human decision-making is needed.",
+    Icon: HelpCircle,
+  },
+  {
+    id: "partial",
+    q: "Can Neovex automate only part of a process?",
+    a: "Yes. Many engagements start with one painful step or a defined workflow segment. The automation can expand later after the first workflow is tested and running.",
+    seoText: "Yes. Neovex can automate one step or a defined workflow segment before expanding later.",
+    Icon: CheckCircle,
+  },
+  {
+    id: "after-launch",
+    q: "What happens after launch?",
+    a: "Some clients operate the completed workflow themselves where appropriate. Others use Managed Automation for monitoring, maintenance, troubleshooting, adjustments, and ongoing improvement after launch.",
+    seoText: "After launch, clients can operate completed workflows themselves or use Managed Automation for monitoring, maintenance, troubleshooting, and improvements.",
+    Icon: Wrench,
   },
 ];
 
@@ -103,7 +103,7 @@ export default function CompanyHome() {
         <FAQ
           faqs={faqs}
           bg="white"
-          title="Workflow Automation FAQ"
+          title="Frequently Asked Questions"
           subtitle="Practical answers about automation projects, integrations, AI, pricing, and what happens after launch."
         />
         <Footer />
