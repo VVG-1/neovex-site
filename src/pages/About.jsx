@@ -41,7 +41,7 @@ const principles = [
   },
   {
     title: "Use the simplest reliable solution",
-    desc: "A workflow may use integrations, rules, APIs, or AI. We use the approach that makes the process work reliably rather than adding unnecessary complexity.",
+    desc: "A workflow may use integrations, rules, APIs, or AI. We use the approach that makes the process work reliably without unnecessary complexity.",
   },
   {
     title: "Stay accountable after launch",
@@ -195,14 +195,15 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid md:grid-cols-3 border-y border-slate-200">
-            {principles.map((item, index) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {principles.map((item) => (
               <article
                 key={item.title}
-                className={`${index > 0 ? "border-t border-slate-200 md:border-t-0 md:border-l" : ""} border-slate-200 py-6 md:px-6`}
+                className="rounded-lg border border-slate-200 bg-white p-7 md:p-8"
               >
+                <div className="mb-5 h-px w-12 bg-slate-300" aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-[#172235]">{item.title}</h3>
-                <p className="mt-2 text-base leading-7 text-slate-700">{item.desc}</p>
+                <p className="mt-3 text-base leading-7 text-slate-700">{item.desc}</p>
               </article>
             ))}
           </div>
