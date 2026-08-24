@@ -50,8 +50,8 @@ export default function Footer({
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-          <div>
+        <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.9fr_1.05fr_0.85fr_0.7fr] lg:gap-10">
+          <div className="lg:pr-6">
             <h3 className="text-white text-lg font-semibold">{orgName}</h3>
             <p className="mt-3 text-sm text-slate-300 leading-relaxed">
               Neovex designs, builds, and manages workflow automation across the tools your business already uses.
@@ -75,7 +75,17 @@ export default function Footer({
             <ul className="space-y-2 text-sm">
               <li><a href="/workflow-automation" className="hover:text-white">Workflow Automation</a></li>
               <li><a href="/workflow-automation-audit" className="hover:text-white">Workflow Automation Audit</a></li>
-              <li><a href="/pricing" className="hover:text-white">Ways to Work</a></li>
+              <li><a href="/managed-automation" className="hover:text-white">Managed Automation</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-labelledby="footer-workflows">
+            <h4 id="footer-workflows" className="text-white text-sm font-bold uppercase tracking-wider mb-3">
+              Workflows
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/workflows/lead-management-automation" className="hover:text-white">Lead Management Automation</Link></li>
+              <li><Link to="/workflows/quote-approval-automation" className="hover:text-white">Quote &amp; Approval Automation</Link></li>
             </ul>
           </nav>
 
@@ -84,45 +94,35 @@ export default function Footer({
               Company
             </h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/about" className="hover:text-white">About</Link></li>
-              <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-white">How It Works</Link></li>
+              <li><Link to="/case-studies" className="hover:text-white">Case Studies</Link></li>
               <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
+              <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+              <li><Link to="/about" className="hover:text-white">About</Link></li>
               <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
             </ul>
           </nav>
 
-          <div>
-            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3">
+          <nav aria-labelledby="footer-legal">
+            <h4 id="footer-legal" className="text-white text-sm font-bold uppercase tracking-wider mb-3">
               Legal
             </h4>
 
             <ul className="space-y-2 text-sm">
               <li><Link to="/privacy" className="hover:text-white">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-white">Terms of Service</Link></li>
-            </ul>
-
-            <ul className="mt-4 flex items-center gap-4">
               {linkedinUrl && (
                 <li>
-                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-slate-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded" title="LinkedIn">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center gap-2 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded" title="LinkedIn">
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M4.98 3.5A2.49 2.49 0 1 0 5 8.48a2.49 2.49 0 0 0-.02-4.98ZM3 9.75h4v10.5H3V9.75Zm6 0h3.83v1.58H13c.53-.96 1.83-1.98 3.77-1.98 4.03 0 4.78 2.61 4.78 6v4.9h-4v-4.35c0-1.04-.02-2.39-1.46-2.39-1.46 0-1.69 1.14-1.69 2.31v4.43H9V9.75Z" />
                     </svg>
-                  </a>
-                </li>
-              )}
-
-              {xUrl && (
-                <li>
-                  <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X" className="text-slate-400 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded" title="X">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M18.9 3h3.6l-7.9 9.1L24 21h-7.4l-5.8-7-6.1 7H1.1l8.4-9.7L0 3h7.6l5.3 6.4L18.9 3z" />
-                    </svg>
+                    <span>LinkedIn</span>
                   </a>
                 </li>
               )}
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className="mt-10 border-t border-slate-800 pt-5 flex flex-col md:flex-row items-center justify-between gap-4">
