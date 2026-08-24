@@ -56,7 +56,7 @@ export default function Header() {
             <div className="absolute top-0 right-0 h-full w-[92vw] max-w-md bg-white shadow-xl border-l border-slate-100 flex flex-col">
               <div className="h-14 px-4 flex items-center justify-between border-b border-slate-100 shrink-0">
                 <Link to="/" aria-label="Neovex - Home" className="flex items-center" onClick={closeMobile}>
-                  <span className="text-lg font-bold text-cyan-700">Neovex</span>
+                  <span className="text-lg font-bold text-[#172235]">Neovex</span>
                 </Link>
 
                 <button
@@ -126,7 +126,7 @@ export default function Header() {
       <div className="lg:hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <Link to="/" aria-label="Neovex - Home" className="flex items-center min-w-0">
-            <span className="text-lg font-bold text-cyan-700">Neovex</span>
+            <span className="text-lg font-bold text-[#172235]">Neovex</span>
           </Link>
 
           <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export default function Header() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 hidden lg:flex items-center justify-between">
         <Link to="/" aria-label="Neovex - Home" className="flex items-center">
-          <span className="text-xl font-bold text-cyan-700">Neovex</span>
+          <span className="text-xl font-bold text-[#172235]">Neovex</span>
         </Link>
 
         <nav className="flex items-center gap-6">
