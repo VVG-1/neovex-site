@@ -9,15 +9,15 @@ const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
 const solutionItems = [
   {
-    href: "/#solutions",
+    href: "/workflow-automation",
     label: "Workflow Automation",
   },
   {
-    href: "/#audit",
+    href: "/workflow-automation-audit",
     label: "Workflow Automation Audit",
   },
   {
-    href: "/#pricing",
+    href: "/managed-automation",
     label: "Managed Automation",
   },
 ];

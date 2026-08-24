@@ -15,6 +15,11 @@ import CompanyHome from "./pages/CompanyHome.jsx";
 import About from "./pages/About.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Contact from "./pages/Contact.jsx";
+import {
+  ManagedAutomationPage,
+  WorkflowAutomationAuditPage,
+  WorkflowAutomationPage,
+} from "./pages/SolutionPages.jsx";
 
 
 /** Scroll to top on route change */
@@ -73,6 +78,9 @@ export default function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact/thanks" element={<ContactThanks />} />
+          <Route path="/workflow-automation" element={<WorkflowAutomationPage />} />
+          <Route path="/workflow-automation-audit" element={<WorkflowAutomationAuditPage />} />
+          <Route path="/managed-automation" element={<ManagedAutomationPage />} />
 
           {/* Legacy product URLs now route to the workflow automation positioning. */}
           <Route path="/products" element={<Navigate to="/#solutions" replace />} />
