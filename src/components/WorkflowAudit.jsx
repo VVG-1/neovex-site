@@ -82,31 +82,19 @@ export default function WorkflowAudit() {
 
 function AuditRoadmap() {
   return (
-    <div className="rounded-lg border border-[#263247] bg-[#1B2638]/45 p-5 md:p-6">
+    <div>
       <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
         Audit Journey
       </div>
 
-      <ol className="mt-5 max-w-2xl space-y-0 border-y border-[#344055]">
-        {auditSteps.map(({ n, Icon, title, desc, offset }, index) => (
+      <ol className="mt-5 max-w-2xl space-y-2">
+        {auditSteps.map(({ n, Icon, title, desc, offset }) => (
           <li key={title} className="relative">
             <div className={`relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-4 ${offset}`}>
               <div className="relative pt-0.5">
                 <span className="relative z-10 grid h-8 w-8 place-items-center rounded-full border border-blue-300/35 bg-[#172235] text-[0.72rem] font-semibold tracking-[0.12em] text-blue-200">
                   {n}
                 </span>
-
-                {index < auditSteps.length - 1 ? (
-                  <div
-                    className={[
-                      "pointer-events-none absolute left-4 top-9 h-10 w-16 border-t border-[#4f6178]",
-                      index === 1 ? "-rotate-[28deg]" : "rotate-[28deg]",
-                    ].join(" ")}
-                    aria-hidden="true"
-                  >
-                    <span className="absolute right-0 top-[-3px] h-1.5 w-1.5 rotate-45 border-r border-t border-[#4f6178]" />
-                  </div>
-                ) : null}
               </div>
 
               <div className="min-w-0">
@@ -120,7 +108,7 @@ function AuditRoadmap() {
                   {desc}
                 </p>
                 {n === "04" ? (
-                  <p className="mt-3 border-t border-[#344055] pt-3 text-[11px] font-semibold leading-5 text-blue-200">
+                  <p className="mt-3 text-[11px] font-semibold leading-5 text-blue-200">
                     Output: Opportunity Heat Map + Prioritized Automation Roadmap
                   </p>
                 ) : null}
