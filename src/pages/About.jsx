@@ -88,39 +88,36 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-6 py-14 md:py-16 bg-[#F5F6F7] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.4fr_0.54fr] gap-10 lg:gap-16">
-          <div>
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
-              OUR MISSION
-            </div>
-            <h2 className="mt-4 text-3xl md:text-[2.5rem] md:leading-[1.16] font-bold tracking-tight text-slate-900">
-              Make operational work move without constant manual effort.
-            </h2>
+      <section className="px-6 py-16 md:py-20 bg-[#F5F6F7] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+            WHAT WE BELIEVE
           </div>
 
-          <div className="max-w-[680px] lg:pt-9">
-            <h3 className="max-w-[640px] text-2xl md:text-[1.55rem] md:leading-snug font-semibold tracking-tight text-[#172235]">
-              Automation should remove work - not create another system to manage.
-            </h3>
+          <h2 className="mt-5 max-w-5xl text-4xl md:text-[3.6rem] md:leading-[1.08] font-bold tracking-tight text-slate-900">
+            Automation should remove work - not create more work to manage.
+          </h2>
 
-            <p className="mt-5 text-base md:text-lg leading-8 text-slate-700">
-              We believe automation should remove unnecessary work without making the business harder to run. That means working with the systems already in place, keeping people involved where judgment matters, and building workflows that are understandable, maintainable, and useful after launch.
-            </p>
-          </div>
+          <p className="mt-7 max-w-3xl text-lg md:text-xl leading-8 text-slate-700">
+            Neovex works with the systems already in place, keeps people involved where judgment matters, and builds workflows that are understandable, maintainable, and useful after launch.
+          </p>
+
+          <p className="mt-8 max-w-[650px] text-2xl md:text-[1.65rem] md:leading-snug font-semibold tracking-tight text-[#172235]">
+            Make operational work move without constant manual effort.
+          </p>
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.62fr)_minmax(300px,0.38fr)] gap-10 lg:gap-14 items-start">
-          <div className="max-w-4xl">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+      <section className="px-6 py-16 bg-[#172235] text-white border-b border-[#263247]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.56fr)_minmax(300px,0.38fr)] gap-10 lg:gap-16 items-start">
+          <div className="max-w-3xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
               BUILT FROM OPERATING EXPERIENCE
             </div>
-            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">
+            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight text-white">
               Built by automating real operational work.
             </h2>
-            <div className="mt-6 space-y-5 text-lg leading-8 text-slate-700">
+            <div className="mt-6 space-y-5 text-base md:text-lg leading-8 text-slate-300">
               <p>
                 Neovex grew out of a practical need: reducing the repetitive administrative work required to run real businesses.
               </p>
@@ -133,10 +130,24 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="border-y border-slate-200 py-4">
-            {["Process first", "Human judgment preserved", "Repeatable work automated", "Managed after launch"].map((item) => (
-              <div key={item} className="border-b border-slate-200 py-4 last:border-b-0">
-                <div className="text-base font-semibold text-[#172235]">{item}</div>
+          <div className="border-y border-white/15 py-2">
+            {[
+              {
+                title: "Built in operating businesses",
+                desc: "Automations were first developed around actual day-to-day workflows.",
+              },
+              {
+                title: "Designed around existing tools",
+                desc: "The goal was to remove repetitive work without replacing every system.",
+              },
+              {
+                title: "Maintained after launch",
+                desc: "The workflows had to keep working as processes, tools, and requirements changed.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border-b border-white/15 py-6 last:border-b-0">
+                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm md:text-base leading-7 text-slate-300">{item.desc}</p>
               </div>
             ))}
           </div>
