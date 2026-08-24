@@ -26,6 +26,10 @@ import {
   WorkflowAutomationAuditPage,
   WorkflowAutomationPage,
 } from "./pages/SolutionPages.jsx";
+import {
+  LeadManagementAutomationPage,
+  QuoteApprovalAutomationPage,
+} from "./pages/WorkflowPages.jsx";
 
 
 /** Scroll to top on route change */
@@ -91,6 +95,8 @@ export default function App() {
           <Route path="/workflow-automation" element={<WorkflowAutomationPage />} />
           <Route path="/workflow-automation-audit" element={<WorkflowAutomationAuditPage />} />
           <Route path="/managed-automation" element={<ManagedAutomationPage />} />
+          <Route path="/workflows/lead-management-automation" element={<LeadManagementAutomationPage />} />
+          <Route path="/workflows/quote-approval-automation" element={<QuoteApprovalAutomationPage />} />
 
           {/* Legacy product URLs now route to the workflow automation positioning. */}
           <Route path="/products" element={<Navigate to="/#solutions" replace />} />

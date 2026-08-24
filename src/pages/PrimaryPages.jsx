@@ -423,6 +423,13 @@ export function CaseStudiesPage() {
 
 export function CaseStudyDetailPage({ slug }) {
   const study = caseStudies.find((item) => item.slug === slug) || caseStudies[0];
+  const relatedWorkflowLinks =
+    study.slug === "lead-intake-quote-follow-up"
+      ? [
+          ["Lead Management Automation", "/workflows/lead-management-automation"],
+          ["Quote & Approval Automation", "/workflows/quote-approval-automation"],
+        ]
+      : [];
   return (
     <div className="bg-white text-slate-900">
       <Seo title={`${study.title} | Neovex Case Study`} description={`Workflow automation case study: ${study.title}.`} />
@@ -446,6 +453,17 @@ export function CaseStudyDetailPage({ slug }) {
           <DetailBlock title="After">{study.after}</DetailBlock>
           <DetailBlock title="Verified outcome / metrics">Verified outcome metrics pending. No estimated or fabricated results are shown.</DetailBlock>
           <DetailBlock title="Video or workflow demo">Workflow demo asset pending.</DetailBlock>
+          {relatedWorkflowLinks.length ? (
+            <DetailBlock title="Related workflow solutions">
+              <div className="flex flex-col gap-2">
+                {relatedWorkflowLinks.map(([label, href]) => (
+                  <a key={href} href={href} className="font-semibold text-[#25638f] hover:text-[#172235]">
+                    {label} -&gt;
+                  </a>
+                ))}
+              </div>
+            </DetailBlock>
+          ) : null}
           <DetailBlock title="CTA"><a href={MEETINGS_URL} className="font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a></DetailBlock>
         </div>
       </section>

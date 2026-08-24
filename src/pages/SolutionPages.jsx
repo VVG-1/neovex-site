@@ -7,10 +7,10 @@ import WorkflowProof from "../components/WorkflowProof";
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
 const automationCategories = [
-  ["Lead Management", "Capture, qualify, route, follow up, schedule, and update the CRM."],
+  ["Lead Management", "Capture, qualify, route, follow up, schedule, and update the CRM.", "/workflows/lead-management-automation"],
   ["Customer Onboarding", "Trigger agreements, forms, payments, welcome communication, and internal setup."],
   ["Scheduling & Coordination", "Automate bookings, reminders, assignments, confirmations, and calendar updates."],
-  ["Quotes & Approvals", "Generate, send, track, follow up, and trigger the next step after approval."],
+  ["Quotes & Approvals", "Generate, send, track, follow up, and trigger the next step after approval.", "/workflows/quote-approval-automation"],
   ["Billing & Collections", "Create invoices, send reminders, update records, and escalate overdue accounts."],
   ["Administrative Work", "Automate email processing, data entry, document routing, reporting, and internal notifications."],
 ];
@@ -371,13 +371,18 @@ function SectionIntro({ eyebrow, title, copy, light = false }) {
 function TextGrid({ items, cols = "lg:grid-cols-3", dark = false }) {
   return (
     <div className={`mt-10 grid md:grid-cols-2 ${cols} border-y ${dark ? "border-white/15" : "border-slate-200"}`}>
-      {items.map(([title, desc], index) => (
+      {items.map(([title, desc, href], index) => (
         <article
           key={title}
           className={`${index > 0 ? `${dark ? "border-white/15" : "border-slate-200"} border-t md:border-t-0 md:border-l` : ""} py-6 md:px-6`}
         >
           <h3 className={`text-xl font-semibold ${dark ? "text-white" : "text-[#172235]"}`}>{title}</h3>
           <p className={`mt-2 text-base leading-7 ${dark ? "text-slate-300" : "text-slate-700"}`}>{desc}</p>
+          {href ? (
+            <a href={href} className={`mt-4 inline-flex text-sm font-semibold ${dark ? "text-blue-300 hover:text-white" : "text-[#25638f] hover:text-[#172235]"}`}>
+              Explore workflow -&gt;
+            </a>
+          ) : null}
         </article>
       ))}
     </div>
