@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ArrowRight, CheckCircle2, ChevronDown, MonitorPlay, Play } from "lucide-react";
+import { ArrowRight, ChevronDown, MonitorPlay, Play } from "lucide-react";
 import Footer from "../components/Footer.jsx";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
@@ -56,6 +56,7 @@ const pricingOptions = [
     items: ["Workflow review", "Stakeholder working session", "Automation opportunity heat map", "Prioritized roadmap", "Recommended next steps"],
     cta: "Start With an Audit",
     href: MEETINGS_URL,
+    best: "Best when the opportunity is not yet clearly defined.",
   },
   {
     title: "Workflow Build",
@@ -64,6 +65,7 @@ const pricingOptions = [
     items: ["Workflow design", "Integration setup", "Automation build", "Testing", "Launch", "Documentation"],
     cta: "Discuss a Workflow",
     href: MEETINGS_URL,
+    best: "Best when you already know which workflow needs to change.",
   },
   {
     title: "Automation System",
@@ -72,6 +74,7 @@ const pricingOptions = [
     items: ["Multiple workflows", "Cross-system automation", "Rules and decision logic", "AI where appropriate", "Testing and implementation", "Documentation"],
     cta: "Discuss a System",
     href: MEETINGS_URL,
+    best: "Best when several workflows need to operate together.",
   },
   {
     title: "Managed Automation",
@@ -80,6 +83,7 @@ const pricingOptions = [
     items: ["Monitoring", "Integration maintenance", "Troubleshooting", "Workflow adjustments", "Optimization", "Minor workflow improvements"],
     cta: "Discuss Management",
     href: MEETINGS_URL,
+    best: "Best when you want Neovex to stay involved after launch.",
   },
 ];
 
@@ -460,35 +464,51 @@ function DetailBlock({ title, children }) {
 }
 
 export function PricingPage() {
+  const startHere = pricingOptions.slice(0, 2);
+  const laterOptions = pricingOptions.slice(2);
+  const decisions = [
+    ["YOU KNOW THE WORKFLOW", "The process is already defined and ready to automate.", "Workflow Build"],
+    ["YOU KNOW THERE IS TOO MUCH MANUAL WORK", "The problem is obvious, but the strongest automation opportunity is not.", "Workflow Automation Audit"],
+    ["YOU NEED MULTIPLE WORKFLOWS CONNECTED", "Several processes or systems need to operate together.", "Automation System"],
+    ["YOU WANT ONGOING SUPPORT", "The workflow is live and you want monitoring, maintenance, and improvements.", "Managed Automation"],
+  ];
+
   return (
     <div className="bg-white text-slate-900">
       <Seo title="Pricing | Neovex" description="Neovex pricing for workflow automation audits, builds, systems, and managed automation." />
       <section className="px-6 pt-24 md:pt-28 pb-16 bg-white">
         <div className="max-w-7xl mx-auto max-w-4xl">
           <Eyebrow>PRICING</Eyebrow>
-          <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">Ways to Work With Neovex.</h1>
+          <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">Choose the Engagement That Fits the Problem.</h1>
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">Start with a focused audit, a defined workflow build, a larger automation system, or ongoing management after launch.</p>
         </div>
       </section>
       <section className={`${COOL} px-6 py-16`}>
-        <div className="max-w-7xl mx-auto grid gap-6 lg:grid-cols-2">
-          {pricingOptions.map((option) => <OfferBlock key={option.title} option={option} />)}
+        <div className="max-w-7xl mx-auto">
+          <SectionIntro eyebrow="START HERE" title="Two Ways to Begin." />
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {startHere.map((option) => <OfferBlock key={option.title} option={option} prominent />)}
+          </div>
         </div>
-        <p className="mx-auto mt-8 max-w-7xl text-sm leading-6 text-slate-600">Final scope depends on workflow complexity, systems involved, access requirements, testing, approval logic, and ongoing support needs.</p>
       </section>
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          <SectionIntro eyebrow="WHICH OPTION IS RIGHT?" title="Not sure where to start?" />
+          <SectionIntro eyebrow="LARGER & ONGOING ENGAGEMENTS" title="When the Work Is Bigger or Continues After Launch." />
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {laterOptions.map((option) => <OfferBlock key={option.title} option={option} />)}
+          </div>
+          <p className="mt-8 max-w-4xl text-sm leading-6 text-slate-600">Final scope depends on workflow complexity, systems involved, access requirements, testing, approval logic, and ongoing support needs.</p>
+        </div>
+      </section>
+      <section className={`${COOL} px-6 py-16`}>
+        <div className="max-w-7xl mx-auto">
+          <SectionIntro eyebrow="WHICH OPTION IS RIGHT?" title="Not Sure Where to Start?" />
           <div className="mt-10 grid gap-0 border-y border-slate-200 md:grid-cols-2">
-            {[
-              ["If you know exactly what needs to be automated:", "Workflow Build"],
-              ["If you know there is too much manual work but priorities are unclear:", "Workflow Automation Audit"],
-              ["If multiple processes need to work together:", "Automation System"],
-              ["If you want ongoing support after launch:", "Managed Automation"],
-            ].map(([prompt, answer], index) => (
-              <div key={prompt} className={`${index > 0 ? "border-t border-slate-200 md:border-l md:border-t-0" : ""} py-6 md:px-6`}>
-                <p className="text-sm leading-6 text-slate-600">{prompt}</p>
-                <div className="mt-2 text-xl font-semibold text-[#172235]">{answer}</div>
+            {decisions.map(([label, prompt, answer], index) => (
+              <div key={label} className={`${index > 0 ? "border-t border-slate-200 md:border-t-0" : ""} ${index % 2 === 1 ? "md:border-l" : ""} py-7 md:px-7`}>
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">{label}</div>
+                <p className="mt-3 text-base leading-7 text-slate-700">{prompt}</p>
+                <div className="mt-4 text-xl font-semibold text-[#172235]">-&gt; {answer}</div>
               </div>
             ))}
           </div>
@@ -499,18 +519,17 @@ export function PricingPage() {
   );
 }
 
-function OfferBlock({ option }) {
+function OfferBlock({ option, prominent = false }) {
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-7 md:p-8">
+    <article className={`rounded-lg border border-slate-200 bg-white p-7 md:p-8 ${prominent ? "lg:p-9" : ""}`}>
       <h2 className="text-2xl font-bold text-slate-900">{option.title}</h2>
-      <div className="mt-3 text-3xl font-bold tracking-tight text-[#172235]">{option.price}</div>
+      <div className={`${prominent ? "text-3xl md:text-4xl" : "text-3xl"} mt-3 font-bold tracking-tight text-[#172235]`}>{option.price}</div>
       <p className="mt-4 text-base leading-7 text-slate-700">{option.description}</p>
-      <ul className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+      {option.best ? <p className="mt-3 text-sm leading-6 text-slate-600">{option.best}</p> : null}
+      <div className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">Includes</div>
+      <ul className="mt-3 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
         {option.items.map((item) => (
-          <li key={item} className="flex gap-2">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#25638f]" />
-            <span>{item}</span>
-          </li>
+          <li key={item} className="border-t border-slate-100 pt-2">{item}</li>
         ))}
       </ul>
       <a href={option.href} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{option.cta}</a>
