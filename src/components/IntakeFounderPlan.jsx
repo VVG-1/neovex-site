@@ -5,7 +5,7 @@ export default function IntakeFounderPlan({
   normalPrice = 399,
   founderPrice = 199,
   months = 3,
-  ctaHref = "/contact",
+  ctaHref = "/discuss-a-workflow",
   variant = "blue", // "blue" | "white"
 }) {
   const isBlue = variant === "blue";

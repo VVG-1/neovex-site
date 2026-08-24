@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { ArrowRight, ChevronDown, MonitorPlay, Play } from "lucide-react";
 import Footer from "../components/Footer.jsx";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
+const AUDIT_URL = "/workflow-automation-audit";
 const COOL = "bg-[#F3F5F7]";
 
 const journey = [
@@ -55,7 +56,7 @@ const pricingOptions = [
     description: "For businesses that want to identify and prioritize the highest-value automation opportunities.",
     items: ["Workflow review", "Stakeholder working session", "Automation opportunity heat map", "Prioritized roadmap", "Recommended next steps"],
     cta: "Start With an Audit",
-    href: MEETINGS_URL,
+    href: AUDIT_URL,
     best: "Best when the opportunity is not yet clearly defined.",
   },
   {
@@ -64,7 +65,7 @@ const pricingOptions = [
     description: "For a defined process that is ready to automate.",
     items: ["Workflow design", "Integration setup", "Automation build", "Testing", "Launch", "Documentation"],
     cta: "Discuss a Workflow",
-    href: MEETINGS_URL,
+    href: DISCUSS_URL,
     best: "Best when you already know which workflow needs to change.",
   },
   {
@@ -73,7 +74,7 @@ const pricingOptions = [
     description: "For multiple connected workflows or a larger operational process.",
     items: ["Multiple workflows", "Cross-system automation", "Rules and decision logic", "AI where appropriate", "Testing and implementation", "Documentation"],
     cta: "Discuss a System",
-    href: MEETINGS_URL,
+    href: DISCUSS_URL,
     best: "Best when several workflows need to operate together.",
   },
   {
@@ -82,7 +83,7 @@ const pricingOptions = [
     description: "For ongoing monitoring, maintenance, and workflow improvements after launch.",
     items: ["Monitoring", "Integration maintenance", "Troubleshooting", "Workflow adjustments", "Optimization", "Minor workflow improvements"],
     cta: "Discuss Management",
-    href: MEETINGS_URL,
+    href: DISCUSS_URL,
     best: "Best when you want Neovex to stay involved after launch.",
   },
 ];
@@ -129,7 +130,7 @@ function Hero({ eyebrow, title, copy, primary = "Discuss a Workflow", secondary,
           <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">{title}</h1>
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">{copy}</p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
-            <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
+            <a href={DISCUSS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
               {primary} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             {secondary ? (
@@ -261,7 +262,7 @@ function FinalLightCta({ eyebrow, title, copy, primary = "Discuss a Workflow", s
           {copy ? <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-700">{copy}</p> : null}
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
+          <a href={DISCUSS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
           <a href="/workflow-automation-audit" className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">{secondary}</a>
         </div>
       </div>
@@ -353,7 +354,7 @@ export function HowItWorksPage() {
             <div className="py-7 md:pr-8">
               <h3 className="text-2xl font-semibold text-[#172235]">You Know What Needs to Be Automated</h3>
               <p className="mt-3 text-base leading-7 text-slate-700">If the process is already clearly defined, Neovex can move directly into workflow design and build.</p>
-              <a href={MEETINGS_URL} className="mt-5 inline-flex text-sm font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a>
+              <a href={DISCUSS_URL} className="mt-5 inline-flex text-sm font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a>
             </div>
             <div className="border-t border-slate-200 py-7 md:border-l md:border-t-0 md:pl-8">
               <h3 className="text-2xl font-semibold text-[#172235]">You Are Not Sure What to Automate First</h3>
@@ -464,7 +465,7 @@ export function CaseStudyDetailPage({ slug }) {
               </div>
             </DetailBlock>
           ) : null}
-          <DetailBlock title="CTA"><a href={MEETINGS_URL} className="font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a></DetailBlock>
+          <DetailBlock title="CTA"><a href={DISCUSS_URL} className="font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a></DetailBlock>
         </div>
       </section>
       <Footer />
@@ -591,7 +592,7 @@ export function FaqPage() {
           </ul>
           <div className="mt-9 text-sm text-slate-700">
             Did not see your question?
-            <a href={MEETINGS_URL} className="ml-2 font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a>
+            <a href={DISCUSS_URL} className="ml-2 font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a>
           </div>
         </div>
       </section>

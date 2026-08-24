@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { Routes, Route, useLocation, Link, Navigate, useParams } from "react-router-dom";
 import PrivacyPage from "./pages/Privacy.jsx";
 import TermsPage from "./pages/Terms.jsx";
-import ContactThanks from "./pages/ContactThanks.jsx";
+import { DiscussWorkflowPage, DiscussWorkflowThanksPage } from "./pages/DiscussWorkflow.jsx";
 
 
 
@@ -13,7 +13,6 @@ import Header from "./components/Header.jsx";
 // Pages
 import CompanyHome from "./pages/CompanyHome.jsx";
 import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
 import {
   CaseStudiesPage,
   CaseStudyDetailPage,
@@ -90,8 +89,10 @@ export default function App() {
           <Route path="/case-studies/:slug" element={<CaseStudyDetailRoute />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/faq" element={<FaqPage />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contact/thanks" element={<ContactThanks />} />
+          <Route path="/discuss-a-workflow" element={<DiscussWorkflowPage />} />
+          <Route path="/discuss-a-workflow/thank-you" element={<DiscussWorkflowThanksPage />} />
+          <Route path="/contact" element={<Navigate to="/discuss-a-workflow" replace />} />
+          <Route path="/contact/thanks" element={<Navigate to="/discuss-a-workflow/thank-you" replace />} />
           <Route path="/workflow-automation" element={<WorkflowAutomationPage />} />
           <Route path="/workflow-automation-audit" element={<WorkflowAutomationAuditPage />} />
           <Route path="/managed-automation" element={<ManagedAutomationPage />} />

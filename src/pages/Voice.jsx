@@ -23,7 +23,7 @@ export default function VoicePage() {
       icon={PhoneCall}
       gradient="from-blue-600 to-sky-500"
 
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book a Voice demo"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"          // ← match Intake wording
@@ -110,7 +110,7 @@ founderQuote={{
   months={3}
   minutesIncluded={400}
   overage={1.25}
-  ctaHref="/contact"
+  ctaHref="/discuss-a-workflow"
 />
       }
 

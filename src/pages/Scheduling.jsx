@@ -22,7 +22,7 @@ export default function SchedulingPage() {
       subtitle="AI books jobs for you—captures details, checks eligibility, and drops confirmed appointments on your calendar 24/7."
       icon={CalendarDays}
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book a Scheduler demo"
       ctaSecondaryHref="/products"
       ctaSecondaryText="View All Products"
@@ -98,7 +98,7 @@ export default function SchedulingPage() {
           founderPrice={99}     // single simple founder price
           months={3}
           calendarsIncluded={3} // tweak as you like
-          ctaHref="/contact"
+          ctaHref="/discuss-a-workflow"
         />
       }
 

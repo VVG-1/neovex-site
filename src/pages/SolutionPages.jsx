@@ -4,7 +4,8 @@ import BeforeAfter from "../components/BeforeAfter";
 import Footer from "../components/Footer";
 import WorkflowProof from "../components/WorkflowProof";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
+const AUDIT_URL = "/workflow-automation-audit";
 
 const automationCategories = [
   ["Lead Management", "Capture, qualify, route, follow up, schedule, and update the CRM.", "/workflows/lead-management-automation"],
@@ -81,7 +82,7 @@ function Eyebrow({ children, light = false }) {
   );
 }
 
-function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#details", journeyItems }) {
+function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#details", primaryHref = DISCUSS_URL, journeyItems }) {
   return (
     <section className="px-6 pt-24 md:pt-28 pb-14 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)] gap-10 lg:gap-14 items-center">
@@ -92,7 +93,7 @@ function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#
           </h1>
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">{copy}</p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
-            <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
+            <a href={primaryHref} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
               {primary} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 hover:bg-slate-50">
@@ -219,7 +220,7 @@ function AuditPricingBlock() {
             <p className="mt-4 max-w-md text-base leading-7 text-slate-700">
               A focused assessment to identify and prioritize the strongest automation opportunities.
             </p>
-            <a href={MEETINGS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
+            <a href={AUDIT_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
               Start With an Audit
             </a>
           </div>
@@ -324,7 +325,7 @@ function ManagedPricingBlock() {
             <p className="mt-4 max-w-md text-base leading-7 text-slate-700">
               Ongoing monitoring, maintenance, troubleshooting, and workflow improvements after launch.
             </p>
-            <a href={MEETINGS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
+            <a href={DISCUSS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
               Discuss Management
             </a>
           </div>
@@ -466,7 +467,7 @@ function PricingPanel({ title, price, items, cta, note }) {
             ))}
           </ul>
           {note ? <p className="mt-6 text-sm leading-6 text-slate-600">{note}</p> : null}
-          <a href={MEETINGS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
+          <a href={DISCUSS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
             {cta}
           </a>
         </article>
@@ -481,7 +482,7 @@ function FinalCta({ title, primary, secondary, secondaryHref, sectionClassName =
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <h2 className="max-w-3xl text-3xl md:text-[2.7rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">{title}</h2>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
+          <a href={DISCUSS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
           <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">{secondary}</a>
         </div>
       </div>
@@ -548,7 +549,7 @@ export function WorkflowAutomationAuditPage() {
         copy="Neovex reviews how work moves through your business, identifies repetitive and manual steps, and prioritizes the automation opportunities with the strongest combination of business value and feasibility."
         primary="Start With an Audit"
         secondary="Discuss Your Process"
-        secondaryHref={MEETINGS_URL}
+        secondaryHref={DISCUSS_URL}
         journeyItems={heroJourney}
       />
 

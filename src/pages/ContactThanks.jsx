@@ -19,7 +19,7 @@ export default function ContactThanks() {
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://meetings.hubspot.com/neovex"
+            href="/discuss-a-workflow"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 text-white px-6 h-12 text-sm font-semibold hover:bg-black w-full sm:w-auto"
           >
             <CalendarDays className="h-4 w-4" />

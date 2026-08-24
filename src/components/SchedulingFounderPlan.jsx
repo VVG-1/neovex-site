@@ -5,7 +5,7 @@ export default function SchedulingFounderPlan({
   founderPrice = 129,
   months = 3,
   calendarsIncluded = 3,
-  ctaHref = "/contact",
+  ctaHref = "/discuss-a-workflow",
 }) {
   return (
     <section className="px-6 py-16 bg-gradient-to-b from-blue-50 to-sky-50 border-y border-blue-100">

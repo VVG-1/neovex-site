@@ -8,7 +8,7 @@ export default function ReachFounderPlan({
   contactsIncluded = 1000,       // enriched contacts / mo
   fairUseEmailsPerContact = 5,   // fair-use emails per contact / mo
   contactOverage = 0.30,         // $ per additional enriched contact
-  ctaHref = "/contact",
+  ctaHref = "/discuss-a-workflow",
 }) {
   return (
     <section className="px-6 py-16 bg-gradient-to-b from-blue-50 to-sky-50 border-y border-blue-100">

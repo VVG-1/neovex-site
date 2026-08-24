@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, GitBranch, Handshake, Link2, Settings2 } from "lucide-react";
 import Footer from "../components/Footer";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 
 const workflowSteps = [
   {
@@ -69,7 +69,7 @@ export default function AboutPage() {
 
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <a
-                href={MEETINGS_URL}
+                href={DISCUSS_URL}
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-[#172235] text-white hover:bg-[#1B2638]"
               >
                 Discuss a Workflow <ArrowRight className="ml-2 h-4 w-4" />

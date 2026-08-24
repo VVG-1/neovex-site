@@ -1,7 +1,8 @@
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
+const AUDIT_URL = "/workflow-automation-audit";
 
 export const workflowOffers = [
   {
@@ -9,6 +10,7 @@ export const workflowOffers = [
     audience: "For businesses that want to identify and prioritize the highest-value automation opportunities.",
     price: "$1,500",
     cta: "Start With an Audit",
+    href: AUDIT_URL,
     features: [
       "Workflow review",
       "Stakeholder working session",
@@ -22,6 +24,7 @@ export const workflowOffers = [
     audience: "For a defined process that is ready to automate.",
     price: "Starting at $4,500",
     cta: "Discuss a Workflow",
+    href: DISCUSS_URL,
     features: [
       "Workflow design",
       "Integration setup",
@@ -36,6 +39,7 @@ export const workflowOffers = [
     audience: "For multiple connected workflows or a larger operational process.",
     price: "Starting at $10,000",
     cta: "Discuss a System",
+    href: DISCUSS_URL,
     features: [
       "Multiple workflows",
       "Cross-system automation",
@@ -50,6 +54,7 @@ export const workflowOffers = [
     audience: "For ongoing monitoring, maintenance, and workflow improvements after launch.",
     price: "Starting at $1,500/month",
     cta: "Discuss Management",
+    href: DISCUSS_URL,
     features: [
       "Monitoring",
       "Integration maintenance",
@@ -114,9 +119,7 @@ function OfferCard({ offer }) {
         </ul>
 
         <a
-          href={MEETINGS_URL}
-          target="_blank"
-          rel="noreferrer"
+          href={offer.href}
           className="mt-6 inline-flex items-center justify-center rounded-lg bg-[#172235] text-white px-4 py-3 text-sm font-semibold hover:bg-[#1B2638]"
         >
           {offer.cta}

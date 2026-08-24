@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { ArrowRight, MonitorPlay, Play } from "lucide-react";
 import Footer from "../components/Footer.jsx";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 const COOL = "bg-[#F3F5F7]";
 
 function Seo({ title, description }) {
@@ -49,7 +49,7 @@ function WorkflowHero({ eyebrow, title, copy, primary, secondary, secondaryHref,
           <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">{title}</h1>
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">{copy}</p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
+            <a href={DISCUSS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
               {primary} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
             <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 hover:bg-slate-50">
@@ -201,7 +201,7 @@ function StartSection({ title, primary, auditText, auditLinkLabel = "Explore the
       <div className="max-w-7xl mx-auto flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <h2 className="max-w-3xl text-3xl md:text-[2.7rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">{title}</h2>
         <div>
-          <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
+          <a href={DISCUSS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
           <p className="mt-4 text-sm leading-6 text-slate-600">
             {auditText}
             <br />

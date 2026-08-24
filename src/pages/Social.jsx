@@ -23,7 +23,7 @@ export default function SocialPage() {
       subtitle="Automated, on-brand posts that turn followers into booked jobs—AI drafts, you 1-click approve, we publish & engage."
       icon={Megaphone}
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book a Social demo"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"
@@ -86,7 +86,7 @@ export default function SocialPage() {
         <SocialFounderPlan
           founderPrice={199}
           months={3}
-          ctaHref="/contact"
+          ctaHref="/discuss-a-workflow"
         />
       }
 

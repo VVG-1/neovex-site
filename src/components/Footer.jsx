@@ -31,9 +31,7 @@ export default function Footer({
 
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
             <a
-              href="https://meetings.hubspot.com/neovex"
-              target="_blank"
-              rel="noreferrer"
+              href="/discuss-a-workflow"
               className="inline-flex items-center justify-center rounded-lg bg-white text-[#172235] px-5 py-3 text-sm font-semibold hover:bg-slate-100"
             >
               Discuss a Workflow
@@ -99,7 +97,7 @@ export default function Footer({
               <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
               <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
               <li><Link to="/about" className="hover:text-white">About</Link></li>
-              <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+              <li><Link to="/discuss-a-workflow" className="hover:text-white">Contact</Link></li>
             </ul>
           </nav>
 

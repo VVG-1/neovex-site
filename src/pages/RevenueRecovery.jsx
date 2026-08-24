@@ -28,7 +28,7 @@ export default function RevenueRecoveryPage() {
       theme="emerald"
       heroPillText="Fully managed • Shadow-mode pilot • Outcome-based • Audit trail"
       heroNoteText="Start with a shadow-mode pilot. Pay only when value is delivered."
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Get a Recovery Assessment"
       ctaSecondaryHref="/products"
       ctaSecondaryText="How the Pilot Works"

@@ -1,7 +1,7 @@
 import React from "react";
 import { Bell, CheckCircle2, ClipboardList, CreditCard } from "lucide-react";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 
 const workflowCards = [
   {
@@ -48,7 +48,7 @@ export default function Hero() {
 
         <div className="mt-6 md:mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
           <a
-            href={MEETINGS_URL}
+            href={DISCUSS_URL}
             aria-label="Discuss a workflow with Neovex"
             className="w-full sm:w-auto bg-[#172235] text-white px-6 py-3 text-base rounded-lg hover:bg-[#1B2638] transition inline-flex items-center justify-center"
           >

@@ -15,7 +15,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 
 export default function MissedCallCapturePage() {
   return (
@@ -26,7 +26,7 @@ export default function MissedCallCapturePage() {
       gradient="from-blue-600 to-sky-500"
       faqTitle="Common questions about missed call capture"
       faqSubtitle="Everything you need to know about setup, call handling, routing, and data privacy."
-      ctaPrimaryHref={MEETINGS_URL}
+      ctaPrimaryHref={DISCUSS_URL}
       ctaPrimaryText="Book a 10-min Intro"
       ctaSecondaryHref="/#founder-plan"
       ctaSecondaryText="Founder Plan (Calls + Web)"
@@ -382,7 +382,7 @@ function PricingCard() {
             </div>
 
             <a
-              href={MEETINGS_URL}
+              href={DISCUSS_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-black transition"

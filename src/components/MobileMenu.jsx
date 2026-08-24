@@ -4,7 +4,7 @@ import { ChevronDown, PhoneCall, Menu, X } from "lucide-react";
 
 const PHONE = "(312) 588-6278";
 const PHONE_TEL = "+13128982809";
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 
 export default function MobileHeader({ logoSrc }) {
   const [open, setOpen] = useState(false);
@@ -178,7 +178,7 @@ export default function MobileHeader({ logoSrc }) {
                 {/* Buttons */}
                 <div className="pt-4 space-y-3">
                   <a
-                    href={MEETINGS_URL}
+                    href={DISCUSS_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center w-full bg-blue-600 text-white px-4 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700"

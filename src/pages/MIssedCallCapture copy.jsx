@@ -24,7 +24,7 @@ export default function IntakePage() {
       subtitle="Never miss another inbound lead—always-on call answering + smart intake built for service businesses that rely on inbound calls."
       icon={PhoneCall} // used for the mobile tile
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="https://meetings.hubspot.com/neovex"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book an Intro Call"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"
@@ -169,7 +169,7 @@ export default function IntakePage() {
           normalPrice={399}
           founderPrice={199}
           months={3}
-          ctaHref="/contact"
+          ctaHref="/discuss-a-workflow"
         />
       }
 

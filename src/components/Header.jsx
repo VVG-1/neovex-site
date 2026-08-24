@@ -5,7 +5,7 @@ import { ChevronDown, Menu, PhoneCall, X } from "lucide-react";
 
 const PHONE = "(312) 588-6278";
 const PHONE_TEL = "+13128982809";
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const DISCUSS_URL = "/discuss-a-workflow";
 
 const solutionGroups = [
   {
@@ -140,7 +140,7 @@ export default function Header() {
               <div className="shrink-0 border-t border-slate-100 bg-white/95 backdrop-blur px-4 pt-3 pb-[calc(env(safe-area-inset-bottom,0px)+12px)]">
                 <div className="space-y-3">
                   <a
-                    href={MEETINGS_URL}
+                    href={DISCUSS_URL}
                     className="w-full inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-4 h-12 text-sm font-semibold"
                     onClick={closeMobile}
                   >
@@ -186,7 +186,7 @@ export default function Header() {
 
           <div className="flex items-center gap-2">
             <a
-              href={MEETINGS_URL}
+              href={DISCUSS_URL}
               className="hidden sm:inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-3 h-10 text-sm font-semibold"
             >
               Discuss
@@ -260,7 +260,7 @@ export default function Header() {
           </a>
 
           <a
-            href={MEETINGS_URL}
+            href={DISCUSS_URL}
             className="inline-flex items-center justify-center bg-[#172235] hover:bg-[#1B2638] text-white rounded-lg px-5 h-11 text-sm font-semibold"
           >
             Discuss a Workflow

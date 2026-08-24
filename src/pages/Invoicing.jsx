@@ -23,7 +23,7 @@ export default function InvoicingPage() {
       subtitle="Get paid faster—AI turns finished jobs into invoices, sends by email/SMS, nudges until paid, and syncs to QuickBooks."
       icon={FileText}
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book an Invoicing demo"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"
@@ -98,7 +98,7 @@ features={[
           founderPrice={99}    // simple single-price founder offer
           normalPrice={199}
           months={3}
-          ctaHref="/contact"
+          ctaHref="/discuss-a-workflow"
         />
       }
 

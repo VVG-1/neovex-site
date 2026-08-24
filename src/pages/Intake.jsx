@@ -12,7 +12,7 @@ export default function IntakePage() {
       subtitle="Turn website visitors into booked revenue—capture, qualify, quote, and auto-schedule 24/7."
       icon={ClipboardList}               // used for the mobile tile
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="https://meetings.hubspot.com/neovex"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book an Intro Call"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"
@@ -94,7 +94,7 @@ afterSolution={
     normalPrice={399}
     founderPrice={199}
     months={3}
-    ctaHref="/contact"
+    ctaHref="/discuss-a-workflow"
   />
 }
 

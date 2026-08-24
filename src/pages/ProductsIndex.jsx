@@ -111,7 +111,7 @@ export default function ProductsIndex() {
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
-                href="/contact"
+                href="/discuss-a-workflow"
                 aria-label="Talk to us"
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 h-12 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white shadow-sm"
               >
@@ -249,7 +249,7 @@ export default function ProductsIndex() {
     <p className="mt-8 text-sm text-slate-700">
       Don’t see your tool?{" "}
       <a
-        href="/contact"
+        href="/discuss-a-workflow"
         className="text-blue-700 font-semibold underline decoration-blue-400/60 hover:decoration-blue-600"
       >
         Ask us
@@ -276,7 +276,7 @@ export default function ProductsIndex() {
     />
     <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
       <a
-        href="/contact"
+        href="/discuss-a-workflow"
         className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 h-12 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white shadow-sm"
       >
         Book a consult

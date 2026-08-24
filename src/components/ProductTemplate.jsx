@@ -54,7 +54,7 @@ featuresIntro = "Neovex is fully managed—we set it up and run it for you in th
   showOutcomes = false,
 
   // CTAs
-  ctaPrimaryHref = "https://meetings.hubspot.com/neovex",
+  ctaPrimaryHref = "/discuss-a-workflow",
   ctaPrimaryText = "Book an Intro Call",
   ctaSecondaryHref = "/products",
   ctaSecondaryText = "See all products",
@@ -496,7 +496,7 @@ const secondaryBtnClass = `${btnBase} border border-slate-200 bg-white text-slat
       <p className="mt-8 text-sm text-slate-700">
         Don’t see your tool?{" "}
         <a
-          href="/contact"
+          href="/discuss-a-workflow"
           className="text-blue-700 font-semibold underline decoration-blue-400/60 hover:decoration-blue-600"
         >
           Ask us

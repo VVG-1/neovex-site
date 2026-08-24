@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
+const AUDIT_URL = "/workflow-automation-audit";
 
 const auditSteps = [
   {
@@ -52,7 +52,7 @@ export default function WorkflowAudit() {
 
           <div className="mt-7 flex flex-col sm:flex-row gap-3">
             <a
-              href={MEETINGS_URL}
+              href={AUDIT_URL}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-white text-slate-950 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
             >
               Start With an Audit <ArrowRight className="w-4 h-4" />

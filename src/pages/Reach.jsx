@@ -22,7 +22,7 @@ export default function ReachPage() {
       subtitle="Find and enrich the right prospects, then run targeted email sequences that turn them into booked jobs and meetings."
       icon={Mail}
       gradient="from-blue-600 to-sky-500"
-      ctaPrimaryHref="/contact"
+      ctaPrimaryHref="/discuss-a-workflow"
       ctaPrimaryText="Book a Reach demo"
       ctaSecondaryHref="/products"
       ctaSecondaryText="All Products"
@@ -93,7 +93,7 @@ export default function ReachPage() {
           contactsIncluded={1000}
           fairUseEmailsPerContact={5}
           contactOverage={0.30}
-          ctaHref="/contact"
+          ctaHref="/discuss-a-workflow"
         />
       }
 

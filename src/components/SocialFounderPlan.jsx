@@ -4,7 +4,7 @@ import React from "react";
 export default function SocialFounderPlan({
   founderPrice = 199,  // flat monthly price
   months = 3,          // promo duration
-  ctaHref = "/contact",
+  ctaHref = "/discuss-a-workflow",
 }) {
   return (
     <section className="px-6 py-16 bg-gradient-to-b from-blue-50 to-sky-50 border-y border-blue-100">

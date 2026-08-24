@@ -110,7 +110,7 @@ export default function FAQ({
 
         <div className="mt-10">
           <a
-            href="https://meetings.hubspot.com/neovex"
+            href="/discuss-a-workflow"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#25638f] hover:text-[#1f567f] transition"
           >
             Did not see your question? Discuss a Workflow
