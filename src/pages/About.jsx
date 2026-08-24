@@ -1,129 +1,147 @@
 import React from "react";
 import { ArrowRight, ClipboardList, GitBranch, Handshake, Link2, Settings2, Shield } from "lucide-react";
-import SectionHeader from "../components/SectionHeader";
 import Footer from "../components/Footer";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
+const workflowSteps = ["Process reviewed", "Systems connected", "Workflow launched", "Automation managed"];
+
+const buildItems = [
+  { icon: GitBranch, title: "Workflow mapping", desc: "We understand how the process moves today and where manual work slows it down." },
+  { icon: Link2, title: "System connection", desc: "We connect the tools that already hold the information and trigger the next steps." },
+  { icon: Settings2, title: "Automation build", desc: "We configure rules, routing, handoffs, approvals, and repeatable workflow logic." },
+  { icon: Handshake, title: "Managed launch", desc: "We test, launch, monitor, maintain, and improve the workflow after it is live." },
+];
+
+const principles = [
+  {
+    icon: ClipboardList,
+    title: "Built around your process",
+    desc: "We start with the work itself: the people involved, the systems in use, the handoffs, and the places where human judgment still belongs.",
+  },
+  {
+    icon: Shield,
+    title: "Managed after launch",
+    desc: "We maintain integrations, monitor workflow behavior, troubleshoot issues, and adjust the automation as the business changes.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <div className="bg-white text-slate-900">
-      <section className="px-6 pt-20 md:pt-24 pb-12 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-[1fr_0.85fr] gap-10 items-center">
+      <section className="px-6 pt-24 md:pt-28 pb-14 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)] gap-10 lg:gap-14 items-center">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 text-blue-700 px-3 py-1 text-[11px] font-semibold ring-1 ring-blue-100">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-600" />
-              About Neovex
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              ABOUT NEOVEX
             </div>
 
-            <h1 className="mt-3 text-3xl md:text-5xl font-extrabold tracking-tight">
-              Workflow automation for growing businesses.
+            <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">
+              Workflow automation built around how your business already works.
             </h1>
 
-            <p className="mt-4 text-lg md:text-xl text-slate-700 max-w-2xl">
+            <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700 max-w-2xl">
               Neovex designs, builds, and manages automated workflows across the tools businesses already use, reducing repetitive work, manual handoffs, and administrative overhead.
             </p>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <a
                 href={MEETINGS_URL}
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 h-12 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold bg-[#172235] text-white hover:bg-[#1B2638]"
               >
                 Discuss a Workflow <ArrowRight className="ml-2 h-4 w-4" />
               </a>
 
               <a
                 href="/#audit"
-                className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 h-12 text-sm font-semibold border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold border border-stone-300 bg-white text-slate-800 hover:bg-stone-50"
               >
                 Start With an Audit <ArrowRight className="ml-2 h-4 w-4 opacity-70" />
               </a>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
-            <div className="h-1 bg-gradient-to-r from-blue-600 to-sky-400" />
-            <div className="p-6 space-y-4">
-              {["Process reviewed", "Systems connected", "Next steps automated", "Workflow managed"].map((item, index) => (
-                <div key={item} className="flex items-center gap-3 rounded-xl bg-slate-50 border border-slate-200 p-4">
-                  <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-semibold">
-                    {index + 1}
-                  </div>
-                  <div className="text-sm font-semibold text-slate-900">{item}</div>
-                </div>
-              ))}
-            </div>
+          <div className="border-y border-slate-200">
+            {workflowSteps.map((item, index) => (
+              <div key={item} className="flex items-center gap-4 border-b border-slate-200 py-5 last:border-b-0">
+                <div className="text-sm font-bold tracking-[0.18em] text-[#25638f]">0{index + 1}</div>
+                <div className="text-lg font-semibold text-[#172235]">{item}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-12 md:py-16 bg-blue-50 border-y border-blue-100">
-        <div className="max-w-5xl mx-auto">
-          <SectionHeader
-            eyebrow="Our mission"
-            title="Make operational work move without constant manual effort."
-            subtitle="We help teams identify where manual work is slowing the business down, then build managed workflows that connect systems, trigger next steps, and keep exceptions visible."
-            variant="primary"
-            align="center"
-            dividerClass="bg-gradient-to-r from-blue-600 to-sky-400"
-          />
+      <section className="px-6 py-14 md:py-16 bg-[#F5F6F7] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.42fr_0.58fr] gap-10 lg:gap-14">
+          <div>
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              OUR MISSION
+            </div>
+            <h2 className="mt-4 text-3xl md:text-[2.8rem] md:leading-[1.14] font-bold tracking-tight text-slate-900">
+              Make operational work move without constant manual effort.
+            </h2>
+          </div>
+
+          <p className="text-lg md:text-xl leading-8 text-slate-700">
+            We help teams identify where manual work is slowing the business down, then build managed workflows that connect systems, trigger next steps, and keep exceptions visible.
+          </p>
         </div>
       </section>
 
-      <section className="px-6 py-12 md:py-16 bg-white border-b border-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <SectionHeader
-            eyebrow="What we build"
-            title="Automated workflows, not another system to babysit."
-            subtitle="Neovex works across the tools you already use and automates the movement of work between people, systems, decisions, and next steps."
-            variant="secondary"
-            align="center"
-          />
+      <section className="px-6 py-16 bg-white border-b border-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              WHAT WE BUILD
+            </div>
+            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">
+              Automated workflows, not another system to babysit.
+            </h2>
+            <p className="mt-5 text-lg md:text-xl leading-8 text-slate-700">
+              Neovex works across the tools you already use and automates the movement of work between people, systems, decisions, and next steps.
+            </p>
+          </div>
 
-          <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: GitBranch, title: "Workflow mapping", desc: "We understand how the process moves today." },
-              { icon: Link2, title: "System connection", desc: "We connect the tools that already hold the information." },
-              { icon: Settings2, title: "Automation build", desc: "We automate repetitive steps, routing, and triggers." },
-              { icon: Handshake, title: "Managed launch", desc: "We monitor, maintain, and improve the workflow." },
-            ].map((f) => (
-              <li key={f.title} className="rounded-2xl bg-white p-6 border border-slate-200 shadow-sm text-center hover:shadow-md transition">
-                <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto mb-4">
-                  <f.icon className="w-6 h-6" />
+          <ul className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 border-y border-slate-200">
+            {buildItems.map((item, index) => (
+              <li
+                key={item.title}
+                className={`${index > 0 ? "border-t border-slate-200 md:border-t-0 md:border-l" : ""} border-slate-200`}
+              >
+                <div className="py-6 md:px-6">
+                  <item.icon className="h-5 w-5 text-slate-600" strokeWidth={1.9} aria-hidden="true" />
+                  <h3 className="mt-4 text-xl font-semibold text-[#172235]">{item.title}</h3>
+                  <p className="mt-2 text-base leading-7 text-slate-700">{item.desc}</p>
                 </div>
-                <h3 className="text-base md:text-lg font-semibold text-slate-900">{f.title}</h3>
-                <p className="text-sm text-slate-600 mt-2 leading-relaxed">{f.desc}</p>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="px-6 py-16 bg-blue-50 border-y border-blue-100">
-        <div className="max-w-7xl mx-auto text-center">
-          <SectionHeader
-            eyebrow="How we work"
-            title="Practical, operational, implementation-focused."
-            subtitle="Neovex uses automation, integrations, rules, and AI where appropriate. The objective is the right workflow, not hype for its own sake."
-            variant="primary"
-            align="center"
-          />
+      <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              HOW WE WORK
+            </div>
+            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">
+              Practical, operational, implementation-focused.
+            </h2>
+            <p className="mt-5 text-lg md:text-xl leading-8 text-slate-700">
+              Neovex uses automation, integrations, rules, and AI where appropriate. The objective is the right workflow, not hype for its own sake.
+            </p>
+          </div>
 
-          <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
-            <div className="rounded-2xl bg-white border border-blue-100 p-6 shadow-sm">
-              <ClipboardList className="w-6 h-6 text-blue-700" />
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">Built around your process</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                We start by understanding the work, the handoffs, the systems, and where human judgment still belongs.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white border border-blue-100 p-6 shadow-sm">
-              <Shield className="w-6 h-6 text-blue-700" />
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">Managed after launch</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">
-                We maintain integrations, monitor workflow behavior, troubleshoot issues, and improve the automation as the business changes.
-              </p>
-            </div>
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+            {principles.map((item) => (
+              <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-6">
+                <item.icon className="h-5 w-5 text-[#25638f]" strokeWidth={1.9} aria-hidden="true" />
+                <h3 className="mt-4 text-xl font-semibold text-[#172235]">{item.title}</h3>
+                <p className="mt-2 text-base leading-7 text-slate-700">{item.desc}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
