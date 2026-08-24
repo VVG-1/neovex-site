@@ -555,23 +555,23 @@ export function FaqPage() {
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">Practical answers about workflow automation, integrations, AI, pricing, implementation, and what happens after launch.</p>
         </div>
       </section>
-      <section className={`${COOL} px-6 py-16`}>
-        <div className="max-w-3xl mx-auto">
-          <ul className="space-y-3">
+      <section className={`${COOL} px-6 py-12 md:py-14`}>
+        <div className="mx-auto max-w-[860px]">
+          <ul className="space-y-3.5">
             {faqs.map(([id, question, answer]) => {
               const open = openId === id;
               return (
                 <li key={id} className="rounded-lg border border-slate-200 bg-white">
-                  <button onClick={() => setOpenId(open ? null : id)} className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-[#172235]">
+                  <button onClick={() => setOpenId(open ? null : id)} className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left text-base font-semibold text-[#172235] md:px-6">
                     <span>{question}</span>
                     <ChevronDown className={`mt-0.5 h-5 w-5 shrink-0 text-slate-500 transition ${open ? "rotate-180" : ""}`} />
                   </button>
-                  {open ? <div className="px-5 pb-5 text-base leading-7 text-slate-700">{answer}</div> : null}
+                  {open ? <div className="px-5 pb-6 pt-1 text-base leading-8 text-slate-700 md:px-6">{answer}</div> : null}
                 </li>
               );
             })}
           </ul>
-          <div className="mt-10 text-sm text-slate-700">
+          <div className="mt-9 text-sm text-slate-700">
             Did not see your question?
             <a href={MEETINGS_URL} className="ml-2 font-semibold text-[#25638f] hover:text-[#172235]">Discuss a Workflow -&gt;</a>
           </div>
