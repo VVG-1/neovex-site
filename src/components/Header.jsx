@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, PhoneCall, X } from "lucide-react";
-import logo from "./assets/logo-neovex4.png";
 
 const PHONE = "(312) 588-6278";
 const PHONE_TEL = "+13128982809";
@@ -56,8 +55,7 @@ export default function Header() {
 
             <div className="absolute top-0 right-0 h-full w-[92vw] max-w-md bg-white shadow-xl border-l border-slate-100 flex flex-col">
               <div className="h-14 px-4 flex items-center justify-between border-b border-slate-100 shrink-0">
-                <Link to="/" aria-label="Neovex - Home" className="flex items-center gap-2" onClick={closeMobile}>
-                  <BrandMark />
+                <Link to="/" aria-label="Neovex - Home" className="flex items-center" onClick={closeMobile}>
                   <span className="text-lg font-bold text-cyan-700">Neovex</span>
                 </Link>
 
@@ -127,8 +125,7 @@ export default function Header() {
 
       <div className="lg:hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-          <Link to="/" aria-label="Neovex - Home" className="flex items-center gap-2 min-w-0">
-            <BrandMark />
+          <Link to="/" aria-label="Neovex - Home" className="flex items-center min-w-0">
             <span className="text-lg font-bold text-cyan-700">Neovex</span>
           </Link>
 
@@ -154,8 +151,7 @@ export default function Header() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 hidden lg:flex items-center justify-between">
-        <Link to="/" aria-label="Neovex - Home" className="flex items-center gap-2">
-          <BrandMark size="desktop" />
+        <Link to="/" aria-label="Neovex - Home" className="flex items-center">
           <span className="text-xl font-bold text-cyan-700">Neovex</span>
         </Link>
 
@@ -192,16 +188,5 @@ export default function Header() {
 
       {mobileOverlay}
     </header>
-  );
-}
-
-function BrandMark({ size = "mobile" }) {
-  const box = size === "desktop" ? "h-9 w-9" : "h-8 w-8";
-  const image = size === "desktop" ? "h-9 max-w-none" : "h-8 max-w-none";
-
-  return (
-    <span className={`${box} inline-flex overflow-hidden shrink-0`} aria-hidden="true">
-      <img src={logo} alt="" className={`${image} w-auto object-left object-contain`} />
-    </span>
   );
 }
