@@ -140,22 +140,36 @@ export default async function handler(req, res) {
       <p style="margin-top:20px;color:#607184;font-size:13px">Submitted at ${escapeHtml(submittedAt)}</p>
     </div>
   `;
-  const confirmationSubject = "We received your workflow details";
+  const firstName = fullName.split(/\s+/)[0] || fullName;
+  const confirmationSubject = "We Received Your Workflow Details | Neovex";
   const confirmationText = [
-    `Hi ${fullName},`,
+    `Hi ${firstName},`,
     "",
-    "Thanks for sharing the workflow you want to improve. We received the details and will review the process, systems involved, and where automation may help.",
+    "Thanks for sharing the workflow you want to improve. We received your details and will review the process, systems involved, and where automation may help.",
     "",
-    "If we have questions or see a good fit, we will follow up with next steps.",
+    "We'll review your request and get back to you within 24 hours with any questions or next steps.",
     "",
+    "If you need anything in the meantime, you can reach the Neovex team at (312) 588-6278 or visit neovexai.com.",
+    "",
+    "Best,",
     "Neovex Team",
+    "hello@neovexai.com",
+    "(312) 588-6278",
+    "neovexai.com",
   ].join("\n");
   const confirmationHtml = `
     <div style="font-family:Arial,sans-serif;color:#172235;line-height:1.55">
-      <p>Hi ${escapeHtml(fullName)},</p>
-      <p>Thanks for sharing the workflow you want to improve. We received the details and will review the process, systems involved, and where automation may help.</p>
-      <p>If we have questions or see a good fit, we will follow up with next steps.</p>
-      <p>Neovex Team</p>
+      <p>Hi ${escapeHtml(firstName)},</p>
+      <p>Thanks for sharing the workflow you want to improve. We received your details and will review the process, systems involved, and where automation may help.</p>
+      <p>We'll review your request and get back to you within 24 hours with any questions or next steps.</p>
+      <p>If you need anything in the meantime, you can reach the Neovex team at <a href="tel:+13125886278" style="color:#25638f">(312) 588-6278</a> or visit <a href="https://neovexai.com" style="color:#25638f">neovexai.com</a>.</p>
+      <p>
+        Best,<br />
+        Neovex Team<br />
+        <a href="mailto:hello@neovexai.com" style="color:#25638f">hello@neovexai.com</a><br />
+        <a href="tel:+13125886278" style="color:#25638f">(312) 588-6278</a><br />
+        <a href="https://neovexai.com" style="color:#25638f">neovexai.com</a>
+      </p>
     </div>
   `;
 
