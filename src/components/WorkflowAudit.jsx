@@ -8,29 +8,29 @@ const auditSteps = [
     n: "01",
     Icon: FileSearch,
     title: "Workflow Review",
-    desc: "Review the current process, systems, recurring tasks, and handoffs.",
-    position: "left-[4%] top-[6%] max-w-[14rem]",
+    desc: "Review the process, systems, recurring tasks, and handoffs.",
+    offset: "lg:ml-0",
   },
   {
     n: "02",
     Icon: UsersRound,
     title: "Stakeholder Working Session",
-    desc: "Understand where time is being spent, what gets delayed, and where exceptions occur.",
-    position: "left-[18%] top-[53%] max-w-[17rem]",
+    desc: "Understand where time is spent, what gets delayed, and where exceptions occur.",
+    offset: "lg:ml-20",
   },
   {
     n: "03",
     Icon: BarChart3,
     title: "Opportunity Analysis",
-    desc: "Evaluate workflows based on manual effort, business value, and automation feasibility.",
-    position: "right-[11%] top-[16%] max-w-[15rem]",
+    desc: "Evaluate workflows based on business value, manual effort, and automation feasibility.",
+    offset: "lg:ml-8",
   },
   {
     n: "04",
     Icon: Map,
     title: "Prioritized Roadmap",
-    desc: "Identify the highest-value automation opportunities and deliver a prioritized roadmap and opportunity heat map.",
-    position: "right-[4%] top-[60%] max-w-[16rem]",
+    desc: "Identify the highest-value opportunities and what to automate first.",
+    offset: "lg:ml-24",
   },
 ];
 
@@ -82,70 +82,34 @@ export default function WorkflowAudit() {
 
 function AuditRoadmap() {
   return (
-    <div className="rounded-lg border border-[#263247] bg-[#1B2638]/55 p-5 md:p-6">
+    <div className="rounded-lg border border-[#263247] bg-[#1B2638]/45 p-5 md:p-6">
       <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
         Audit Journey
       </div>
 
-      <div className="relative mt-5 hidden min-h-[25rem] lg:block">
-        <svg
-          className="absolute inset-0 h-full w-full text-[#4f6178]"
-          viewBox="0 0 680 420"
-          fill="none"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M74 70 C150 84 118 204 226 226 C330 248 340 86 452 92 C560 98 544 285 615 318"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M602 308 L615 318 L600 323"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-
-        {auditSteps.map(({ n, Icon, title, desc, position }) => (
-          <div key={title} className={`absolute ${position}`}>
-            <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-full border border-blue-300/35 bg-[#172235] text-[0.72rem] font-semibold tracking-[0.12em] text-blue-200">
-                {n}
-              </span>
-              <Icon className="h-4 w-4 text-slate-300" strokeWidth={1.8} aria-hidden="true" />
-            </div>
-
-            <h3 className="mt-3 text-sm font-semibold leading-5 text-white">
-              {title}
-            </h3>
-            <p className="mt-1.5 text-xs leading-5 text-slate-300">
-              {desc}
-            </p>
-
-            {n === "04" ? (
-              <p className="mt-3 border-t border-[#344055] pt-3 text-[11px] font-semibold leading-5 text-blue-200">
-                Output: Automation Opportunity Heat Map + Prioritized Roadmap
-              </p>
-            ) : null}
-          </div>
-        ))}
-      </div>
-
-      <ol className="mt-5 space-y-0 border-y border-[#344055] lg:hidden">
-        {auditSteps.map(({ n, Icon, title, desc }, index) => (
-          <li key={title} className={index === 0 ? "" : "border-t border-[#344055]"}>
-            <div className="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-4">
-              <div className="pt-0.5">
-                <span className="grid h-8 w-8 place-items-center rounded-full border border-blue-300/35 bg-[#172235] text-[0.72rem] font-semibold tracking-[0.12em] text-blue-200">
+      <ol className="mt-5 max-w-2xl space-y-0 border-y border-[#344055]">
+        {auditSteps.map(({ n, Icon, title, desc, offset }, index) => (
+          <li key={title} className="relative">
+            <div className={`relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-4 ${offset}`}>
+              <div className="relative pt-0.5">
+                <span className="relative z-10 grid h-8 w-8 place-items-center rounded-full border border-blue-300/35 bg-[#172235] text-[0.72rem] font-semibold tracking-[0.12em] text-blue-200">
                   {n}
                 </span>
+
+                {index < auditSteps.length - 1 ? (
+                  <div
+                    className={[
+                      "pointer-events-none absolute left-4 top-9 h-10 w-16 border-t border-[#4f6178]",
+                      index === 1 ? "-rotate-[28deg]" : "rotate-[28deg]",
+                    ].join(" ")}
+                    aria-hidden="true"
+                  >
+                    <span className="absolute right-0 top-[-3px] h-1.5 w-1.5 rotate-45 border-r border-t border-[#4f6178]" />
+                  </div>
+                ) : null}
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <div className="flex items-center gap-2">
                   <Icon className="h-4 w-4 text-slate-300" strokeWidth={1.8} aria-hidden="true" />
                   <h3 className="text-sm font-semibold leading-5 text-white">
@@ -157,7 +121,7 @@ function AuditRoadmap() {
                 </p>
                 {n === "04" ? (
                   <p className="mt-3 border-t border-[#344055] pt-3 text-[11px] font-semibold leading-5 text-blue-200">
-                    Output: Automation Opportunity Heat Map + Prioritized Roadmap
+                    Output: Opportunity Heat Map + Prioritized Automation Roadmap
                   </p>
                 ) : null}
               </div>
