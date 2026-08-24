@@ -12,8 +12,8 @@ export default function Footer({
 }) {
   return (
     <footer id="contact" className="relative overflow-hidden bg-[#172235] text-slate-400">
-      <div className="max-w-7xl mx-auto px-6 pt-16">
-        <div className="rounded-lg border border-[#263247] bg-[#1B2638]/70 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-6 pt-14">
+        <div className="rounded-md bg-[#1B2638]/35 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-blue-300">
               Ready to get started?
@@ -23,12 +23,8 @@ export default function Footer({
               Start With the Workflow That Is Taking Too Much Time.
             </h3>
 
-            <p className="mt-1 text-slate-300 text-sm md:text-base max-w-3xl">
-              Whether you already know what needs to be automated or need help finding the best opportunity, Neovex can help you move from manual process to managed workflow.
-            </p>
-
-            <p className="mt-2 text-xs text-slate-400">
-              Automation + integrations + AI where appropriate.
+            <p className="mt-2 text-slate-300 text-sm md:text-base max-w-3xl">
+              Know what needs to be automated? Start there. Not sure? We&apos;ll help you identify the best opportunity.
             </p>
           </div>
 
@@ -37,14 +33,14 @@ export default function Footer({
               href="https://meetings.hubspot.com/neovex"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-lg bg-white text-slate-950 px-5 py-3 text-sm font-semibold hover:bg-slate-100"
+              className="inline-flex items-center justify-center rounded-lg bg-white text-[#172235] px-5 py-3 text-sm font-semibold hover:bg-slate-100"
             >
               Discuss a Workflow
             </a>
 
             <a
               href="/#audit"
-              className="inline-flex items-center justify-center rounded-lg border border-[#344055] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-500/45 px-5 py-3 text-sm font-semibold text-slate-100 hover:bg-[#1B2638]"
             >
               Start With an Audit
             </a>
@@ -52,12 +48,12 @@ export default function Footer({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           <div>
             <h3 className="text-white text-lg font-semibold">{orgName}</h3>
             <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-              Neovex designs, builds, and manages workflow automation for growing businesses. We connect the tools you already use and automate repetitive work across sales, customer operations, administration, and back-office processes.
+              Neovex designs, builds, and manages workflow automation across the tools your business already uses.
             </p>
 
             <div className="mt-4 text-sm space-y-1">
@@ -128,11 +124,11 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-10 border-t border-slate-800 pt-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
             &copy; {year} {orgName}. All rights reserved.
           </p>
-          <p className="text-xs text-slate-500">Workflow automation for growing businesses.</p>
+          <span aria-hidden="true" />
         </div>
       </div>
 
