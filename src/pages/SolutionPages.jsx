@@ -219,7 +219,7 @@ function AuditPricingBlock() {
             <p className="mt-4 max-w-md text-base leading-7 text-slate-700">
               A focused assessment to identify and prioritize the strongest automation opportunities.
             </p>
-            <a href={MEETINGS_URL} className="mt-7 hidden items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638] lg:inline-flex">
+            <a href={MEETINGS_URL} className="mt-7 inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
               Start With an Audit
             </a>
           </div>
@@ -235,11 +235,12 @@ function AuditPricingBlock() {
               ))}
             </ul>
             <p className="mt-7 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
-              Already know exactly what needs to be automated? You can skip the audit and start with a Workflow Build.
+              Already know exactly what needs to be automated?
+              <br />
+              <a href="/#pricing" className="font-semibold text-[#25638f] hover:text-[#172235]">
+                Start with a Workflow Build -&gt;
+              </a>
             </p>
-            <a href={MEETINGS_URL} className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638] sm:w-auto lg:hidden">
-              Start With an Audit
-            </a>
           </div>
         </article>
       </div>
@@ -455,14 +456,6 @@ export function WorkflowAutomationAuditPage() {
       <AuditJourneySection />
       <AuditDeliverablesSection />
       <AuditPricingBlock />
-
-      <FinalCta
-        title="Not Sure What to Automate First?"
-        primary="Start With an Audit"
-        secondary="Discuss a Workflow"
-        secondaryHref="/workflow-automation"
-        sectionClassName="px-6 py-14 bg-[#F3F5F7]"
-      />
       <Footer />
     </div>
   );
