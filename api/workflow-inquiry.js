@@ -194,9 +194,9 @@ export default async function handler(req, res) {
     });
 
     if (!confirmationSent) {
-      return res.status(502).json({
-        ok: false,
-        message: ERROR_MESSAGE,
+      logFailure("Prospect confirmation failed after internal notification succeeded", {
+        type: "prospect_confirmation",
+        company,
       });
     }
 
