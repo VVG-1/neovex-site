@@ -299,26 +299,31 @@ function DemoVisual({ study }) {
 function CaseStudyRow({ study, index }) {
   const visualFirst = index % 2 === 0;
   return (
-    <article className="py-12 first:pt-0 last:pb-0">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(360px,0.95fr)] lg:items-center lg:gap-12">
-        <div className={visualFirst ? "" : "lg:order-2"}>
-          <DemoVisual study={study} />
-        </div>
-        <div className={visualFirst ? "" : "lg:order-1"}>
-          <Eyebrow>{study.businessType}</Eyebrow>
-          <h2 className="mt-3 text-2xl md:text-[2rem] md:leading-tight font-semibold tracking-tight text-slate-900">{study.title}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">{study.description}</p>
-          <div className="mt-6 space-y-5">
-            <ProofBlock label="Before">{study.before}</ProofBlock>
-            <ProofBlock label="Automation">{study.automation}</ProofBlock>
-            <ProofBlock label="Impact">Verified outcome metrics pending. The workflow example uses approved content only.</ProofBlock>
+    <section className={`${index % 2 === 0 ? COOL : "bg-white"} px-6 py-20 md:py-24`}>
+      <article className="max-w-[1360px] mx-auto">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.28fr)_minmax(360px,0.95fr)] lg:items-center lg:gap-14">
+          <div className={`${visualFirst ? "" : "lg:order-2"} hidden lg:block`}>
+            <DemoVisual study={study} />
           </div>
-          <a href={`/case-studies/${study.slug}`} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#172235] hover:text-[#25638f]">
-            View Case Study <span aria-hidden="true">-&gt;</span>
-          </a>
+          <div className={visualFirst ? "" : "lg:order-1"}>
+            <Eyebrow>{study.businessType}</Eyebrow>
+            <h2 className="mt-3 text-3xl md:text-[2.35rem] md:leading-tight font-bold tracking-tight text-slate-900">{study.title}</h2>
+            <div className="mt-7 lg:hidden">
+              <DemoVisual study={study} />
+            </div>
+            <div className="mt-7 space-y-5">
+              <ProofBlock label="Context">{study.description}</ProofBlock>
+              <ProofBlock label="Before">{study.before}</ProofBlock>
+              <ProofBlock label="Automation">{study.automation}</ProofBlock>
+              <ProofBlock label="Impact">{study.after}</ProofBlock>
+            </div>
+            <a href={`/case-studies/${study.slug}`} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#25638f] hover:text-[#172235]">
+              View Case Study <span aria-hidden="true">-&gt;</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </section>
   );
 }
 
@@ -399,19 +404,14 @@ export function CaseStudiesPage() {
   return (
     <div className="bg-white text-slate-900">
       <Seo title="Case Studies | Neovex" description="Explore Neovex-built workflow automation examples running in real businesses." />
-      <section className="px-6 pt-24 md:pt-28 pb-16 bg-white">
+      <section className="px-6 pt-24 md:pt-28 pb-14 bg-white">
         <div className="max-w-7xl mx-auto max-w-4xl">
           <Eyebrow>CASE STUDIES</Eyebrow>
           <h1 className="mt-4 text-4xl md:text-6xl md:leading-[1.08] font-bold tracking-tight text-slate-900">Workflow Automation Running in Real Businesses.</h1>
           <p className="mt-6 text-lg md:text-xl leading-8 text-slate-700">See how Neovex-built workflows connect systems, remove repetitive work, and keep day-to-day processes moving with less manual intervention.</p>
         </div>
       </section>
-      <section className={`${COOL} px-6 py-16`}>
-        <div className="max-w-[1360px] mx-auto divide-y divide-slate-200">
-          {caseStudies.map((study, index) => <CaseStudyRow key={study.slug} study={study} index={index} />)}
-        </div>
-      </section>
-      <FinalLightCta eyebrow="HAVE A WORKFLOW LIKE THIS?" title="Have a Workflow Like This?" primary="Discuss a Workflow" secondary="Start With an Audit" />
+      {caseStudies.map((study, index) => <CaseStudyRow key={study.slug} study={study} index={index} />)}
       <Footer />
     </div>
   );
