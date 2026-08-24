@@ -83,7 +83,7 @@ function Eyebrow({ children, light = false }) {
 
 function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#details", journeyItems }) {
   return (
-    <section className="px-6 pt-24 md:pt-28 pb-14 bg-white border-b border-slate-100">
+    <section className="px-6 pt-24 md:pt-28 pb-14 bg-white">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)] gap-10 lg:gap-14 items-center">
         <div className="max-w-2xl">
           <Eyebrow>{eyebrow}</Eyebrow>
@@ -136,7 +136,7 @@ function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#
 
 function BuildJourneySection() {
   return (
-    <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+    <section className="px-6 py-16 bg-[#F6F3EE]">
       <div className="max-w-7xl mx-auto">
         <SectionIntro eyebrow="FROM DISCOVERY TO LAUNCH" title="From Manual Process to Managed Workflow." />
         <div className="relative mt-12">
@@ -144,7 +144,7 @@ function BuildJourneySection() {
           <ol className="relative grid gap-8 lg:grid-cols-4 lg:gap-6">
             {processSteps.map(([n, step, desc]) => (
               <li key={step} className="relative">
-                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#25638f]/40 bg-[#F5F6F7] text-xs font-semibold text-[#25638f]">
+                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#25638f]/40 bg-[#F6F3EE] text-xs font-semibold text-[#25638f]">
                   {n}
                 </div>
                 <h3 className="mt-5 text-xl font-semibold text-[#172235]">{step}</h3>
@@ -300,14 +300,14 @@ export function WorkflowAutomationPage() {
         journeyItems={heroJourney}
       />
 
-      <section id="what-we-automate" className="px-6 py-16 bg-white border-b border-slate-100">
+      <section id="what-we-automate" className="px-6 py-16 bg-[#F6F3EE]">
         <div className="max-w-7xl mx-auto">
           <SectionIntro eyebrow="WHAT WE AUTOMATE" title="Workflows That Still Depend on Someone Remembering the Next Step." />
           <TextGrid items={automationCategories} />
         </div>
       </section>
 
-      <section id="details" className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+      <section id="details" className="px-6 py-16 bg-[#F3F7FB]">
         <div className="max-w-7xl mx-auto">
           <SectionIntro eyebrow="HOW IT WORKS" title="We Connect the Tools Already Involved in the Process." />
           <FlowGraphic />
@@ -319,18 +319,18 @@ export function WorkflowAutomationPage() {
         title="What Changes When the Workflow Is Automated."
         subhead="A compact look at how familiar workflow steps change when handoffs, follow-up, and exceptions are connected by automation."
         rows={workflowComparisonRows}
-        sectionClassName="bg-white py-16 px-6 border-b border-slate-100 scroll-mt-28 md:scroll-mt-32"
+        sectionClassName="bg-white py-16 px-6 scroll-mt-28 md:scroll-mt-32"
         compact
       />
       <BuildJourneySection />
 
       <WorkflowProof
         copy="Explore how Neovex-built workflows have changed day-to-day operations, reduced manual work, and connected systems across real businesses."
-        sectionClassName="bg-white py-20 px-6 border-b border-slate-100 scroll-mt-28 md:scroll-mt-32"
+        sectionClassName="bg-[#F3F7FB] py-20 px-6 scroll-mt-28 md:scroll-mt-32"
         showHeaderCta
       />
 
-      <Footer />
+      <Footer className="bg-[#0F1B33]" />
     </div>
   );
 }

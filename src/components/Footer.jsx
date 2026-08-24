@@ -9,9 +9,10 @@ export default function Footer({
   siteUrl = "https://neovexai.com",
   linkedinUrl = "https://linkedin.com/company/neovex",
   xUrl = "",
+  className = "bg-[#172235]",
 }) {
   return (
-    <footer id="contact" className="relative overflow-hidden bg-[#172235] text-slate-400">
+    <footer id="contact" className={`relative overflow-hidden ${className} text-slate-400`}>
       <div className="max-w-7xl mx-auto px-6 pt-14">
         <div className="rounded-md bg-[#1B2638]/35 p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
