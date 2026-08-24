@@ -89,19 +89,25 @@ export default function AboutPage() {
       </section>
 
       <section className="px-6 py-14 md:py-16 bg-[#F5F6F7] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.42fr_0.58fr] gap-10 lg:gap-14">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.4fr_0.54fr] gap-10 lg:gap-16">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
               OUR MISSION
             </div>
-            <h2 className="mt-4 text-3xl md:text-[2.8rem] md:leading-[1.14] font-bold tracking-tight text-slate-900">
+            <h2 className="mt-4 text-3xl md:text-[2.5rem] md:leading-[1.16] font-bold tracking-tight text-slate-900">
               Make operational work move without constant manual effort.
             </h2>
           </div>
 
-          <p className="text-lg md:text-xl leading-8 text-slate-700">
-            We believe automation should remove unnecessary work without making the business harder to run. That means working with the systems already in place, keeping people involved where judgment matters, and building workflows that are understandable, maintainable, and useful after launch.
-          </p>
+          <div className="max-w-[680px] lg:pt-9">
+            <h3 className="max-w-[640px] text-2xl md:text-[1.55rem] md:leading-snug font-semibold tracking-tight text-[#172235]">
+              Automation should remove work - not create another system to manage.
+            </h3>
+
+            <p className="mt-5 text-base md:text-lg leading-8 text-slate-700">
+              We believe automation should remove unnecessary work without making the business harder to run. That means working with the systems already in place, keeping people involved where judgment matters, and building workflows that are understandable, maintainable, and useful after launch.
+            </p>
+          </div>
         </div>
       </section>
 
