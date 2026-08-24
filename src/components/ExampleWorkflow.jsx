@@ -66,12 +66,27 @@ function WorkflowCenter() {
 function Connector() {
   return (
     <div
-      className="flex items-center justify-start text-slate-400 lg:justify-center"
+      className="flex justify-start py-1 text-[#607184] lg:justify-center lg:py-0"
       aria-hidden="true"
     >
-      <span className="hidden h-px w-12 bg-slate-300 lg:block" />
-      <span className="hidden -ml-1 text-sm lg:block">-&gt;</span>
-      <span className="pl-2 text-sm lg:hidden">v</span>
+      <svg
+        className="hidden h-5 w-16 lg:block"
+        viewBox="0 0 64 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M4 10H56" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M51 5L56 10L51 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <svg
+        className="ml-3 h-10 w-5 lg:hidden"
+        viewBox="0 0 20 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M10 4V32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M5 27L10 32L15 27" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
     </div>
   );
 }
