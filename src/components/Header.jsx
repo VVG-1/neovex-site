@@ -1,17 +1,43 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, PhoneCall, X } from "lucide-react";
+import { ChevronDown, Menu, PhoneCall, X } from "lucide-react";
 
 const PHONE = "(312) 588-6278";
 const PHONE_TEL = "+13128982809";
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
+const solutionItems = [
+  {
+    href: "/#solutions",
+    label: "Workflow Automation",
+    desc: "General overview of Neovex workflow automation.",
+  },
+  {
+    href: "/#audit",
+    label: "Workflow Automation Audit",
+    desc: "Identify and prioritize the highest-value opportunities.",
+  },
+  {
+    href: "/#pricing",
+    label: "Workflow Build",
+    desc: "For a defined process that is ready to automate.",
+  },
+  {
+    href: "/#pricing",
+    label: "Automation Systems",
+    desc: "For larger operational processes and connected workflows.",
+  },
+  {
+    href: "/#pricing",
+    label: "Managed Automation",
+    desc: "Ongoing monitoring, maintenance, and improvements.",
+  },
+];
+
 const navItems = [
-  { href: "/#solutions", label: "Solutions" },
-  { href: "/#audit", label: "Workflow Audit" },
   { href: "/#how-it-works", label: "How It Works" },
-  { href: "/#results", label: "Results" },
+  { href: "/#results", label: "Case Studies" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
 ];
@@ -70,6 +96,23 @@ export default function Header() {
               </div>
 
               <div className="px-4 pt-2 pb-24 flex-1 overflow-y-auto">
+                <div className="px-4 py-3">
+                  <div className="text-[15px] font-semibold text-slate-900">Solutions</div>
+                  <div className="mt-2 border-l border-slate-200 pl-4">
+                    {solutionItems.map((item) => (
+                      <a
+                        key={`${item.label}-${item.href}`}
+                        href={item.href}
+                        className="block py-2"
+                        onClick={closeMobile}
+                      >
+                        <span className="block text-sm font-medium text-slate-900">{item.label}</span>
+                        <span className="mt-0.5 block text-xs leading-5 text-slate-500">{item.desc}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
                 {navItems.map((item) => (
                   <a
                     key={item.href}
@@ -155,7 +198,30 @@ export default function Header() {
           <span className="text-xl font-bold text-[#172235]">Neovex</span>
         </Link>
 
-        <nav className="flex items-center gap-6">
+        <nav className="flex items-center gap-5">
+          <div className="relative group">
+            <a
+              href="/#solutions"
+              className="inline-flex items-center gap-1 px-1 py-4 text-sm font-medium text-slate-700 hover:text-[#25638f] transition"
+            >
+              Solutions
+              <ChevronDown className="h-3.5 w-3.5 text-slate-500 transition group-hover:text-[#25638f]" aria-hidden="true" />
+            </a>
+
+            <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-2 rounded-lg border border-slate-200 bg-white p-2 opacity-0 shadow-sm transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              {solutionItems.map((item) => (
+                <a
+                  key={`${item.label}-${item.href}`}
+                  href={item.href}
+                  className="block rounded-md px-3 py-2.5 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                >
+                  <span className="block text-sm font-semibold text-[#172235]">{item.label}</span>
+                  <span className="mt-0.5 block text-xs leading-5 text-slate-500">{item.desc}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
           {navItems.map((item) => (
             <a
               key={item.href}
