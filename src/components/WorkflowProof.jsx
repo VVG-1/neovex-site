@@ -58,21 +58,33 @@ const caseStudies = [
   },
 ];
 
-export default function WorkflowProof() {
+export default function WorkflowProof({
+  copy = "Businesses are already using Neovex-built automations in day-to-day operations. Explore the case studies to see what was automated, how the workflow changed, and the impact after launch.",
+  sectionClassName = "bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32",
+  showHeaderCta = false,
+}) {
   return (
-    <section id="results" className="bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32">
+    <section id="results" className={sectionClassName}>
       <div className="max-w-[1360px] mx-auto">
-        <div className="max-w-[1320px]">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
-            REAL-WORLD AUTOMATION
+        <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-[1320px]">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
+              REAL-WORLD AUTOMATION
+            </div>
+
+            <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
+              See the Workflows Running in Real Businesses
+            </h2>
+            <p className="mt-6 max-w-[820px] text-lg md:text-xl leading-relaxed text-slate-700">
+              {copy}
+            </p>
           </div>
 
-          <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
-            See the Workflows Running in Real Businesses
-          </h2>
-          <p className="mt-6 max-w-[820px] text-lg md:text-xl leading-relaxed text-slate-700">
-            Businesses are already using Neovex-built automations in day-to-day operations. Explore the case studies to see what was automated, how the workflow changed, and the impact after launch.
-          </p>
+          {showHeaderCta ? (
+            <a href="/#results" className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">
+              View Case Studies
+            </a>
+          ) : null}
         </div>
 
         <div className="mt-14 divide-y divide-slate-200">

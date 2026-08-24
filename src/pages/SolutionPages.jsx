@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import BeforeAfter from "../components/BeforeAfter";
 import Footer from "../components/Footer";
+import WorkflowProof from "../components/WorkflowProof";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
@@ -15,10 +16,27 @@ const automationCategories = [
 ];
 
 const processSteps = [
-  ["01", "Discovery Call", "Walk through the process, tools, manual work, and desired outcome."],
-  ["02", "Workflow Design", "Map the current process, design the automated workflow, and define approvals or exceptions."],
-  ["03", "Build & Launch", "Connect systems, configure automation, test real scenarios, and launch once reliable."],
-  ["04", "Manage & Improve", "Monitor, maintain integrations, adjust rules, and improve as the process changes."],
+  ["01", "Discovery Call", "Walk through the process, systems involved, and where work is manual today."],
+  ["02", "Workflow Design", "Map the process and define triggers, routing, approvals, and exceptions."],
+  ["03", "Build & Launch", "Connect systems, configure automation, test scenarios, and launch."],
+  ["04", "Manage & Improve", "Monitor, maintain, troubleshoot, and adjust the workflow as the business changes."],
+];
+
+const heroJourney = [
+  ["01", "Review the process", "Understand how the workflow currently moves."],
+  ["02", "Connect the systems", "Link the tools and data already involved."],
+  ["03", "Automate the handoffs", "Configure triggers, routing, approvals, and next steps."],
+  ["04", "Manage after launch", "Monitor, maintain, and improve the workflow."],
+];
+
+const workflowComparisonRows = [
+  { stage: "Lead Intake", manual: "Someone reviews the inquiry and enters the details", auto: "Captured and structured automatically" },
+  { stage: "Follow-Up", manual: "Someone remembers to email, text, or call", auto: "Follow-up triggers automatically" },
+  { stage: "Scheduling", manual: "Dates and availability are coordinated manually", auto: "Booking steps and confirmations are triggered" },
+  { stage: "Customer Approval", manual: "Approval is chased through email or messages", auto: "Sent, tracked, and used to trigger the next step" },
+  { stage: "Payment / Deposit", manual: "Someone sends the request and checks status", auto: "Payment requests trigger and status updates automatically" },
+  { stage: "Internal Handoff", manual: "Information is passed from person to person", auto: "The right person receives the context automatically" },
+  { stage: "Exceptions", manual: "Problems are noticed when someone catches them", auto: "Exceptions are flagged for human attention" },
 ];
 
 const auditSteps = [
@@ -63,7 +81,7 @@ function Eyebrow({ children, light = false }) {
   );
 }
 
-function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#details" }) {
+function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#details", journeyItems }) {
   return (
     <section className="px-6 pt-24 md:pt-28 pb-14 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[minmax(0,0.56fr)_minmax(0,0.44fr)] gap-10 lg:gap-14 items-center">
@@ -83,12 +101,57 @@ function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#
           </div>
         </div>
 
-        <div className="border-y border-slate-200 py-4">
-          {["Review the process", "Connect the systems", "Automate the handoffs", "Manage after launch"].map((item) => (
-            <div key={item} className="border-b border-slate-200 py-4 last:border-b-0">
-              <div className="text-lg font-semibold text-[#172235]">{item}</div>
-            </div>
-          ))}
+        {journeyItems ? (
+          <div className="border-y border-slate-200 py-5">
+            {journeyItems.map(([n, item, desc], index, items) => (
+              <div key={item} className="relative grid grid-cols-[34px_minmax(0,1fr)] gap-4 border-b border-slate-200 py-3.5 last:border-b-0">
+                <div className="relative">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#25638f]/35 text-[10px] font-semibold text-[#25638f]">
+                    {n}
+                  </div>
+                  {index < items.length - 1 ? (
+                    <div className="absolute left-[13px] top-8 h-[calc(100%-0.5rem)] w-px bg-slate-200" aria-hidden="true" />
+                  ) : null}
+                </div>
+                <div>
+                  <div className="text-lg font-semibold text-[#172235]">{item}</div>
+                  <p className="mt-1 text-sm leading-6 text-slate-600">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="border-y border-slate-200 py-4">
+            {["Review the process", "Connect the systems", "Automate the handoffs", "Manage after launch"].map((item) => (
+              <div key={item} className="border-b border-slate-200 py-4 last:border-b-0">
+                <div className="text-lg font-semibold text-[#172235]">{item}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function BuildJourneySection() {
+  return (
+    <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+      <div className="max-w-7xl mx-auto">
+        <SectionIntro eyebrow="FROM DISCOVERY TO LAUNCH" title="From Manual Process to Managed Workflow." />
+        <div className="relative mt-12">
+          <div className="absolute left-0 right-0 top-[18px] hidden h-px bg-slate-300 lg:block" aria-hidden="true" />
+          <ol className="relative grid gap-8 lg:grid-cols-4 lg:gap-6">
+            {processSteps.map(([n, step, desc]) => (
+              <li key={step} className="relative">
+                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#25638f]/40 bg-[#F5F6F7] text-xs font-semibold text-[#25638f]">
+                  {n}
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-[#172235]">{step}</h3>
+                <p className="mt-2 max-w-sm text-sm leading-6 text-slate-700">{desc}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
@@ -234,6 +297,7 @@ export function WorkflowAutomationPage() {
         primary="Discuss a Workflow"
         secondary="See What We Automate"
         secondaryHref="#what-we-automate"
+        journeyItems={heroJourney}
       />
 
       <section id="what-we-automate" className="px-6 py-16 bg-white border-b border-slate-100">
@@ -250,17 +314,22 @@ export function WorkflowAutomationPage() {
         </div>
       </section>
 
-      <BeforeAfter />
-      <StepBand eyebrow="FROM DISCOVERY TO LAUNCH" title="From Manual Process to Managed Workflow." steps={processSteps} />
+      <BeforeAfter
+        eyebrow="Before / After"
+        title="What Changes When the Workflow Is Automated."
+        subhead="A compact look at how familiar workflow steps change when handoffs, follow-up, and exceptions are connected by automation."
+        rows={workflowComparisonRows}
+        sectionClassName="bg-white py-16 px-6 border-b border-slate-100 scroll-mt-28 md:scroll-mt-32"
+        compact
+      />
+      <BuildJourneySection />
 
-      <section className="px-6 py-14 bg-[#F5F6F7] border-b border-slate-200">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <SectionIntro eyebrow="REAL-WORLD AUTOMATION" title="See the Workflows Running in Real Businesses." copy="Review deployed workflow examples and case-study placeholders without invented metrics or proof." />
-          <a href="/#results" className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">View Case Studies</a>
-        </div>
-      </section>
+      <WorkflowProof
+        copy="Explore how Neovex-built workflows have changed day-to-day operations, reduced manual work, and connected systems across real businesses."
+        sectionClassName="bg-white py-20 px-6 border-b border-slate-100 scroll-mt-28 md:scroll-mt-32"
+        showHeaderCta
+      />
 
-      <FinalCta title="Start With the Workflow That Is Taking Too Much Time." primary="Discuss a Workflow" secondary="Start With an Audit" secondaryHref="/workflow-automation-audit" />
       <Footer />
     </div>
   );

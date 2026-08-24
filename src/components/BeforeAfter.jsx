@@ -1,6 +1,6 @@
 import React from "react";
 
-const rows = [
+const defaultRows = [
   { stage: "Lead Intake", manual: "Someone reviews the inquiry and enters the details", auto: "Captured and structured automatically" },
   { stage: "Lead Qualification", manual: "Someone checks the details and decides where it goes", auto: "Qualified and routed by workflow rules" },
   { stage: "Follow-Up", manual: "Someone has to remember to email, text, or call", auto: "Follow-up triggers automatically" },
@@ -20,11 +20,14 @@ export default function BeforeAfter({
   subhead = "A side-by-side look at how work moves when systems, handoffs, follow-up, and exceptions are connected by a managed workflow.",
   leftLabel = "Manual Today",
   rightLabel = "With Neovex",
+  rows = defaultRows,
+  sectionClassName = "bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32",
+  compact = false,
 }) {
   return (
     <section
       id={id}
-      className="bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32"
+      className={sectionClassName}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
@@ -41,9 +44,9 @@ export default function BeforeAfter({
           </p>
         </div>
 
-        <div className="md:hidden mt-10 border-y border-slate-200">
+        <div className={`${compact ? "mt-8" : "mt-10"} md:hidden border-y border-slate-200`}>
           {rows.map((row) => (
-            <div key={row.stage} className="border-b border-slate-200 py-5 last:border-b-0">
+            <div key={row.stage} className={`border-b border-slate-200 ${compact ? "py-4" : "py-5"} last:border-b-0`}>
               <div className="text-lg font-semibold text-[#172235]">{row.stage}</div>
 
               <div className="mt-4 grid gap-4">
@@ -65,7 +68,7 @@ export default function BeforeAfter({
           ))}
         </div>
 
-        <div className="hidden md:block mt-10 overflow-x-auto">
+        <div className={`${compact ? "mt-8" : "mt-10"} hidden md:block overflow-x-auto`}>
           <div className="w-full rounded-lg p-[1px] bg-stone-200">
             <div className="w-full rounded-lg bg-white border border-stone-200 overflow-hidden min-w-[820px] md:min-w-0">
               <div className="h-px w-full bg-[#25638f]/45" />
@@ -98,13 +101,13 @@ export default function BeforeAfter({
                 <tbody className="divide-y divide-slate-100">
                   {rows.map((row) => (
                     <tr key={row.stage} className="hover:bg-stone-50/70 transition-colors">
-                      <th scope="row" className="p-4 md:p-5 text-[#172235] font-semibold">
+                      <th scope="row" className={`${compact ? "p-3.5 md:p-4" : "p-4 md:p-5"} text-[#172235] font-semibold`}>
                         {row.stage}
                       </th>
-                      <td className="p-4 md:p-5 text-slate-600">
+                      <td className={`${compact ? "p-3.5 md:p-4" : "p-4 md:p-5"} text-slate-600`}>
                         {row.manual}
                       </td>
-                      <td className="p-4 md:p-5 text-[#25638f] font-semibold">
+                      <td className={`${compact ? "p-3.5 md:p-4" : "p-4 md:p-5"} text-[#25638f] font-semibold`}>
                         {row.auto}
                       </td>
                     </tr>
