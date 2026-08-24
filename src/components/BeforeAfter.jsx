@@ -1,16 +1,16 @@
 import React from "react";
-import { CheckCircle2, XCircle } from "lucide-react";
 
 const rows = [
-  { stage: "Information capture", manual: "Someone enters it", auto: "Captured automatically" },
-  { stage: "Data transfer", manual: "Copy/paste between tools", auto: "Systems sync automatically" },
-  { stage: "Follow-up", manual: "Someone remembers", auto: "Triggered automatically" },
-  { stage: "Assignment", manual: "Manually routed", auto: "Routed based on workflow rules" },
-  { stage: "Approvals", manual: "Chased through email", auto: "Sent and tracked automatically" },
-  { stage: "Status updates", manual: "Checked manually", auto: "Updated as work progresses" },
-  { stage: "Reporting", manual: "Compiled manually", auto: "Generated from workflow data" },
-  { stage: "Exceptions", manual: "Discovered late", auto: "Flagged for human attention" },
-  { stage: "Maintenance", manual: "Internal troubleshooting", auto: "Managed by Neovex" },
+  { stage: "Lead Intake", manual: "Someone reviews the inquiry and enters the details", auto: "Captured and structured automatically" },
+  { stage: "Lead Qualification", manual: "Someone checks the details and decides where it goes", auto: "Qualified and routed by workflow rules" },
+  { stage: "Follow-Up", manual: "Someone has to remember to email, text, or call", auto: "Follow-up triggers automatically" },
+  { stage: "Scheduling", manual: "Dates and availability are coordinated manually", auto: "Booking steps and confirmations are triggered automatically" },
+  { stage: "Customer Approval", manual: "Approval is chased through email or messages", auto: "Approval is sent, tracked, and triggers the next step" },
+  { stage: "Payment / Deposit", manual: "Someone sends the request and checks whether it was paid", auto: "Payment requests trigger automatically and status stays updated" },
+  { stage: "Internal Handoff", manual: "Information is passed from person to person", auto: "The right person receives the context automatically" },
+  { stage: "Status Updates", manual: "Someone checks multiple systems to see what happened", auto: "Status updates as the workflow progresses" },
+  { stage: "Exceptions", manual: "Problems are noticed when someone catches them", auto: "Exceptions are flagged for human attention" },
+  { stage: "Maintenance", manual: "Your team troubleshoots workflow issues internally", auto: "The workflow can be monitored and maintained by Neovex" },
 ];
 
 export default function BeforeAfter({
@@ -18,10 +18,8 @@ export default function BeforeAfter({
   eyebrow = "Manual vs. Automated",
   title = "Manual Workflow vs. Neovex-Automated Workflow",
   subhead = "A side-by-side look at how work moves when systems, handoffs, follow-up, and exceptions are connected by a managed workflow.",
-  ctaHref = "https://meetings.hubspot.com/neovex",
-  ctaText = "Discuss a Workflow",
-  leftLabel = "Manual Workflow",
-  rightLabel = "Neovex Automated",
+  leftLabel = "Manual Today",
+  rightLabel = "With Neovex",
 }) {
   return (
     <section
@@ -43,30 +41,24 @@ export default function BeforeAfter({
           </p>
         </div>
 
-        <div className="md:hidden mt-10 space-y-5">
+        <div className="md:hidden mt-10 border-y border-slate-200">
           {rows.map((row) => (
-            <div key={row.stage} className="rounded-lg bg-white border border-stone-200 p-5">
-              <div className="text-base font-semibold text-slate-900">{row.stage}</div>
+            <div key={row.stage} className="border-b border-slate-200 py-5 last:border-b-0">
+              <div className="text-lg font-semibold text-[#172235]">{row.stage}</div>
 
-              <div className="mt-4 space-y-4">
-                <div className="rounded-lg bg-stone-50 ring-1 ring-stone-200 p-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-600 mb-2">
+              <div className="mt-4 grid gap-4">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500 mb-1.5">
                     {leftLabel}
                   </div>
-                  <div className="flex items-start gap-2 text-sm text-slate-700">
-                    <XCircle className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" aria-hidden="true" />
-                    <span className="leading-5">{row.manual}</span>
-                  </div>
+                  <div className="text-sm leading-6 text-slate-700">{row.manual}</div>
                 </div>
 
-                <div className="rounded-lg bg-white ring-1 ring-stone-200 p-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-wide text-[#25638f] mb-2">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-wide text-[#25638f] mb-1.5">
                     {rightLabel}
                   </div>
-                  <div className="flex items-start gap-2 text-sm font-medium text-[#25638f]">
-                    <CheckCircle2 className="w-4 h-4 text-[#25638f] mt-0.5 shrink-0" aria-hidden="true" />
-                    <span className="leading-5">{row.auto}</span>
-                  </div>
+                  <div className="text-sm leading-6 font-medium text-[#25638f]">{row.auto}</div>
                 </div>
               </div>
             </div>
@@ -87,8 +79,8 @@ export default function BeforeAfter({
 
                 <thead className="sticky top-0 z-10 bg-slate-50/90 backdrop-blur supports-[backdrop-filter]:bg-slate-50/70">
                   <tr>
-                    <th scope="col" className="p-4 md:p-5 font-semibold text-slate-600">
-                      Workflow stage
+                    <th scope="col" className="p-4 md:p-5 font-semibold text-slate-700">
+                      Workflow Step
                     </th>
                     <th scope="col" className="p-4 md:p-5">
                       <span className="text-xs font-semibold text-slate-700">
@@ -106,20 +98,14 @@ export default function BeforeAfter({
                 <tbody className="divide-y divide-slate-100">
                   {rows.map((row) => (
                     <tr key={row.stage} className="hover:bg-stone-50/70 transition-colors">
-                      <th scope="row" className="p-4 md:p-5 text-slate-900 font-medium">
+                      <th scope="row" className="p-4 md:p-5 text-[#172235] font-semibold">
                         {row.stage}
                       </th>
                       <td className="p-4 md:p-5 text-slate-600">
-                        <span className="inline-flex items-center gap-2">
-                          <XCircle className="w-4 h-4 text-slate-400" aria-hidden="true" />
-                          {row.manual}
-                        </span>
+                        {row.manual}
                       </td>
                       <td className="p-4 md:p-5 text-[#25638f] font-semibold">
-                        <span className="inline-flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 text-[#25638f]" aria-hidden="true" />
-                          {row.auto}
-                        </span>
+                        {row.auto}
                       </td>
                     </tr>
                   ))}
@@ -129,14 +115,6 @@ export default function BeforeAfter({
           </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <a
-            href={ctaHref}
-            className="inline-flex items-center gap-2 bg-[#172235] text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-[#1B2638] transition"
-          >
-            {ctaText}
-          </a>
-        </div>
       </div>
     </section>
   );
