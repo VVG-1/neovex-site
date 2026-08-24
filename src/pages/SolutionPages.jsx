@@ -95,7 +95,7 @@ function PageHero({ eyebrow, title, copy, primary, secondary, secondaryHref = "#
             <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-6 py-3 text-base font-semibold text-white hover:bg-[#1B2638]">
               {primary} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
-            <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 hover:bg-stone-50">
+            <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 hover:bg-slate-50">
               {secondary}
             </a>
           </div>
@@ -153,6 +153,95 @@ function BuildJourneySection() {
             ))}
           </ol>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function AuditJourneySection() {
+  return (
+    <section className="px-6 py-16 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <SectionIntro eyebrow="AUDIT JOURNEY" title="Review, Discuss, Analyze, Prioritize." />
+        <div className="relative mt-12">
+          <div className="absolute left-0 right-0 top-[18px] hidden h-px bg-slate-300 lg:block" aria-hidden="true" />
+          <ol className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+            {auditSteps.map(([n, step, desc]) => (
+              <li key={step} className="relative">
+                <div className="relative z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#25638f]/40 bg-white text-xs font-semibold text-[#25638f]">
+                  {n}
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-[#172235]">{step}</h3>
+                <p className="mt-2 max-w-sm text-sm leading-6 text-slate-700">{desc}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AuditDeliverablesSection() {
+  const deliverables = [
+    ["Automation Opportunity Heat Map", "Prioritizes opportunities based on business value and automation feasibility."],
+    ["Prioritized Workflow Roadmap", "Shows what should be automated first and what can wait."],
+    ["Recommended Next Steps", "Defines whether the opportunity should move into a Workflow Build, larger Automation System, or remain manual."],
+  ];
+
+  return (
+    <section className="px-6 py-16 md:py-20 bg-[#F3F5F7]">
+      <div className="max-w-7xl mx-auto">
+        <SectionIntro eyebrow="WHAT YOU RECEIVE" title="A Clear Automation Roadmap." />
+        <div className="mt-11 grid gap-0 border-y border-slate-200 bg-white/55 md:grid-cols-3">
+          {deliverables.map(([title, desc], index) => (
+            <article key={title} className={`${index > 0 ? "border-t border-slate-200 md:border-l md:border-t-0" : ""} py-7 md:px-7 lg:py-9`}>
+              <h3 className="text-2xl font-semibold tracking-tight text-[#172235]">{title}</h3>
+              <p className="mt-4 text-base leading-7 text-slate-700">{desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AuditPricingBlock() {
+  const items = ["Workflow review", "Stakeholder working session", "Automation opportunity heat map", "Prioritized roadmap", "Recommended next steps"];
+
+  return (
+    <section className="px-6 py-16 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <article className="rounded-lg border border-slate-200 bg-white p-7 md:p-9 lg:grid lg:grid-cols-[0.42fr_0.58fr] lg:gap-12">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900">Workflow Automation Audit</h2>
+            <div className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-[#172235]">$1,500</div>
+            <p className="mt-4 max-w-md text-base leading-7 text-slate-700">
+              A focused assessment to identify and prioritize the strongest automation opportunities.
+            </p>
+            <a href={MEETINGS_URL} className="mt-7 hidden items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638] lg:inline-flex">
+              Start With an Audit
+            </a>
+          </div>
+
+          <div className="mt-9 lg:mt-0">
+            <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">What&apos;s included</div>
+            <ul className="mt-5 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+              {items.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#25638f]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-7 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
+              Already know exactly what needs to be automated? You can skip the audit and start with a Workflow Build.
+            </p>
+            <a href={MEETINGS_URL} className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638] sm:w-auto lg:hidden">
+              Start With an Audit
+            </a>
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -272,14 +361,14 @@ function PricingPanel({ title, price, items, cta, note }) {
   );
 }
 
-function FinalCta({ title, primary, secondary, secondaryHref }) {
+function FinalCta({ title, primary, secondary, secondaryHref, sectionClassName = "px-6 py-16 bg-white border-b border-slate-100" }) {
   return (
-    <section className="px-6 py-16 bg-white border-b border-slate-100">
+    <section className={sectionClassName}>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <h2 className="max-w-3xl text-3xl md:text-[2.7rem] md:leading-[1.12] font-bold tracking-tight text-slate-900">{title}</h2>
         <div className="flex flex-col sm:flex-row gap-3">
           <a href={MEETINGS_URL} className="inline-flex items-center justify-center rounded-lg bg-[#172235] px-5 py-3 text-sm font-semibold text-white hover:bg-[#1B2638]">{primary}</a>
-          <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-stone-50">{secondary}</a>
+          <a href={secondaryHref} className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50">{secondary}</a>
         </div>
       </div>
     </section>
@@ -346,9 +435,10 @@ export function WorkflowAutomationAuditPage() {
         primary="Start With an Audit"
         secondary="Discuss Your Process"
         secondaryHref={MEETINGS_URL}
+        journeyItems={heroJourney}
       />
 
-      <section className="px-6 py-16 bg-[#F5F6F7] border-b border-slate-200">
+      <section className="px-6 py-16 bg-[#F3F5F7]">
         <div className="max-w-7xl mx-auto">
           <SectionIntro eyebrow="WHEN AN AUDIT MAKES SENSE" title="You Know There Is Too Much Manual Work. You Just Do Not Know Where to Start." />
           <TextGrid items={[
@@ -362,28 +452,17 @@ export function WorkflowAutomationAuditPage() {
         </div>
       </section>
 
-      <StepBand eyebrow="AUDIT JOURNEY" title="Review, Discuss, Analyze, Prioritize." steps={auditSteps} />
+      <AuditJourneySection />
+      <AuditDeliverablesSection />
+      <AuditPricingBlock />
 
-      <section className="px-6 py-16 bg-white border-b border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <SectionIntro eyebrow="WHAT YOU RECEIVE" title="A Clear Automation Roadmap." />
-          <TextGrid items={[
-            ["Automation Opportunity Heat Map", "Prioritizes opportunities based on business value and automation feasibility."],
-            ["Prioritized Workflow Roadmap", "Shows what should be automated first and what can wait."],
-            ["Recommended Next Steps", "Defines whether the opportunity should move into a Workflow Build, larger Automation System, or remain manual."],
-          ]} />
-        </div>
-      </section>
-
-      <PricingPanel
-        title="Workflow Automation Audit"
-        price="$1,500"
-        items={["Workflow review", "Stakeholder working session", "Automation opportunity heat map", "Prioritized roadmap", "Recommended next steps"]}
-        cta="Start With an Audit"
-        note="Already know exactly what needs to be automated? You can skip the audit and start with a Workflow Build."
+      <FinalCta
+        title="Not Sure What to Automate First?"
+        primary="Start With an Audit"
+        secondary="Discuss a Workflow"
+        secondaryHref="/workflow-automation"
+        sectionClassName="px-6 py-14 bg-[#F3F5F7]"
       />
-
-      <FinalCta title="Not Sure What to Automate First?" primary="Start With an Audit" secondary="Discuss a Workflow" secondaryHref="/workflow-automation" />
       <Footer />
     </div>
   );
