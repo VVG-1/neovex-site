@@ -11,27 +11,14 @@ const solutionItems = [
   {
     href: "/#solutions",
     label: "Workflow Automation",
-    desc: "General overview of Neovex workflow automation.",
   },
   {
     href: "/#audit",
     label: "Workflow Automation Audit",
-    desc: "Identify and prioritize the highest-value opportunities.",
-  },
-  {
-    href: "/#pricing",
-    label: "Workflow Build",
-    desc: "For a defined process that is ready to automate.",
-  },
-  {
-    href: "/#pricing",
-    label: "Automation Systems",
-    desc: "For larger operational processes and connected workflows.",
   },
   {
     href: "/#pricing",
     label: "Managed Automation",
-    desc: "Ongoing monitoring, maintenance, and improvements.",
   },
 ];
 
@@ -103,11 +90,10 @@ export default function Header() {
                       <a
                         key={`${item.label}-${item.href}`}
                         href={item.href}
-                        className="block py-2"
+                        className="block py-2 text-sm font-medium text-slate-900 hover:text-[#25638f]"
                         onClick={closeMobile}
                       >
-                        <span className="block text-sm font-medium text-slate-900">{item.label}</span>
-                        <span className="mt-0.5 block text-xs leading-5 text-slate-500">{item.desc}</span>
+                        {item.label}
                       </a>
                     ))}
                   </div>
@@ -208,15 +194,14 @@ export default function Header() {
               <ChevronDown className="h-3.5 w-3.5 text-slate-500 transition group-hover:text-[#25638f]" aria-hidden="true" />
             </a>
 
-            <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-2 rounded-lg border border-slate-200 bg-white p-2 opacity-0 shadow-sm transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+            <div className="invisible absolute left-0 top-full z-50 w-[280px] translate-y-2 rounded-lg border border-slate-200 bg-white p-1.5 opacity-0 shadow-sm transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
               {solutionItems.map((item) => (
                 <a
                   key={`${item.label}-${item.href}`}
                   href={item.href}
-                  className="block rounded-md px-3 py-2.5 hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                  className="block rounded-md px-3 py-2 text-sm font-semibold text-[#172235] hover:bg-slate-50 hover:text-[#25638f] focus:bg-slate-50 focus:text-[#25638f] focus:outline-none"
                 >
-                  <span className="block text-sm font-semibold text-[#172235]">{item.label}</span>
-                  <span className="mt-0.5 block text-xs leading-5 text-slate-500">{item.desc}</span>
+                  {item.label}
                 </a>
               ))}
             </div>
