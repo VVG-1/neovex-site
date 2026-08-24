@@ -3,23 +3,23 @@ import React from "react";
 const steps = [
   {
     n: "01",
-    title: "Understand",
-    desc: "We review the process, people, tools, decisions, and handoffs involved.",
+    title: "Discovery Call",
+    desc: "Walk us through the process you want to improve, the tools involved, where work is manual today, and what you want to change.",
   },
   {
     n: "02",
-    title: "Build",
-    desc: "We design the workflow, connect the systems, and automate the steps that do not need to be performed manually.",
+    title: "Workflow Design",
+    desc: "We map the current process, design the automated workflow, define system connections, and identify where human approvals or exceptions should remain.",
   },
   {
     n: "03",
-    title: "Launch",
-    desc: "We test the workflow in real operating conditions and move it into production.",
+    title: "Build & Launch",
+    desc: "We connect the systems, configure the automation, test real scenarios and handoffs, and launch once the workflow is working reliably.",
   },
   {
     n: "04",
-    title: "Manage",
-    desc: "We monitor the automation, maintain integrations, and improve the workflow as the business changes.",
+    title: "Manage & Improve",
+    desc: "We monitor the workflow, maintain integrations, adjust rules, and improve the automation as your process or systems change.",
   },
 ];
 
@@ -31,15 +31,15 @@ export default function HowItWorks() {
     >
       <div className="max-w-7xl mx-auto text-center">
         <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
-          Understand - Build - Launch - Manage
+          Discover - Design - Build - Manage
         </div>
 
         <h2 className="mt-4 text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900 tracking-tight">
-          From Manual Process to Managed Workflow
+          From First Conversation to Managed Workflow
         </h2>
 
         <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-          Neovex turns a manual business process into a workflow that connects systems, routes work, triggers next steps, and stays maintained after launch.
+          Neovex takes you from identifying the workflow to launching the automation - then stays involved to keep it running as your business changes.
         </p>
 
         <ol className="relative mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 text-left border-y border-stone-200">
