@@ -1,42 +1,26 @@
 import React from "react";
-import { ClipboardCheck, Eye, HandCoins, MessageCircle, MoveRight, UserCheck } from "lucide-react";
 
 const outcomes = [
   {
-    chip: "Data movement",
-    title: "Less Manual Entry",
-    desc: "Information moves between systems automatically.",
-    icon: <ClipboardCheck className="w-5 h-5" />,
+    number: "01",
+    title: "Work Moves Faster",
+    desc: "Information moves between systems automatically, and the next action happens when it should - without waiting for someone to copy data or remember the follow-up.",
+    labels: ["Data movement", "Next steps"],
+    metrics: [],
   },
   {
-    chip: "Next steps",
-    title: "Faster Follow-Up",
-    desc: "Messages and next steps trigger when they should.",
-    icon: <MessageCircle className="w-5 h-5" />,
+    number: "02",
+    title: "Operations Become More Reliable",
+    desc: "The right information reaches the right person at the right time, and recurring work no longer depends on someone remembering every step.",
+    labels: ["Handoffs", "Reliability"],
+    metrics: [],
   },
   {
-    chip: "Routing",
-    title: "Cleaner Handoffs",
-    desc: "The right person receives the right information at the right time.",
-    icon: <MoveRight className="w-5 h-5" />,
-  },
-  {
-    chip: "Reliability",
-    title: "Fewer Dropped Tasks",
-    desc: "Work does not disappear because someone forgot a step.",
-    icon: <UserCheck className="w-5 h-5" />,
-  },
-  {
-    chip: "Visibility",
-    title: "Better Visibility",
-    desc: "See where the workflow is and what has already happened.",
-    icon: <Eye className="w-5 h-5" />,
-  },
-  {
-    chip: "Team capacity",
-    title: "More Capacity",
-    desc: "Teams spend less time moving information around and more time on higher-value work.",
-    icon: <HandCoins className="w-5 h-5" />,
+    number: "03",
+    title: "Teams Gain Capacity and Visibility",
+    desc: "Teams can see where work stands, what has already happened, and spend less time moving information around manually.",
+    labels: ["Visibility", "Capacity"],
+    metrics: [],
   },
 ];
 
@@ -44,60 +28,65 @@ export default function Outcomes() {
   return (
     <section
       id="outcomes"
-      className="relative overflow-hidden py-20 px-6 bg-white scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-16 px-6 bg-white scroll-mt-28 md:scroll-mt-32"
     >
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-4">
-          Outcomes
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-3xl">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f] mb-4">
+            OUTCOMES
+          </div>
+
+          <h2 className="text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900">
+            The Operational Impact
+          </h2>
+
+          <p className="mt-6 text-lg md:text-xl text-slate-700">
+            Less manual work. Faster movement. Cleaner handoffs. More capacity for the work that still needs people.
+          </p>
         </div>
 
-        <h2 className="text-3xl md:text-[2.85rem] md:leading-[1.12] font-bold text-slate-900">
-          What Changes When the Workflow Runs Itself
-        </h2>
-
-        <p className="mt-6 text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-12">
-          Automated workflows reduce the repetitive movement of information, keep next steps visible, and make handoffs more consistent.
-        </p>
-
-        <ul role="list" className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="mt-12 border-y border-slate-200">
           {outcomes.map((outcome) => (
-            <OutcomeCard key={outcome.title} {...outcome} />
+            <OutcomeBand key={outcome.title} {...outcome} />
           ))}
-        </ul>
-
-        <div className="mt-10">
-          <a
-            href="https://meetings.hubspot.com/neovex"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#25638f] hover:text-[#1f567f] transition"
-          >
-            Discuss a Workflow
-          </a>
         </div>
       </div>
     </section>
   );
 }
 
-function OutcomeCard({ chip, title, desc, icon }) {
+function OutcomeBand({ number, title, desc, labels, metrics }) {
+  const hasMetrics = metrics.length > 0;
+
   return (
-    <li className="h-full">
-      <div className="rounded-lg p-6 text-center h-full border border-stone-200 bg-stone-50/45">
-        <div className="mx-auto mb-3 text-xs font-medium text-slate-600">
-          {chip}
-        </div>
+    <article className="grid gap-4 border-b border-slate-200 py-7 last:border-b-0 md:grid-cols-[72px_minmax(0,0.95fr)_minmax(260px,0.75fr)] md:gap-8 md:py-8 lg:grid-cols-[88px_minmax(0,0.9fr)_minmax(300px,0.7fr)]">
+      <div className="text-sm font-semibold tracking-[0.16em] text-[#25638f]">{number}</div>
 
-        <div className="mx-auto w-10 h-10 rounded-md bg-white text-slate-700 flex items-center justify-center mb-3 ring-1 ring-stone-200">
-          {icon}
-        </div>
-
-        <h3 className="text-lg font-semibold text-slate-900 mb-1 leading-snug min-h-[3rem]">
-          {title}
-        </h3>
-
-        <p className="text-sm text-slate-700 leading-6 min-h-[4.5rem]">
-          {desc}
-        </p>
+      <div>
+        <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">{title}</h3>
+        <p className="mt-3 max-w-3xl text-sm md:text-base leading-7 text-slate-700">{desc}</p>
       </div>
-    </li>
+
+      <div className="flex flex-col justify-between gap-5 md:items-end md:text-right">
+        <div className="flex flex-wrap gap-x-4 gap-y-2 md:justify-end">
+          {labels.map((label) => (
+            <span key={label} className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+              {label}
+            </span>
+          ))}
+        </div>
+
+        {hasMetrics && (
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-1">
+            {metrics.map((metric) => (
+              <div key={metric.label}>
+                <div className="text-2xl font-semibold text-[#172235]">{metric.value}</div>
+                <div className="mt-1 text-xs leading-5 text-slate-600">{metric.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
   );
 }
