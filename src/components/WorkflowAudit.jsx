@@ -1,36 +1,32 @@
 import React from "react";
-import { ArrowRight, BarChart3, FileSearch, Map, UsersRound } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const MEETINGS_URL = "https://meetings.hubspot.com/neovex";
 
 const auditSteps = [
   {
     n: "01",
-    Icon: FileSearch,
     title: "Workflow Review",
     desc: "Review the process, systems, recurring tasks, and handoffs.",
     offset: "lg:ml-0",
   },
   {
     n: "02",
-    Icon: UsersRound,
     title: "Stakeholder Working Session",
     desc: "Understand where time is spent, what gets delayed, and where exceptions occur.",
-    offset: "lg:ml-20",
+    offset: "lg:ml-14",
   },
   {
     n: "03",
-    Icon: BarChart3,
     title: "Opportunity Analysis",
     desc: "Evaluate workflows based on business value, manual effort, and automation feasibility.",
-    offset: "lg:ml-8",
+    offset: "lg:ml-6",
   },
   {
     n: "04",
-    Icon: Map,
     title: "Prioritized Roadmap",
     desc: "Identify the highest-value opportunities and what to automate first.",
-    offset: "lg:ml-24",
+    offset: "lg:ml-16",
   },
 ];
 
@@ -87,10 +83,32 @@ function AuditRoadmap() {
         Audit Journey
       </div>
 
-      <ol className="mt-5 max-w-2xl space-y-2">
-        {auditSteps.map(({ n, Icon, title, desc, offset }) => (
+      <ol className="relative mt-5 max-w-2xl space-y-0">
+        <svg
+          className="pointer-events-none absolute left-4 top-8 hidden h-[17.25rem] w-28 text-[#4f6178] lg:block"
+          viewBox="0 0 112 276"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 0 V46 L56 84 V126 L8 166 V208 L72 252"
+            stroke="currentColor"
+            strokeWidth="1.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M62 250 L72 252 L66 260"
+            stroke="currentColor"
+            strokeWidth="1.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+
+        {auditSteps.map(({ n, title, desc, offset }) => (
           <li key={title} className="relative">
-            <div className={`relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-4 ${offset}`}>
+            <div className={`relative grid grid-cols-[2.5rem_minmax(0,1fr)] gap-3 py-3.5 ${offset}`}>
               <div className="relative pt-0.5">
                 <span className="relative z-10 grid h-8 w-8 place-items-center rounded-full border border-blue-300/35 bg-[#172235] text-[0.72rem] font-semibold tracking-[0.12em] text-blue-200">
                   {n}
@@ -98,19 +116,21 @@ function AuditRoadmap() {
               </div>
 
               <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-slate-300" strokeWidth={1.8} aria-hidden="true" />
-                  <h3 className="text-sm font-semibold leading-5 text-white">
-                    {title}
-                  </h3>
-                </div>
+                <h3 className="text-sm font-semibold leading-5 text-white">
+                  {title}
+                </h3>
                 <p className="mt-1.5 text-xs leading-5 text-slate-300">
                   {desc}
                 </p>
                 {n === "04" ? (
-                  <p className="mt-3 text-[11px] font-semibold leading-5 text-blue-200">
-                    Output: Opportunity Heat Map + Prioritized Automation Roadmap
-                  </p>
+                  <div className="mt-3">
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-blue-300/80">
+                      Deliverable
+                    </div>
+                    <p className="mt-1 text-[11px] font-medium leading-5 text-slate-200">
+                      Opportunity Heat Map + Prioritized Automation Roadmap
+                    </p>
+                  </div>
                 ) : null}
               </div>
             </div>
