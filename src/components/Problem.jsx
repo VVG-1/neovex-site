@@ -5,7 +5,7 @@ const items = [
   {
     n: "01",
     title: "Repetitive Data Entry",
-    desc: "Information gets copied between systems that should already be connected.",
+    desc: "Staff re-enter the same information across tools, wasting time and increasing the chance of errors.",
     status: "Manual",
     Icon: FileText,
   },
@@ -19,14 +19,14 @@ const items = [
   {
     n: "03",
     title: "Broken Handoffs",
-    desc: "Work slows down when information has to be manually passed from one person to another.",
+    desc: "Handoffs depend on people remembering to pass work along, creating delays and dropped details.",
     status: "Handoff",
     Icon: ArrowRightLeft,
   },
   {
     n: "04",
     title: "Disconnected Tools",
-    desc: "Your systems hold the information, but they do not automatically move the process forward.",
+    desc: "The information exists, but your systems do not move the work forward without manual effort.",
     status: "Disconnected",
     Icon: Cable,
   },
@@ -36,7 +36,7 @@ export default function Problem() {
   return (
     <section
       id="problem"
-      className="relative overflow-hidden py-10 md:py-12 lg:py-14 px-6 bg-[#F7F6F2] border-t border-stone-200 scroll-mt-28 md:scroll-mt-32"
+      className="relative overflow-hidden py-10 md:py-12 lg:py-14 px-6 bg-[#F5F6F7] border-t border-slate-200 scroll-mt-28 md:scroll-mt-32"
     >
       <div className="max-w-7xl mx-auto">
         <div className="max-w-full sm:max-w-[52rem]">
@@ -49,17 +49,17 @@ export default function Problem() {
           </h2>
 
           <p className="mt-5 max-w-[43rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
-            Work still moves manually between forms, inboxes, spreadsheets, CRMs, calendars, billing tools, and people. Every handoff adds delay, repetitive work, and another opportunity for something to get missed.
+            When work moves manually between systems and people, teams lose time, follow-ups get missed, handoffs break down, and customers wait longer than they should.
           </p>
         </div>
 
-        <ol role="list" className="mt-8 md:mt-9 grid md:grid-cols-2 lg:grid-cols-4 border-y border-stone-300/70">
+        <ol role="list" className="mt-8 md:mt-9 grid md:grid-cols-2 lg:grid-cols-4 border-y border-slate-300/70">
           {items.map((item, index) => {
             const dividerClass = [
-              index > 0 ? "border-t border-stone-300/70" : "",
-              index === 1 ? "md:border-t-0 md:border-l md:border-stone-300/70" : "",
-              index === 2 ? "md:border-l-0 lg:border-t-0 lg:border-l lg:border-stone-300/70" : "",
-              index === 3 ? "md:border-l md:border-stone-300/70 lg:border-t-0" : "",
+              index > 0 ? "border-t border-slate-300/70" : "",
+              index === 1 ? "md:border-t-0 md:border-l md:border-slate-300/70" : "",
+              index === 2 ? "md:border-l-0 lg:border-t-0 lg:border-l lg:border-slate-300/70" : "",
+              index === 3 ? "md:border-l md:border-slate-300/70 lg:border-t-0" : "",
             ]
               .filter(Boolean)
               .join(" ");
