@@ -88,22 +88,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 md:py-20 bg-[#F5F6F7] border-b border-slate-200">
+      <section className="px-6 py-16 md:py-[4.5rem] bg-[#F5F6F7] border-b border-slate-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
             WHAT WE BELIEVE
           </div>
 
-          <h2 className="mt-5 max-w-5xl text-4xl md:text-[3.6rem] md:leading-[1.08] font-bold tracking-tight text-slate-900">
+          <h2 className="mt-8 max-w-5xl text-4xl md:text-[3.6rem] md:leading-[1.08] font-bold tracking-tight text-slate-900">
             Automation should remove work - not create more work to manage.
           </h2>
 
-          <p className="mt-7 max-w-3xl text-lg md:text-xl leading-8 text-slate-700">
+          <p className="mt-7 max-w-[760px] text-lg md:text-xl leading-8 text-slate-700">
             Neovex works with the systems already in place, keeps people involved where judgment matters, and builds workflows that are understandable, maintainable, and useful after launch.
-          </p>
-
-          <p className="mt-8 max-w-[650px] text-2xl md:text-[1.65rem] md:leading-snug font-semibold tracking-tight text-[#172235]">
-            Make operational work move without constant manual effort.
           </p>
         </div>
       </section>
