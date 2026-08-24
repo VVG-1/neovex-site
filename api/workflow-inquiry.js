@@ -1,4 +1,6 @@
 const NOTIFICATION_TO = "hello@neovexai.com";
+const FROM = "Neovex Team <hello@neovexai.com>";
+const ERROR_MESSAGE = "We could not send your workflow details. Please try again or email hello@neovexai.com.";
 
 function readBody(req) {
   if (!req.body) return {};
@@ -27,9 +29,39 @@ function logFailure(message, details = {}) {
   console.error("[workflow-inquiry]", message, {
     ...details,
     hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
-    hasWorkflowInquiryFrom: Boolean(process.env.WORKFLOW_INQUIRY_FROM || process.env.EMAIL_FROM),
+    from: FROM,
     to: NOTIFICATION_TO,
   });
+}
+
+async function sendEmail({ resendApiKey, payload, logContext }) {
+  const providerResponse = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendApiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const responseText = await providerResponse.text();
+  let responseJson = null;
+  try {
+    responseJson = responseText ? JSON.parse(responseText) : null;
+  } catch {
+    responseJson = null;
+  }
+
+  if (!providerResponse.ok || !responseJson?.id) {
+    logFailure("Resend rejected email", {
+      status: providerResponse.status,
+      response: responseText?.slice(0, 500),
+      ...logContext,
+    });
+    return false;
+  }
+
+  return true;
 }
 
 export default async function handler(req, res) {
@@ -60,13 +92,12 @@ export default async function handler(req, res) {
   }
 
   const resendApiKey = process.env.RESEND_API_KEY || "";
-  const from = process.env.WORKFLOW_INQUIRY_FROM || process.env.EMAIL_FROM || "";
 
-  if (!resendApiKey || !from) {
+  if (!resendApiKey) {
     logFailure("Email provider is not configured", { company });
     return res.status(500).json({
       ok: false,
-      message: "We could not send your workflow details. Please try again or email hello@neovexai.com.",
+      message: ERROR_MESSAGE,
     });
   }
 
@@ -109,41 +140,63 @@ export default async function handler(req, res) {
       <p style="margin-top:20px;color:#607184;font-size:13px">Submitted at ${escapeHtml(submittedAt)}</p>
     </div>
   `;
+  const confirmationSubject = "We received your workflow details";
+  const confirmationText = [
+    `Hi ${fullName},`,
+    "",
+    "Thanks for sharing the workflow you want to improve. We received the details and will review the process, systems involved, and where automation may help.",
+    "",
+    "If we have questions or see a good fit, we will follow up with next steps.",
+    "",
+    "Neovex Team",
+  ].join("\n");
+  const confirmationHtml = `
+    <div style="font-family:Arial,sans-serif;color:#172235;line-height:1.55">
+      <p>Hi ${escapeHtml(fullName)},</p>
+      <p>Thanks for sharing the workflow you want to improve. We received the details and will review the process, systems involved, and where automation may help.</p>
+      <p>If we have questions or see a good fit, we will follow up with next steps.</p>
+      <p>Neovex Team</p>
+    </div>
+  `;
 
   try {
-    const providerResponse = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from,
+    const internalSent = await sendEmail({
+      resendApiKey,
+      payload: {
+        from: FROM,
         to: [NOTIFICATION_TO],
         subject,
         reply_to: email,
         text,
         html,
-      }),
+      },
+      logContext: { type: "internal_notification", company },
     });
 
-    const responseText = await providerResponse.text();
-    let responseJson = null;
-    try {
-      responseJson = responseText ? JSON.parse(responseText) : null;
-    } catch {
-      responseJson = null;
-    }
-
-    if (!providerResponse.ok || !responseJson?.id) {
-      logFailure("Resend rejected workflow inquiry email", {
-        status: providerResponse.status,
-        response: responseText?.slice(0, 500),
-        company,
-      });
+    if (!internalSent) {
       return res.status(502).json({
         ok: false,
-        message: "We could not send your workflow details. Please try again or email hello@neovexai.com.",
+        message: ERROR_MESSAGE,
+      });
+    }
+
+    const confirmationSent = await sendEmail({
+      resendApiKey,
+      payload: {
+        from: FROM,
+        to: [email],
+        subject: confirmationSubject,
+        reply_to: NOTIFICATION_TO,
+        text: confirmationText,
+        html: confirmationHtml,
+      },
+      logContext: { type: "prospect_confirmation", company },
+    });
+
+    if (!confirmationSent) {
+      return res.status(502).json({
+        ok: false,
+        message: ERROR_MESSAGE,
       });
     }
 
@@ -155,7 +208,7 @@ export default async function handler(req, res) {
     });
     return res.status(502).json({
       ok: false,
-      message: "We could not send your workflow details. Please try again or email hello@neovexai.com.",
+      message: ERROR_MESSAGE,
     });
   }
 }
