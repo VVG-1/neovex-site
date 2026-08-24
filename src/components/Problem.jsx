@@ -49,7 +49,7 @@ export default function Problem() {
           </h2>
 
           <p className="mt-5 max-w-[43rem] text-lg md:text-[1.25rem] leading-8 md:leading-9 text-slate-700">
-            When work moves manually between systems and people, teams lose time, follow-ups get missed, handoffs break down, and customers wait longer than they should.
+            When work moves manually between systems and people, teams lose time, follow-ups get missed, handoffs break down, customers wait longer - and revenue gets delayed or lost along the way.
           </p>
         </div>
 
