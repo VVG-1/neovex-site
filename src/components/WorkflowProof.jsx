@@ -60,7 +60,7 @@ const caseStudies = [
 
 export default function WorkflowProof() {
   return (
-    <section id="results" className="bg-white py-20 px-6 border-t border-slate-100 scroll-mt-28 md:scroll-mt-32">
+    <section id="results" className="bg-[#F5F6F7] py-20 px-6 border-t border-slate-200 scroll-mt-28 md:scroll-mt-32">
       <div className="max-w-[1360px] mx-auto">
         <div className="max-w-[1320px]">
           <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
