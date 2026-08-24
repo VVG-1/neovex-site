@@ -2,6 +2,8 @@ import React from "react";
 
 const tools = ["Website", "Email", "CRM", "Forms"];
 
+const workflow = ["Triggers", "Rules", "Routing", "Handoffs"];
+
 const nextSteps = ["Update CRM", "Send follow-up", "Create task", "Schedule", "Notify team"];
 
 export default function ExampleWorkflow() {
@@ -20,10 +22,10 @@ export default function ExampleWorkflow() {
           </p>
         </div>
 
-        <div className="mt-9 grid gap-4 lg:grid-cols-[minmax(0,1fr)_72px_minmax(280px,0.8fr)_72px_minmax(0,1fr)] lg:items-center">
+        <div className="mt-11 grid gap-6 lg:grid-cols-[minmax(0,1fr)_88px_minmax(0,1fr)_88px_minmax(0,1fr)] lg:items-start">
           <FlowZone label="YOUR TOOLS" items={tools} />
           <Connector />
-          <WorkflowCenter />
+          <FlowZone label="NEOVEX WORKFLOW" items={workflow} centered />
           <Connector />
           <FlowZone label="AUTOMATED NEXT STEPS" items={nextSteps} />
         </div>
@@ -32,32 +34,18 @@ export default function ExampleWorkflow() {
   );
 }
 
-function FlowZone({ label, items }) {
+function FlowZone({ label, items, centered = false }) {
   return (
-    <div>
-      <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{label}</div>
-      <div className="mt-3 flex flex-wrap gap-2">
+    <div className={centered ? "lg:text-center" : ""}>
+      <div className="text-lg md:text-xl font-bold uppercase tracking-[0.08em] text-[#172235]">
+        {label}
+      </div>
+      <div className={`mt-4 flex flex-col gap-2 text-base leading-7 text-slate-700 ${centered ? "lg:items-center" : ""}`}>
         {items.map((item) => (
-          <span
-            key={item}
-            className="rounded-md border border-slate-200 bg-[#F5F6F7] px-3 py-2 text-sm font-medium text-slate-700"
-          >
+          <div key={item} className="font-medium">
             {item}
-          </span>
+          </div>
         ))}
-      </div>
-    </div>
-  );
-}
-
-function WorkflowCenter() {
-  return (
-    <div className="rounded-lg border border-slate-300 bg-white px-5 py-5 text-center">
-      <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#25638f]">
-        NEOVEX WORKFLOW
-      </div>
-      <div className="mt-3 text-sm font-medium text-slate-600">
-        Triggers · Rules · Routing · Handoffs
       </div>
     </div>
   );
@@ -66,7 +54,7 @@ function WorkflowCenter() {
 function Connector() {
   return (
     <div
-      className="flex justify-start py-1 text-[#607184] lg:justify-center lg:py-0"
+      className="flex justify-start py-1 text-[#607184] lg:justify-center lg:pt-2"
       aria-hidden="true"
     >
       <svg
